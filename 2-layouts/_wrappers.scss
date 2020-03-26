@@ -19,7 +19,7 @@
         z-index: -1;
         width: 100vw;
         height: 100vh;
-        background: url("beforeXD/art0mobile2.jpg") center center no-repeat;
+        //background: url("beforeXD/art0mobile2.jpg") center center no-repeat;
         background-size: cover;
         filter: contrast(250%) hue-rotate(0deg);
         @keyframes backgroundAnimations {
@@ -57,7 +57,42 @@
         }
     }
 }
-@media (min-width: 768px){
+@media (min-width: 1px) and (max-width: 768px) and (orientation: landscape){
+    .Wrapper{
+        display: none;
+    }
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  
+
+    
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  
+    
+}
+  
+@media (min-width: 768px) and (max-width: 1366px) and (orientation: landscape) {
+    .Wrapper{
+        overflow-y: auto;
+        height: 100%;
+        &::after{
+            background: url("beforeXD/art0mobile2.jpg") center center no-repeat;
+            background-size: cover;
+            animation: none;
+        }
+        &-Inner{
+            width: 100vw;
+            flex-direction: column;
+            overflow-y: auto;
+            overflow-x: none;
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px){
+    
+}
+@media (min-width: 1025px) and (orientation: portrait){
     .Wrapper{
         display: block;
         width: 100vw;

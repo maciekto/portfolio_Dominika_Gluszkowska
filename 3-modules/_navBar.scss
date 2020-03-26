@@ -5,10 +5,8 @@ $transitionSpeed: 0.5s;
     background-color: rgba($color: #ffffff, $alpha: 0.84);
     width: 90px;
     height: 90px;
-    border: 0px solid black;
     z-index: 51;
     position: fixed;
-    box-shadow: 0px 0px 6px;
     transform: rotateZ(45deg);
     top: 40vh;
     right: -30px;
@@ -95,7 +93,7 @@ $transitionSpeed: 0.5s;
     transition: $transitionSpeed;
     transform: rotateZ(315deg);
 }
-@media (min-width: 768px){
+@media (min-width: 1025px){
     .NavBar{
         display: none;
     }

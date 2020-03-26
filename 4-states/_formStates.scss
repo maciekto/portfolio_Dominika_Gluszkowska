@@ -19,7 +19,7 @@ input:disabled{
     background-color: rgba($color: #ffffff, $alpha: 0);
 }
 
-@media (min-width: 768px){
+@media (min-width: 1025px){
     .Form{
         &-InputEmailFrom:focus{
             border: 0px solid black;
@@ -36,17 +36,14 @@ input:disabled{
             transition: 0.4s;
             box-shadow: 0px 0px 4px black;
         }
-        
-    }
-}
-@media (min-width: 1024px){
-    .Form-LabelEmailFrom_focus{
-        transition: 0.4s;
-        top: -20px;
-    }
-    .Form-LabelTextArea_focus{
-        transition: 0.4s;
-        top: -20px;
+        &-LabelEmailFrom_focus{
+            transition: 0.4s;
+            top: -20px;
+        }
+        &-LabelTextArea_focus{
+            transition: 0.4s;
+            top: -20px;
+        }
     }
 }
 @media (min-width: 1440px){

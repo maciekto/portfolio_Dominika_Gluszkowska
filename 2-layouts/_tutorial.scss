@@ -4,10 +4,8 @@
     perspective: 110px;
     perspective-origin: center;
     font-size: 1.8rem;
-    display: flex;
+    display: block;
     position: fixed;
-    align-items: flex-start;
-    justify-content: center;
     left: 0;
     top: 0;
     z-index: 51;
@@ -112,48 +110,17 @@
 .ProjectMainTutorial_opacity_0{
     opacity: 0;
 }
-@media (min-width: 768px){
-    .ProjectMainTutorial{
+@media (min-width: 320px) and (max-width: 480px){
+    .Tutorial{
         display: none;
     }
-    .Tutorial{
-        &-Exit{
-            top: 20px;
-            left: 20px;
-            bottom: none;
-            cursor: pointer;
-        }
-        &-Mobile{
-            display: none;
-        }
-        &-Desktop{
-            display: flex;
-        }
-        &-Message{
-            font-weight: bold;
-            transition: 0.4s;
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            transform: translateY(15vh) translateX(12vw);
-        }
-        &-Arrow{
-            transition: 0.4s;
-            color: black;
-            transform: rotateZ(180deg) translateY(20px) translateX(-20vw);
-        }
-        &-Title{
-            transition: 0.4s;
-        }
-    }
-    .Message_moveDesktop1{
-        transform: translateY(75vh) translateX(10vw);
-    }
-    .Arrow_moveDesktop1{
-        transform: rotateZ(0deg) rotateY(180deg) translateY(20px) translateX(-20vw);
-    }
 }
-@media (min-width: 1024px){
+@media (min-width: 768px) and (max-width: 1024px){
+    
+}
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+}
+@media (min-width: 1025px){
     .Tutorial{
         &-Arrow{
             transition: 0.4s;
