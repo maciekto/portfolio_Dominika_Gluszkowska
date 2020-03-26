@@ -22,25 +22,7 @@ a, a:visited, a:focus, a:active{
     color: black;
     font-size: 1.0rem;
 }
-
-
-@media only screen and (max-width: 400px){
-    :root{
-        font-size: 8px;
-    }
-}
-@media only screen and (max-width: 360px){
-    :root{
-        font-size: 6px;
-    }
-}
-@media only screen and (max-width: 300px){
-    :root{
-        font-size: 3px;
-    }
-}
-
-@media (min-width: 768px){
+@media (min-width: 1025px){
     :root{
         
         overflow-y: hidden;

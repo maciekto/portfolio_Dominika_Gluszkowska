@@ -1,24 +1,24 @@
 .Page{
     //z-index: 0;
     width: 100vw;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
-    perspective-origin: center;
-    perspective: 110px;
+
 }
 .Page1{
-    height: 100vh;
+    height: 90vh;
+    justify-content: space-evenly;
     
 }
 .Page2{
     z-index: 1;
-    height: 65vh;
-    margin-bottom: 150px;
-    perspective-origin: 50% 60%;
+    height:50vh;
+
+
+    justify-content:space-around;
     
 }
 .Page3{
@@ -26,7 +26,22 @@
     height: 90vh;
     justify-content: space-around;
 }
-@media (min-width: 768px){
+@media (min-width: 320px) and (max-width: 480px) {
+    .Page2{
+      
+    }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  
+    
+}
+@media (min-width: 768px) and (max-width: 1024px){
+    
+}
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+      
+}
+@media (min-width: 1025px){
     .Page{
         height: 100vh;
         justify-content: space-evenly;

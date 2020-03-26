@@ -117,7 +117,7 @@ $transitionSpeed: 0.4s;
     transition: $transitionSpeed;
     transform: rotateZ(225deg) scale(2);
 }
-@media(min-width: 768px){
+@media(min-width: 1025px){
     .NavBarDesktop{    
         display: block;
     }
