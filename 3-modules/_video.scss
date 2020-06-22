@@ -1,0 +1,61 @@
+.Carousel{
+    position: relative;
+    width: 100vw;
+    height: auto;
+    &::after{
+        z-index: -20;
+        display: block;
+        content: '';
+        position: absolute;
+        bottom: -10vw;
+        left: -5vw;
+        width: 110vw;
+        height: 20vw;
+        background: black;
+        transform: rotate(-5deg);
+    }
+    &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 4px;
+        width: 100vw;
+        height: 0px;
+        background: rgba($color: #fff, $alpha: 0.43);
+        box-shadow: 0px 0px 30px 5px white;
+        z-index: 1;
+    }
+}
+.Video{
+    position: relative;
+    width: 100vw;
+    height: auto;
+    &-Controls{
+        position: absolute;
+        top: 50%;
+    }
+}
+.Seek-Bar{
+    transition: opacity 1s;
+    opacity: 0.5;
+    appearance: none;
+    width: 100vw;
+    outline: none;
+    height: 5px;
+    box-shadow: 0px 0px 10px white;
+}
+.Seek-Bar::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 3px;
+    border-radius: 30%;
+    height: 30px;
+    background: white;
+    box-shadow: 0px 0px 20px 5px white;
+}
+.Seek-Bar:hover {
+    transition: 1s;
+    opacity: 1; /* Fully shown on mouse-over */
+}
+.Play-Pause {
+
+}
