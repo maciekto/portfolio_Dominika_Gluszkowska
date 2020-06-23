@@ -129,21 +129,23 @@
     }
 }
 .Controls{
-    width: 50vw;
+    width: 80vw;
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     top: 75%;
-    left: calc(50% - 25vw);
+    left: calc(50% - 40vw);
 }
 .Controls-Mute {
+    box-shadow: 0px 0px 7px white;
+    border-radius: 50%;
     transition: opacity 0.4s;
     opacity: 0.5;
     width: 25px;
     height: 25px;
-    background: url('beforeXD/unmute.png');
-    background-size: cover;
+    background: url('beforeXD/unmute.png') center center no-repeat;
+    background-size: 70%;
     &:hover{
         cursor: pointer;
         transition: 0.4s;
@@ -151,12 +153,14 @@
     }
 }
 .Controls-Fullscreen {
+    border-radius: 20%;
+    box-shadow: 0px 0px 7px white;
     transition: opacity 0.4s;
     opacity: 0.5;
     width: 25px;
     height: 25px;
-    background: url('beforeXD/fullscreen.png');
-    background-size: contain;
+    background: url('beforeXD/fullscreen.png') center center no-repeat;
+    background-size: 79%;
     &:hover{
         cursor: pointer;
         transition: 0.4s;

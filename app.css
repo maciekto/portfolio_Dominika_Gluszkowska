@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 /* LAYOUTS CSS FILES */
@@ -195,7 +195,7 @@ body {
 }
 
 .Controls {
-  width: 50vw;
+  width: 80vw;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -207,17 +207,20 @@ body {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   top: 75%;
-  left: calc(50% - 25vw);
+  left: calc(50% - 40vw);
 }
 
 .Controls-Mute {
+  -webkit-box-shadow: 0px 0px 7px white;
+          box-shadow: 0px 0px 7px white;
+  border-radius: 50%;
   -webkit-transition: opacity 0.4s;
   transition: opacity 0.4s;
   opacity: 0.5;
   width: 25px;
   height: 25px;
-  background: url("beforeXD/unmute.png");
-  background-size: cover;
+  background: url("beforeXD/unmute.png") center center no-repeat;
+  background-size: 70%;
 }
 
 .Controls-Mute:hover {
@@ -228,13 +231,16 @@ body {
 }
 
 .Controls-Fullscreen {
+  border-radius: 20%;
+  -webkit-box-shadow: 0px 0px 7px white;
+          box-shadow: 0px 0px 7px white;
   -webkit-transition: opacity 0.4s;
   transition: opacity 0.4s;
   opacity: 0.5;
   width: 25px;
   height: 25px;
-  background: url("beforeXD/fullscreen.png");
-  background-size: contain;
+  background: url("beforeXD/fullscreen.png") center center no-repeat;
+  background-size: 79%;
 }
 
 .Controls-Fullscreen:hover {
@@ -242,6 +248,130 @@ body {
   -webkit-transition: 0.4s;
   transition: 0.4s;
   opacity: 0.8;
+}
+
+.Component {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.Article1 {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top: 1px solid black;
+  margin-top: calc(20vw);
+}
+
+.Article1-Title {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Article1-Carousel {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Carousel01 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  min-width: 100%;
+  height: 40vh;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.Carousel01-Arrow1 {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  display: block;
+  content: '';
+  width: 25px;
+  height: 25px;
+  background-color: black;
+  top: calc(50% - 12.5px);
+  left: 2%;
+}
+
+.Carousel01-Arrow2 {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  display: block;
+  content: '';
+  width: 25px;
+  height: 25px;
+  background-color: black;
+  top: calc(50% - 12.5px);
+  right: 2%;
+}
+
+.Carousel01-Inner {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow-x: scroll;
+  min-width: calc(100% - 2*(4% + 25px));
+  width: 2000px;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.Carousel01-Item {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: calc(600px);
+  height: 80%;
+  background-color: white;
+  border: 1px solid black;
 }
 
 /* STATES */
