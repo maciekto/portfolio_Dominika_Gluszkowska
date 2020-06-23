@@ -3,13 +3,18 @@ window.onload = function() {
     // Video
     var video = document.querySelector(".Video");
     // Buttons
-    var playButton = document.querySelector(".Play-Pause");
-    var muteButton = document.querySelector(".mute");
-    var fullScreenButton = document.querySelector(".full-screen");
+    var playButton = document.querySelector(".PlayPause");
+    var muteButton = document.querySelector(".Controls-Mute");
+    var fullScreenButton = document.querySelector(".Controls-Fullscreen");
   
     // Sliders
     var seekBar = document.querySelector(".Seek-Bar");
-    var volumeBar = document.querySelector(".Volume-Bar");
+    var volumeBar = document.querySelector(".Controls-VolumeBar");
+
+    // Play pause
+    var ele1 = document.querySelector('.ele1');
+    var ele2 = document.querySelector('.ele2');
+    var ele3 = document.querySelector('.ele3');
 
     // Event listener for the play/pause button
     playButton.addEventListener("click", function() {
@@ -18,13 +23,23 @@ window.onload = function() {
           video.play();
       
           // Update the button text to 'Pause'
-          playButton.innerHTML = "Pause";
+          ele1.classList.remove('ele1_play');
+          ele2.classList.remove('ele2_play');
+          ele3.classList.remove('ele3_play');
+          ele1.classList.add('ele1_pause');
+          ele2.classList.add('ele2_pause');
+          ele3.classList.add('ele3_pause');
         } else {
           // Pause the video
           video.pause();
       
           // Update the button text to 'Play'
-          playButton.innerHTML = "Play";
+          ele1.classList.remove('ele1_pause');
+          ele2.classList.remove('ele2_pause');
+          ele3.classList.remove('ele3_pause');
+          ele1.classList.add('ele1_play');
+          ele2.classList.add('ele2_play');
+          ele3.classList.add('ele3_play');
         }
       });
     // Event listener for the mute button
@@ -34,13 +49,13 @@ window.onload = function() {
         video.muted = true;
     
         // Update the button text
-        muteButton.innerHTML = "Unmute";
+        muteButton.style.cssText = "background: url('beforeXD/mute.png'); background-size: contain;";
         } else {
         // Unmute the video
         video.muted = false;
     
         // Update the button text
-        muteButton.innerHTML = "Mute";
+        muteButton.style.cssText = "background: url('beforeXD/unmute.png'); background-size: contain;";
         }
     });
     // Event listener for the full-screen button
@@ -53,17 +68,14 @@ window.onload = function() {
         video.webkitRequestFullscreen(); // Chrome and Safari
         }
     });
-    // Event listener for the seek bar
-    
-    seekBar.addEventListener("change", function() {
-    var time = video.duration * (seekBar.value / 100);
-    // Calculate the new time
-    // Update the video time
-    video.currentTime = time;
+    // Event listener for the volume bar
+    volumeBar.addEventListener("change", function() {
+      // Update the video volume
+      video.volume = volumeBar.value;
     });
 
     setInterval(() => {
         seekBar.value = video.currentTime;
-    }, 100);
+    }, 1);
   }
   

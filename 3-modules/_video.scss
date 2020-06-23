@@ -1,20 +1,23 @@
 .Carousel{
+    box-sizing: border-box;
     position: relative;
     width: 100vw;
     height: auto;
     &::after{
-        z-index: -20;
+        box-sizing: border-box;
+        z-index: 20;
         display: block;
         content: '';
         position: absolute;
-        bottom: -10vw;
+        bottom: -15vw;
         left: -5vw;
         width: 110vw;
         height: 20vw;
-        background: black;
-        transform: rotate(-5deg);
+        background: white;
+        transform: rotate(-4deg);
     }
     &::before{
+        box-sizing: border-box;
         content: '';
         display: block;
         position: absolute;
@@ -27,6 +30,7 @@
     }
 }
 .Video{
+    box-sizing: border-box;
     position: relative;
     width: 100vw;
     height: auto;
@@ -35,27 +39,127 @@
         top: 50%;
     }
 }
-.Seek-Bar{
+.Seek-Bar, .Controls-VolumeBar{
+    box-sizing: border-box;
     transition: opacity 1s;
     opacity: 0.5;
     appearance: none;
-    width: 100vw;
     outline: none;
     height: 5px;
     box-shadow: 0px 0px 10px white;
 }
-.Seek-Bar::-webkit-slider-thumb{
+.Seek-Bar{
+    width: 100vw;
+}
+.Controls-VolumeBar{
+    background: rgba($color: #000, $alpha: 0.1);
+}
+.Seek-Bar::-webkit-slider-thumb, .Controls-VolumeBar::-webkit-slider-thumb{
+    box-sizing: border-box;
     -webkit-appearance: none;
     width: 3px;
     border-radius: 30%;
     height: 30px;
     background: white;
-    box-shadow: 0px 0px 20px 5px white;
+    box-shadow: 0px 0px 10px white;
+    background: rgba($color: #000, $alpha: 0.1);
 }
 .Seek-Bar:hover {
     transition: 1s;
     opacity: 1; /* Fully shown on mouse-over */
 }
-.Play-Pause {
-
+.PlayPause {
+    outline: none;
+    transition: opacity 0.4s;
+    opacity: 0.5;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px white,
+    0px 0px 10px white inset;
+    border: 2px solid rgba($color: #000, $alpha: 0.4);
+    box-sizing: border-box;
+    position: absolute;
+    top: 60%;
+    left: calc(50% - 25px);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+        transition: 0.4s;
+        opacity: 1;
+    }
+    &:focus {
+        outline: 0;
+        outline: none; 
+    }
+}
+.ele{
+    display: block;
+    border-radius: 2px;
+    width: 16px;
+    height: 2px;
+    box-shadow: 0px 0px 7px white;
+    background: rgba($color: #000, $alpha: 0.7);
+    &1_play{
+        transition: 0.4s;
+        transform: rotate(30deg) translateX(1px) translateY(-3px);
+    }
+    &2_play{
+        transition: 0.4s;
+        transform: rotate(-30deg) translateX(0px) translateY(5px);
+    }
+    &3_play{
+        transition: 0.4s;
+        transform: rotate(90deg) translateY(5px) translateX(-2px);
+    }
+    &1_pause{
+        transition: 0.4s;
+        transform: rotate(90deg) translateX(2px) translateY(5px);
+    }
+    &2_pause{
+        transition: 0.4s;
+        transform: rotate(90deg) translateX(0px) translateY(-5px);
+    }
+    &3_pause{
+        opacity: 0;
+        transition: 0.4s;
+        transform: rotate(720deg) translateX(0px) translateY(0px);
+    }
+}
+.Controls{
+    width: 50vw;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    top: 75%;
+    left: calc(50% - 25vw);
+}
+.Controls-Mute {
+    transition: opacity 0.4s;
+    opacity: 0.5;
+    width: 25px;
+    height: 25px;
+    background: url('beforeXD/unmute.png');
+    background-size: cover;
+    &:hover{
+        cursor: pointer;
+        transition: 0.4s;
+        opacity: 0.8;
+    }
+}
+.Controls-Fullscreen {
+    transition: opacity 0.4s;
+    opacity: 0.5;
+    width: 25px;
+    height: 25px;
+    background: url('beforeXD/fullscreen.png');
+    background-size: contain;
+    &:hover{
+        cursor: pointer;
+        transition: 0.4s;
+        opacity: 0.8;
+    }
 }
