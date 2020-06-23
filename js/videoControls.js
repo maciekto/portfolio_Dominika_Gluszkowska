@@ -49,13 +49,13 @@ window.onload = function() {
         video.muted = true;
     
         // Update the button text
-        muteButton.style.cssText = "background: url('beforeXD/mute.png'); background-size: contain;";
+        muteButton.style.cssText = "background: url('beforeXD/mute.png') center center no-repeat; background-size: 70%;";
         } else {
         // Unmute the video
         video.muted = false;
     
         // Update the button text
-        muteButton.style.cssText = "background: url('beforeXD/unmute.png'); background-size: contain;";
+        muteButton.style.cssText = "background: url('beforeXD/unmute.png') center center no-repeat; background-size: 70%;";
         }
     });
     // Event listener for the full-screen button

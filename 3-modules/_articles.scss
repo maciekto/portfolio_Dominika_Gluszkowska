@@ -1,0 +1,82 @@
+.Component{
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.Article1{
+    box-sizing: border-box;
+    border-top: 1px solid black;
+    margin-top: calc(20vw);
+    &-Title{
+        box-sizing: border-box;
+        margin: 0;
+        width: 100%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &-Carousel{
+        box-sizing: border-box;
+        width: 100%;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+.Carousel01{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    position: relative;
+    min-width: 100%;
+    height: 40vh;
+    background: rgba($color: #000000, $alpha: 0.4);
+    &-Arrow1{
+        box-sizing: border-box;
+        position: absolute;
+        display: block;
+        content: '';
+        width: 25px;
+        height: 25px;
+        background-color: black;
+        top: calc(50% - 12.5px);
+        left: 2%;
+    }
+    &-Arrow2{
+        box-sizing: border-box;
+        position: absolute;
+        display: block;
+        content: '';
+        width: 25px;
+        height: 25px;
+        background-color: black;
+        top: calc(50% - 12.5px);
+        right: 2%;
+    }
+    &-Inner{
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        min-width: calc(100% - 2*(4% + 25px));;
+        width: 2000px;
+        height: 80%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        box-sizing: border-box;
+    }
+    &-Item {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        width: calc(600px);
+        height: 80%;
+        background-color: white;
+        border: 1px solid black;
+    }
+}
