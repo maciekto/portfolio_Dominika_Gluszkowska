@@ -8,26 +8,32 @@ body {
 
 /* LAYOUTS CSS FILES */
 .Carousel {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   position: relative;
   width: 100vw;
   height: auto;
 }
 
 .Carousel::after {
-  z-index: -20;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 20;
   display: block;
   content: '';
   position: absolute;
-  bottom: -10vw;
+  bottom: -15vw;
   left: -5vw;
   width: 110vw;
   height: 20vw;
-  background: black;
-  -webkit-transform: rotate(-5deg);
-          transform: rotate(-5deg);
+  background: white;
+  -webkit-transform: rotate(-4deg);
+          transform: rotate(-4deg);
 }
 
 .Carousel::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   content: '';
   display: block;
   position: absolute;
@@ -41,6 +47,8 @@ body {
 }
 
 .Video {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   position: relative;
   width: 100vw;
   height: auto;
@@ -51,28 +59,40 @@ body {
   top: 50%;
 }
 
-.Seek-Bar {
+.Seek-Bar, .Controls-VolumeBar {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
   opacity: 0.5;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  width: 100vw;
   outline: none;
   height: 5px;
   -webkit-box-shadow: 0px 0px 10px white;
           box-shadow: 0px 0px 10px white;
 }
 
-.Seek-Bar::-webkit-slider-thumb {
+.Seek-Bar {
+  width: 100vw;
+}
+
+.Controls-VolumeBar {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.Seek-Bar::-webkit-slider-thumb, .Controls-VolumeBar::-webkit-slider-thumb {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-appearance: none;
   width: 3px;
   border-radius: 30%;
   height: 30px;
   background: white;
-  -webkit-box-shadow: 0px 0px 20px 5px white;
-          box-shadow: 0px 0px 20px 5px white;
+  -webkit-box-shadow: 0px 0px 10px white;
+          box-shadow: 0px 0px 10px white;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .Seek-Bar:hover {
@@ -80,6 +100,148 @@ body {
   transition: 1s;
   opacity: 1;
   /* Fully shown on mouse-over */
+}
+
+.PlayPause {
+  outline: none;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+  opacity: 0.5;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 10px white, 0px 0px 10px white inset;
+          box-shadow: 0px 0px 10px white, 0px 0px 10px white inset;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  top: 60%;
+  left: calc(50% - 25px);
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.PlayPause:hover {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  opacity: 1;
+}
+
+.PlayPause:focus {
+  outline: 0;
+  outline: none;
+}
+
+.ele {
+  display: block;
+  border-radius: 2px;
+  width: 16px;
+  height: 2px;
+  -webkit-box-shadow: 0px 0px 7px white;
+          box-shadow: 0px 0px 7px white;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.ele1_play {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: rotate(30deg) translateX(1px) translateY(-3px);
+          transform: rotate(30deg) translateX(1px) translateY(-3px);
+}
+
+.ele2_play {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: rotate(-30deg) translateX(0px) translateY(5px);
+          transform: rotate(-30deg) translateX(0px) translateY(5px);
+}
+
+.ele3_play {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: rotate(90deg) translateY(5px) translateX(-2px);
+          transform: rotate(90deg) translateY(5px) translateX(-2px);
+}
+
+.ele1_pause {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: rotate(90deg) translateX(2px) translateY(5px);
+          transform: rotate(90deg) translateX(2px) translateY(5px);
+}
+
+.ele2_pause {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: rotate(90deg) translateX(0px) translateY(-5px);
+          transform: rotate(90deg) translateX(0px) translateY(-5px);
+}
+
+.ele3_pause {
+  opacity: 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: rotate(720deg) translateX(0px) translateY(0px);
+          transform: rotate(720deg) translateX(0px) translateY(0px);
+}
+
+.Controls {
+  width: 50vw;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  top: 75%;
+  left: calc(50% - 25vw);
+}
+
+.Controls-Mute {
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+  opacity: 0.5;
+  width: 25px;
+  height: 25px;
+  background: url("beforeXD/unmute.png");
+  background-size: cover;
+}
+
+.Controls-Mute:hover {
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  opacity: 0.8;
+}
+
+.Controls-Fullscreen {
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+  opacity: 0.5;
+  width: 25px;
+  height: 25px;
+  background: url("beforeXD/fullscreen.png");
+  background-size: contain;
+}
+
+.Controls-Fullscreen:hover {
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  opacity: 0.8;
 }
 
 /* STATES */
