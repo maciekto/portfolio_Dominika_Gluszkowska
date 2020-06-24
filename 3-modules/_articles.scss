@@ -8,25 +8,31 @@
 .Article1{
     box-sizing: border-box;
     margin-top: calc(20vw);
-    height: 80vh;
+    height: 75vh;
     border: none;
     &-Title{
+        text-shadow: 0px 0px 1px black;
         box-sizing: border-box;
         margin: 0;
         width: 100%;
-        height: 20%;
+        height: 10%;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
+        font-size: 2.5rem;
+        font-weight: 400;
     }
     &-Carousel{
         overflow: hidden;
         box-sizing: border-box;
         width: 100%;
-        height: 80%;
+        height: 90%;
         display: flex;
         justify-content: center;
         align-items: center;
+        text-shadow: 0px 0px 1px black;
+        font-size: 1.5rem;
+        font-weight: 400;
     }
 
 }
@@ -39,15 +45,19 @@
     min-width: 100%;
     height: 100%;
     &-Arrow1{
+        box-shadow: 0px 0px 5px black;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        border-radius: 50%;
+        border: 2px solid black;
         cursor: pointer;
         box-sizing: border-box;
         position: absolute;
         display: block;
         content: '';
-        width: 25px;
-        height: 25px;
-        top: calc(50% - 12.5px);
-        left: 2%;
+        width: 50px;
+        height: 50px;
+        top: calc(40% - 25px);
+        left: 7%;
         z-index: 1001;
         &::after{
             display: block;
@@ -57,8 +67,8 @@
             width: 17px;
             height: 2px;
             background-color: black;
-            top: 8px;
-            left: 0;
+            top: 18px;
+            left: calc(50% - 10px);
             transform: rotate(-30deg);
         }
         &::before{
@@ -69,21 +79,25 @@
             width: 17px;
             height: 2px;
             background-color: black;
-            bottom: 7px;
-            left: 0;
+            bottom: 18px;
+            left: calc(50% - 10px);
             transform: rotate(30deg)
         }
     }
     &-Arrow2{
+        box-shadow: 0px 0px 5px black;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        border-radius: 50%;
+        border: 2px solid black;
         cursor: pointer;
         box-sizing: border-box;
         position: absolute;
         display: block;
         content: '';
-        width: 25px;
-        height: 25px;
-        top: calc(50% - 12.5px);
-        right: 2%;
+        width: 50px;
+        height: 50px;
+        top: calc(40% - 25px);
+        right: 7%;
         z-index: 1001;
         &::after{
             display: block;
@@ -93,8 +107,8 @@
             width: 17px;
             height: 2px;
             background-color: black;
-            top: 8px;
-            right: 0;
+            top: 18px;
+            right: calc(50% - 10px);
             transform: rotate(30deg);
         }
         &::before{
@@ -105,8 +119,8 @@
             width: 17px;
             height: 2px;
             background-color: black;
-            bottom: 7px;
-            right: 0;
+            bottom: 18px;
+            right: calc(50% - 10px);
             transform: rotate(-30deg)
         }
     }
