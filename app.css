@@ -284,6 +284,7 @@ body {
 }
 
 .Article1-Carousel {
+  overflow: hidden;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
@@ -300,20 +301,13 @@ body {
 }
 
 .Carousel01 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: relative;
   min-width: 100%;
-  height: 40vh;
+  height: 60vh;
   background: rgba(0, 0, 0, 0.4);
 }
 
@@ -328,6 +322,7 @@ body {
   background-color: black;
   top: calc(50% - 12.5px);
   left: 2%;
+  z-index: 1001;
 }
 
 .Carousel01-Arrow2 {
@@ -341,37 +336,59 @@ body {
   background-color: black;
   top: calc(50% - 12.5px);
   right: 2%;
-}
-
-.Carousel01-Inner {
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  overflow-x: scroll;
-  min-width: calc(100% - 2*(4% + 25px));
-  width: 2000px;
-  height: 80%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  z-index: 1001;
 }
 
 .Carousel01-Item {
+  opacity: 0.4;
+  position: absolute;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  width: calc(600px);
-  height: 80%;
-  background-color: white;
+  margin: auto;
+  height: 50%;
+  top: 0;
+  width: 100%;
+  z-index: 900;
+  background-color: rgba(255, 255, 255, 0.3);
   border: 1px solid black;
+  -webkit-transition: opacity .5s, z-index .5s, -webkit-transform .5s;
+  transition: opacity .5s, z-index .5s, -webkit-transform .5s;
+  transition: transform .5s, opacity .5s, z-index .5s;
+  transition: transform .5s, opacity .5s, z-index .5s, -webkit-transform .5s;
+}
+
+.Carousel01-Item_Initial, .Carousel01-Item_Active {
+  opacity: 1;
+  position: relative;
+  z-index: 900;
+}
+
+.Carousel01-Item_Prev, .Carousel01-Item_Next {
+  z-index: 1000;
+}
+
+.Carousel01-Item_Prev {
+  -webkit-transition: opacity .5s, z-index .5s, -webkit-transform .5s;
+  transition: opacity .5s, z-index .5s, -webkit-transform .5s;
+  transition: transform .5s, opacity .5s, z-index .5s;
+  transition: transform .5s, opacity .5s, z-index .5s, -webkit-transform .5s;
+  -webkit-transform: translateX(-90%);
+          transform: translateX(-90%);
+  /* Move 'prev' item to the left */
+}
+
+.Carousel01-Item_Next {
+  -webkit-transition: opacity .5s, z-index .5s, -webkit-transform .5s;
+  transition: opacity .5s, z-index .5s, -webkit-transform .5s;
+  transition: transform .5s, opacity .5s, z-index .5s;
+  transition: transform .5s, opacity .5s, z-index .5s, -webkit-transform .5s;
+  -webkit-transform: translateX(90%);
+          transform: translateX(90%);
+  /* Move 'prev' item to the left */
+}
+
+.Carousel01-Item2 {
+  background-color: yellow;
 }
 
 /* STATES */

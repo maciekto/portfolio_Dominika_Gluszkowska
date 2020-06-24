@@ -19,6 +19,7 @@
         align-items: center;
     }
     &-Carousel{
+        overflow: hidden;
         box-sizing: border-box;
         width: 100%;
         height: 80vh;
@@ -29,13 +30,11 @@
 
 }
 .Carousel01{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    transform-style: preserve-3d;
     box-sizing: border-box;
     position: relative;
     min-width: 100%;
-    height: 40vh;
+    height: 60vh;
     background: rgba($color: #000000, $alpha: 0.4);
     &-Arrow1{
         box-sizing: border-box;
@@ -47,6 +46,7 @@
         background-color: black;
         top: calc(50% - 12.5px);
         left: 2%;
+        z-index: 1001;
     }
     &-Arrow2{
         box-sizing: border-box;
@@ -58,25 +58,38 @@
         background-color: black;
         top: calc(50% - 12.5px);
         right: 2%;
-    }
-    &-Inner{
-        flex-wrap: nowrap;
-        overflow-x: scroll;
-        min-width: calc(100% - 2*(4% + 25px));;
-        width: 2000px;
-        height: 80%;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        box-sizing: border-box;
+        z-index: 1001;
     }
     &-Item {
+        opacity: 0.4;
+        position: absolute;
         box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        width: calc(600px);
-        height: 80%;
-        background-color: white;
+        margin: auto;
+        height: 50%;
+        top: 0;
+        width: 100%;
+        z-index: 900;
+        background-color: rgba($color: #fff, $alpha: 0.3);
         border: 1px solid black;
+        transition: transform .5s, opacity .5s, z-index .5s;
+        &_Initial, &_Active {
+            opacity: 1;
+            position: relative;
+            z-index: 900;
+        }
+        &_Prev, &_Next {
+            z-index: 1000;
+        }
+        &_Prev {
+            transition: transform .5s, opacity .5s, z-index .5s;
+            transform: translateX(-90%); /* Move 'prev' item to the left */
+        }
+        &_Next {
+            transition: transform .5s, opacity .5s, z-index .5s;
+            transform: translateX(90%); /* Move 'prev' item to the left */
+        }
+        &2 {
+            background-color: rgba($color: #ff0, $alpha: 1);
+        }
     }
 }
