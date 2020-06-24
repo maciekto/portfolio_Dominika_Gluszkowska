@@ -1,13 +1,24 @@
 /* BASE CSS FILES */
+:root {
+  font-size: 10px;
+  font-family: 'Lato', sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
   overflow-y: scroll;
+  position: relative;
+}
+
+html, body {
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 /* LAYOUTS CSS FILES */
 .Carousel {
+  margin-top: 15vw;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: relative;
@@ -15,7 +26,7 @@ body {
   height: auto;
 }
 
-.Carousel::after {
+.Carousel-Bottombar {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   z-index: 20;
@@ -33,19 +44,22 @@ body {
           box-shadow: 0px 0px 10px white;
 }
 
-.Carousel::before {
+.Carousel-Abovebar {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  content: '';
+  z-index: 20;
   display: block;
+  content: '';
   position: absolute;
-  bottom: 4px;
-  width: 100vw;
-  height: 0px;
-  background: rgba(255, 255, 255, 0.43);
-  -webkit-box-shadow: 0px 0px 30px 5px white;
-          box-shadow: 0px 0px 30px 5px white;
-  z-index: 1;
+  top: -15vw;
+  left: -5vw;
+  width: 110vw;
+  height: 20vw;
+  background: white;
+  -webkit-transform: rotate(-4deg);
+          transform: rotate(-4deg);
+  -webkit-box-shadow: 0px 0px 10px white;
+          box-shadow: 0px 0px 10px white;
 }
 
 .Video {
@@ -265,25 +279,28 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin-top: calc(20vw);
-  height: 80vh;
+  height: 75vh;
   border: none;
 }
 
 .Article1-Title {
+  text-shadow: 0px 0px 1px black;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
   width: 100%;
-  height: 20%;
+  height: 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-size: 2.5rem;
+  font-weight: 400;
 }
 
 .Article1-Carousel {
@@ -291,7 +308,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
-  height: 80%;
+  height: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -301,6 +318,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-shadow: 0px 0px 1px black;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
 .Carousel01 {
@@ -321,16 +341,21 @@ body {
 }
 
 .Carousel01-Arrow1 {
+  -webkit-box-shadow: 0px 0px 5px black;
+          box-shadow: 0px 0px 5px black;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  border: 2px solid black;
   cursor: pointer;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: absolute;
   display: block;
   content: '';
-  width: 25px;
-  height: 25px;
-  top: calc(50% - 12.5px);
-  left: 2%;
+  width: 50px;
+  height: 50px;
+  top: calc(40% - 25px);
+  left: 7%;
   z-index: 1001;
 }
 
@@ -342,8 +367,8 @@ body {
   width: 17px;
   height: 2px;
   background-color: black;
-  top: 8px;
-  left: 0;
+  top: 18px;
+  left: calc(50% - 10px);
   -webkit-transform: rotate(-30deg);
           transform: rotate(-30deg);
 }
@@ -356,23 +381,28 @@ body {
   width: 17px;
   height: 2px;
   background-color: black;
-  bottom: 7px;
-  left: 0;
+  bottom: 18px;
+  left: calc(50% - 10px);
   -webkit-transform: rotate(30deg);
           transform: rotate(30deg);
 }
 
 .Carousel01-Arrow2 {
+  -webkit-box-shadow: 0px 0px 5px black;
+          box-shadow: 0px 0px 5px black;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  border: 2px solid black;
   cursor: pointer;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: absolute;
   display: block;
   content: '';
-  width: 25px;
-  height: 25px;
-  top: calc(50% - 12.5px);
-  right: 2%;
+  width: 50px;
+  height: 50px;
+  top: calc(40% - 25px);
+  right: 7%;
   z-index: 1001;
 }
 
@@ -384,8 +414,8 @@ body {
   width: 17px;
   height: 2px;
   background-color: black;
-  top: 8px;
-  right: 0;
+  top: 18px;
+  right: calc(50% - 10px);
   -webkit-transform: rotate(30deg);
           transform: rotate(30deg);
 }
@@ -398,8 +428,8 @@ body {
   width: 17px;
   height: 2px;
   background-color: black;
-  bottom: 7px;
-  right: 0;
+  bottom: 18px;
+  right: calc(50% - 10px);
   -webkit-transform: rotate(-30deg);
           transform: rotate(-30deg);
 }
