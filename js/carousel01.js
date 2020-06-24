@@ -3,6 +3,9 @@
         items = d.querySelectorAll(itemClassName),
         totalItems = items.length,
         slide = 0,
+        text1 = d.querySelector('.Carousel01-ItemText1');
+        text2 = d.querySelector('.Carousel01-ItemText2');
+        text3 = d.querySelector('.Carousel01-ItemText3');
         moving = true;
         items[0].classList.remove("Carousel01-Item_Initial");
     // Set classes 
@@ -76,6 +79,15 @@
                 items[slide + 2].classList.add("Carousel01-Item_Prev");
                 items[slide + 2].classList.remove("Carousel01-Item_Active");
                 items[slide + 2].classList.remove("Carousel01-Item_Next");
+
+                // texts 
+                text1.classList.add('Carousel01-ItemText1_Active');
+                text1.classList.remove('Carousel01-ItemText1_Notactive');
+
+                text3.classList.remove('Carousel01-ItemText3_Active');
+                text3.classList.add('Carousel01-ItemText3_Notactive');
+                text2.classList.remove('Carousel01-ItemText2_Active');
+                text2.classList.add('Carousel01-ItemText2_Notactive');
               }else if(slide === 1){
                 items[slide - 1].classList.add("Carousel01-Item_Prev");
                 items[slide - 1].classList.remove("Carousel01-Item_Active");
@@ -89,6 +101,16 @@
                 items[slide + 1].classList.add("Carousel01-Item_Next");
                 items[slide + 1].classList.remove("Carousel01-Item_Prev");
                 items[slide + 1].classList.remove("Carousel01-Item_Active");
+
+                //text
+                text2.classList.add('Carousel01-ItemText2_Active');
+                text2.classList.remove('Carousel01-ItemText2_Notactive');
+
+                text1.classList.remove('Carousel01-ItemText1_Active');
+                text1.classList.add('Carousel01-ItemText1_Notactive');
+                text3.classList.remove('Carousel01-ItemText3_Active');
+                text3.classList.add('Carousel01-ItemText3_Notactive');
+                
               }else if(slide === 2){
                 items[slide - 2].classList.add("Carousel01-Item_Next");
                 items[slide - 2].classList.remove("Carousel01-Item_Prev");
@@ -100,7 +122,15 @@
 
                 items[slide].classList.add("Carousel01-Item_Active");
                 items[slide].classList.remove("Carousel01-Item_Next");
-                items[slide].classList.remove("Carousel01-Item_Prev");
+                items[slide].classList.remove("Carousel01-Item_Prev");    
+                // text     
+                text3.classList.add('Carousel01-ItemText3_Active');
+                text3.classList.remove('Carousel01-ItemText3_Notactive'); 
+
+                text2.classList.remove('Carousel01-ItemText2_Active');
+                text2.classList.add('Carousel01-ItemText2_Notactive');
+                text1.classList.remove('Carousel01-ItemText1_Active');
+                text1.classList.add('Carousel01-ItemText1_Notactive');
               }
           }else{
               console.log('error');

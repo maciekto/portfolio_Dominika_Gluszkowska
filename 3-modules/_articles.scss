@@ -7,8 +7,9 @@
 }
 .Article1{
     box-sizing: border-box;
-    border-top: 1px solid black;
     margin-top: calc(20vw);
+    height: 80vh;
+    border: none;
     &-Title{
         box-sizing: border-box;
         margin: 0;
@@ -22,7 +23,7 @@
         overflow: hidden;
         box-sizing: border-box;
         width: 100%;
-        height: 80vh;
+        height: 80%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -30,66 +31,174 @@
 
 }
 .Carousel01{
-    transform-style: preserve-3d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
     position: relative;
     min-width: 100%;
-    height: 60vh;
-    background: rgba($color: #000000, $alpha: 0.4);
+    height: 100%;
     &-Arrow1{
+        cursor: pointer;
         box-sizing: border-box;
         position: absolute;
         display: block;
         content: '';
         width: 25px;
         height: 25px;
-        background-color: black;
         top: calc(50% - 12.5px);
         left: 2%;
         z-index: 1001;
+        &::after{
+            display: block;
+            position: absolute;
+            content: '';
+            border-radius: 2px;
+            width: 17px;
+            height: 2px;
+            background-color: black;
+            top: 8px;
+            left: 0;
+            transform: rotate(-30deg);
+        }
+        &::before{
+            display: block;
+            position: absolute;
+            content: '';
+            border-radius: 2px;
+            width: 17px;
+            height: 2px;
+            background-color: black;
+            bottom: 7px;
+            left: 0;
+            transform: rotate(30deg)
+        }
     }
     &-Arrow2{
+        cursor: pointer;
         box-sizing: border-box;
         position: absolute;
         display: block;
         content: '';
         width: 25px;
         height: 25px;
-        background-color: black;
         top: calc(50% - 12.5px);
         right: 2%;
         z-index: 1001;
+        &::after{
+            display: block;
+            position: absolute;
+            content: '';
+            border-radius: 2px;
+            width: 17px;
+            height: 2px;
+            background-color: black;
+            top: 8px;
+            right: 0;
+            transform: rotate(30deg);
+        }
+        &::before{
+            display: block;
+            position: absolute;
+            content: '';
+            border-radius: 2px;
+            width: 17px;
+            height: 2px;
+            background-color: black;
+            bottom: 7px;
+            right: 0;
+            transform: rotate(-30deg)
+        }
     }
     &-Item {
-        opacity: 0.4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        perspective: 10px;
+        perspective-origin: 50% 50%;
+        transform-style: preserve-3d;
+        opacity: 0;
         position: absolute;
         box-sizing: border-box;
-        margin: auto;
-        height: 50%;
-        top: 0;
-        width: 100%;
-        z-index: 900;
-        background-color: rgba($color: #fff, $alpha: 0.3);
-        border: 1px solid black;
+        height: 100%;
+        width: 80%;
+        z-index: 800;
+        //background-color: rgba($color: #ccc, $alpha: 0.3);
+        //border: 1px solid black;
         transition: transform .5s, opacity .5s, z-index .5s;
         &_Initial, &_Active {
             opacity: 1;
             position: relative;
-            z-index: 900;
         }
         &_Prev, &_Next {
-            z-index: 1000;
+            z-index: 800;
         }
         &_Prev {
             transition: transform .5s, opacity .5s, z-index .5s;
-            transform: translateX(-90%); /* Move 'prev' item to the left */
+            transform: translateX(-140%) scale(0.5); /* Move 'prev' item to the left */
         }
         &_Next {
             transition: transform .5s, opacity .5s, z-index .5s;
-            transform: translateX(90%); /* Move 'prev' item to the left */
+            transform: translateX(140%) scale(0.5); /* Move 'prev' item to the left */
         }
-        &2 {
-            background-color: rgba($color: #ff0, $alpha: 1);
+        &Content{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            height: 80%;
+            &-Img{
+                box-shadow: 0px 0px 10px 2px black;
+                border-radius: 20%;
+                width: 65%;
+                max-height: 90%;
+            }
+        }
+        &Text{
+            display: flex;
+            padding-top: 10px;
+            box-sizing: border-box;
+            align-items: flex-start;
+            justify-content: center;
+            width: 100%;
+            height: 20%;
+            &1{
+                &_Notactive{
+                    transition: 1s;
+                    transform: translateY(100px);
+                    opacity: 0;
+                }
+                &_Active{
+                    transition: 1s;
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+            }
+            &2{
+                &_Notactive{
+                    transition: 1s;
+                    transform: translateY(100px);
+                    opacity: 0;
+                }
+                &_Active{
+                    transition: 1s;
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+            }
+            &3{
+                &_Notactive{
+                    transition: 1s;
+                    transform: translateY(100px);
+                    opacity: 0;
+                }
+                &_Active{
+                    transition: 1s;
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+            }
         }
     }
 }

@@ -29,6 +29,8 @@ body {
   background: white;
   -webkit-transform: rotate(-4deg);
           transform: rotate(-4deg);
+  -webkit-box-shadow: 0px 0px 10px white;
+          box-shadow: 0px 0px 10px white;
 }
 
 .Carousel::before {
@@ -262,8 +264,9 @@ body {
 .Article1 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-top: 1px solid black;
   margin-top: calc(20vw);
+  height: 80vh;
+  border: none;
 }
 
 .Article1-Title {
@@ -288,7 +291,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
-  height: 80vh;
+  height: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -301,17 +304,24 @@ body {
 }
 
 .Carousel01 {
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: relative;
   min-width: 100%;
-  height: 60vh;
-  background: rgba(0, 0, 0, 0.4);
+  height: 100%;
 }
 
 .Carousel01-Arrow1 {
+  cursor: pointer;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: absolute;
@@ -319,13 +329,41 @@ body {
   content: '';
   width: 25px;
   height: 25px;
-  background-color: black;
   top: calc(50% - 12.5px);
   left: 2%;
   z-index: 1001;
 }
 
+.Carousel01-Arrow1::after {
+  display: block;
+  position: absolute;
+  content: '';
+  border-radius: 2px;
+  width: 17px;
+  height: 2px;
+  background-color: black;
+  top: 8px;
+  left: 0;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+
+.Carousel01-Arrow1::before {
+  display: block;
+  position: absolute;
+  content: '';
+  border-radius: 2px;
+  width: 17px;
+  height: 2px;
+  background-color: black;
+  bottom: 7px;
+  left: 0;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+
 .Carousel01-Arrow2 {
+  cursor: pointer;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: absolute;
@@ -333,24 +371,66 @@ body {
   content: '';
   width: 25px;
   height: 25px;
-  background-color: black;
   top: calc(50% - 12.5px);
   right: 2%;
   z-index: 1001;
 }
 
+.Carousel01-Arrow2::after {
+  display: block;
+  position: absolute;
+  content: '';
+  border-radius: 2px;
+  width: 17px;
+  height: 2px;
+  background-color: black;
+  top: 8px;
+  right: 0;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+
+.Carousel01-Arrow2::before {
+  display: block;
+  position: absolute;
+  content: '';
+  border-radius: 2px;
+  width: 17px;
+  height: 2px;
+  background-color: black;
+  bottom: 7px;
+  right: 0;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+
 .Carousel01-Item {
-  opacity: 0.4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-perspective: 10px;
+          perspective: 10px;
+  -webkit-perspective-origin: 50% 50%;
+          perspective-origin: 50% 50%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  opacity: 0;
   position: absolute;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin: auto;
-  height: 50%;
-  top: 0;
-  width: 100%;
-  z-index: 900;
-  background-color: rgba(255, 255, 255, 0.3);
-  border: 1px solid black;
+  height: 100%;
+  width: 80%;
+  z-index: 800;
   -webkit-transition: opacity .5s, z-index .5s, -webkit-transform .5s;
   transition: opacity .5s, z-index .5s, -webkit-transform .5s;
   transition: transform .5s, opacity .5s, z-index .5s;
@@ -360,11 +440,10 @@ body {
 .Carousel01-Item_Initial, .Carousel01-Item_Active {
   opacity: 1;
   position: relative;
-  z-index: 900;
 }
 
 .Carousel01-Item_Prev, .Carousel01-Item_Next {
-  z-index: 1000;
+  z-index: 800;
 }
 
 .Carousel01-Item_Prev {
@@ -372,8 +451,8 @@ body {
   transition: opacity .5s, z-index .5s, -webkit-transform .5s;
   transition: transform .5s, opacity .5s, z-index .5s;
   transition: transform .5s, opacity .5s, z-index .5s, -webkit-transform .5s;
-  -webkit-transform: translateX(-90%);
-          transform: translateX(-90%);
+  -webkit-transform: translateX(-140%) scale(0.5);
+          transform: translateX(-140%) scale(0.5);
   /* Move 'prev' item to the left */
 }
 
@@ -382,13 +461,96 @@ body {
   transition: opacity .5s, z-index .5s, -webkit-transform .5s;
   transition: transform .5s, opacity .5s, z-index .5s;
   transition: transform .5s, opacity .5s, z-index .5s, -webkit-transform .5s;
-  -webkit-transform: translateX(90%);
-          transform: translateX(90%);
+  -webkit-transform: translateX(140%) scale(0.5);
+          transform: translateX(140%) scale(0.5);
   /* Move 'prev' item to the left */
 }
 
-.Carousel01-Item2 {
-  background-color: yellow;
+.Carousel01-ItemContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 300px;
+  height: 80%;
+}
+
+.Carousel01-ItemContent-Img {
+  -webkit-box-shadow: 0px 0px 10px 2px black;
+          box-shadow: 0px 0px 10px 2px black;
+  border-radius: 20%;
+  width: 65%;
+  max-height: 90%;
+}
+
+.Carousel01-ItemText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 20%;
+}
+
+.Carousel01-ItemText1_Notactive {
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  opacity: 0;
+}
+
+.Carousel01-ItemText1_Active {
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.Carousel01-ItemText2_Notactive {
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  opacity: 0;
+}
+
+.Carousel01-ItemText2_Active {
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.Carousel01-ItemText3_Notactive {
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  opacity: 0;
+}
+
+.Carousel01-ItemText3_Active {
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
 }
 
 /* STATES */
