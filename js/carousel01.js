@@ -81,9 +81,10 @@
                 items[slide + 2].classList.remove("Carousel01-Item_Next");
 
                 // texts 
-                text1.classList.add('Carousel01-ItemText1_Active');
-                text1.classList.remove('Carousel01-ItemText1_Notactive');
-
+                setTimeout(() => {
+                    text1.classList.add('Carousel01-ItemText1_Active');
+                    text1.classList.remove('Carousel01-ItemText1_Notactive');
+                }, 350);
                 text3.classList.remove('Carousel01-ItemText3_Active');
                 text3.classList.add('Carousel01-ItemText3_Notactive');
                 text2.classList.remove('Carousel01-ItemText2_Active');
@@ -103,9 +104,11 @@
                 items[slide + 1].classList.remove("Carousel01-Item_Active");
 
                 //text
-                text2.classList.add('Carousel01-ItemText2_Active');
-                text2.classList.remove('Carousel01-ItemText2_Notactive');
-
+                
+                setTimeout(() => {
+                    text2.classList.add('Carousel01-ItemText2_Active');
+                    text2.classList.remove('Carousel01-ItemText2_Notactive');
+                }, 350);
                 text1.classList.remove('Carousel01-ItemText1_Active');
                 text1.classList.add('Carousel01-ItemText1_Notactive');
                 text3.classList.remove('Carousel01-ItemText3_Active');
@@ -124,9 +127,11 @@
                 items[slide].classList.remove("Carousel01-Item_Next");
                 items[slide].classList.remove("Carousel01-Item_Prev");    
                 // text     
-                text3.classList.add('Carousel01-ItemText3_Active');
-                text3.classList.remove('Carousel01-ItemText3_Notactive'); 
-
+                 
+                setTimeout(() => {
+                    text3.classList.add('Carousel01-ItemText3_Active');
+                    text3.classList.remove('Carousel01-ItemText3_Notactive');
+                }, 350);
                 text2.classList.remove('Carousel01-ItemText2_Active');
                 text2.classList.add('Carousel01-ItemText2_Notactive');
                 text1.classList.remove('Carousel01-ItemText1_Active');

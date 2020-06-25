@@ -8,7 +8,7 @@
 .Article1{
     box-sizing: border-box;
     margin-top: calc(20vw);
-    height: 75vh;
+    height: 80vh;
     border: none;
     &-Title{
         text-shadow: 0px 0px 1px black;
@@ -54,21 +54,21 @@
         position: absolute;
         display: block;
         content: '';
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         top: calc(40% - 25px);
-        left: 7%;
+        left: calc((100% - 300px)/2.4);
         z-index: 1001;
         &::after{
             display: block;
             position: absolute;
             content: '';
             border-radius: 2px;
-            width: 17px;
+            width: 15px;
             height: 2px;
             background-color: black;
-            top: 18px;
-            left: calc(50% - 10px);
+            top: 14px;
+            left: calc(50% - 9px);
             transform: rotate(-30deg);
         }
         &::before{
@@ -76,11 +76,11 @@
             position: absolute;
             content: '';
             border-radius: 2px;
-            width: 17px;
+            width: 15px;
             height: 2px;
             background-color: black;
-            bottom: 18px;
-            left: calc(50% - 10px);
+            bottom: 13px;
+            left: calc(50% - 9px);
             transform: rotate(30deg)
         }
     }
@@ -94,21 +94,21 @@
         position: absolute;
         display: block;
         content: '';
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         top: calc(40% - 25px);
-        right: 7%;
+        right: calc((100% - 300px)/2.4);
         z-index: 1001;
         &::after{
             display: block;
             position: absolute;
             content: '';
             border-radius: 2px;
-            width: 17px;
+            width: 15px;
             height: 2px;
             background-color: black;
-            top: 18px;
-            right: calc(50% - 10px);
+            top: 14px;
+            right: calc(50% - 9px);
             transform: rotate(30deg);
         }
         &::before{
@@ -116,11 +116,11 @@
             position: absolute;
             content: '';
             border-radius: 2px;
-            width: 17px;
+            width: 15px;
             height: 2px;
             background-color: black;
-            bottom: 18px;
-            right: calc(50% - 10px);
+            bottom: 13px;
+            right: calc(50% - 9px);
             transform: rotate(-30deg)
         }
     }
@@ -160,7 +160,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 300px;
+            width: 240px;
             height: 80%;
             &-Img{
                 box-shadow: 0px 0px 10px 2px black;
