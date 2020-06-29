@@ -1,0 +1,46 @@
+.Article2 {
+    border: none;
+    height: 100vh;
+    &-Text{
+        height: 50vh;
+        box-sizing: border-box;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        flex-direction: column;
+        &Title {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0px 20px;
+            font-size: 2.7rem;
+        }
+        &Description {
+            box-sizing: border-box;
+            padding: 0px 15px;
+            font-size: 1.8rem;
+        }
+    }
+    &-Img{
+        box-sizing: border-box;
+        height: 50vh;
+        width: 100vw;
+        margin-left: 20vw;
+        &Me{
+            box-sizing: border-box;
+            width: 60vw;
+            height: 60vw;
+            max-height: 40vh;
+            max-width: 40vh;
+            border-radius: 50% 50% 50% 50%;
+            box-shadow: 0px 0px 10px black;
+        }
+        &Description{
+            box-sizing: border-box;
+            width: 50%;
+            text-align: center;
+            margin-top: 25px;
+            font-size: 1.2rem;
+            margin-left: calc(50% - 20vw - 25%);
+        }
+    }
+}

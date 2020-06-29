@@ -1,7 +1,7 @@
 <template>
     <nav class="NavBar">
             <div class="NavBar-Logo">
-                Dominika Głuszkowska - Graphic Designer
+              <h2 class="NavBar-LogoTitle"> Dominika Głuszkowska - Graphic Designer </h2>
             </div>
             <div class="NavBar-Hamburger">
               <span class="NavBar-HamburgerLine NavBar-HamburgerLine1"></span>
