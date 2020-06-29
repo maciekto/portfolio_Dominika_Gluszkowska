@@ -1,8 +1,8 @@
 <template>
-    <section class="Component Component3">
-        <article class="Component-Article Article3">
-
+    <section class="Component Article3">
+        <article class="Component-Article">
         </article>
+        <div class="Article3-AboveBar"></div>
     </section>
 </template>
 
