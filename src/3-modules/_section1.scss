@@ -1,17 +1,20 @@
 .Article1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     box-sizing: border-box;
     margin-top: calc(20vw);
-    height: 80vh;
+    height: 75vh;
     border: none;
     &-Title{
         box-sizing: border-box;
         margin: 0;
         width: 100%;
-        height: 20%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
+        height: auto;
+        text-align: center;
         font-size: 2.7rem;
+        margin-bottom: 20px;
     }
     &-Carousel{
         overflow: hidden;
