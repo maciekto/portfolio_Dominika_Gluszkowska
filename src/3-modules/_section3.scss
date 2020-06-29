@@ -1,0 +1,20 @@
+.Article3 {
+    z-index: 30;
+    background: black;
+    position: relative;
+    margin-top: 10vh;
+    &-AboveBar{
+        box-sizing: border-box;
+        z-index: 20;
+        display: block;
+        content: '';
+        position: absolute;
+        top: -15vw;
+        left: -5vw;
+        width: 110vw;
+        height: 20vw;
+        background: black;
+        transform: rotate(-4deg);
+        box-shadow: 0px 0px 10px black;
+    }   
+}
