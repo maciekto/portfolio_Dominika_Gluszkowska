@@ -21,7 +21,19 @@
             </div>
         </article>
         <div class="Carousel-Bottombar"></div>
-        <div class="Carousel-Abovebar"></div>
+        <div class="Carousel-Abovebar">
+          <div class="Carousel-AbovebarContainer">
+            <div class="Carousel-AbovebarContainer1">
+              <p class="Carousel-AbovebarContainer1Paragraph"> CV &#8250; </p>
+              <img src="./../beforeXD/cvIcon.png" class="Carousel-AbovebarImg1">
+            </div>
+            <div class="Carousel-AbovebarContainer2">
+              <img src="./../beforeXD/photoLogo2.jpg" class="Carousel-AbovebarImg Carousel-AbovebarImg2">
+              <img src="./../beforeXD/photoLogo.jpg" class="Carousel-AbovebarImg Carousel-AbovebarImg3">
+              <p class="Carousel-AbovebarContainer2Paragraph"> &#x2039; Contact </p>
+            </div>
+          </div>
+        </div>
     </section>
 </template>
 

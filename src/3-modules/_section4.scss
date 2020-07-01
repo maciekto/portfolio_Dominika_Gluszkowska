@@ -1,0 +1,60 @@
+.Article4 {
+    border: none;
+    height: 70vh;
+    padding: 5vh 0 5vh 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    &-Text{
+        height: auto;
+        box-sizing: border-box;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        &Title {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 30px 20px 60px 20px;
+            font-size: 3.7rem;
+        }
+        &Description {
+            background: white;
+            z-index: 24;
+            margin: 0;
+            box-sizing: border-box;
+            padding: 0px 20px 10px 20px;
+            font-size: 1.5rem;
+        }
+    }
+    &-Img{
+        display: flex;
+        align-items: space-evenly;
+        justify-content: space-evenly;
+        position: relative;
+        box-sizing: border-box;
+        height: 20vh;
+        width: 100vw;
+        &Me{
+            bottom: 8vh;
+            z-index: 25;
+            display: block;
+            box-sizing: border-box;
+            width: 25vw;
+            height: 25vw;
+            border-radius: 50% 50% 50% 50%;
+            box-shadow: 0px 0px 10px black;
+        }
+        &Description{
+            z-index: 25;
+            bottom: 0;
+            box-sizing: border-box;
+            width: 50%;
+            text-align: center;
+            margin-top: 25px;
+            font-size: 1.2rem;
+            margin-left: calc(50% - 20vw - 25%);
+        }
+    }
+}

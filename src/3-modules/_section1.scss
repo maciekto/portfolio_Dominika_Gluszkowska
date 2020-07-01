@@ -5,22 +5,23 @@
     flex-direction: column;
     box-sizing: border-box;
     margin-top: calc(20vw);
-    height: 75vh;
+    height: auto;
     border: none;
+    padding: 0 0 10vh 0;
     &-Title{
         box-sizing: border-box;
         margin: 0;
         width: 100%;
         height: auto;
         text-align: center;
-        font-size: 2.7rem;
+        font-size: 3.7rem;
         margin-bottom: 20px;
     }
     &-Carousel{
         overflow: hidden;
         box-sizing: border-box;
         width: 100%;
-        height: 80%;
+        height: 400px;
         display: flex;
         justify-content: center;
         align-items: center;
