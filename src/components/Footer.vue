@@ -1,6 +1,7 @@
 <template>
     <footer class="Component Footer">
-      <p class="Footer-Title"> &copy; Dominika Głuszkowska / Maciej Tomaszewski 2020 - All rights reserved</p>
+      <p class="Footer-Title"> &copy; Dominika Głuszkowska 2020 - All rights reserved <br />
+      Website Created by &copy; Maciej Tomaszewski - All rights reserved</p>
       <div class="Carousel-AbovebarContainer Footer-Contact">
             <div class="Carousel-AbovebarContainer1">
               <p class="Carousel-AbovebarContainer1Paragraph"> CV &#8250; </p>
