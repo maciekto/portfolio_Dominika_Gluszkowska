@@ -1,0 +1,16 @@
+.Footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-top: 5vh;
+    height: 30vh;
+    border: none;
+    text-align: center;
+    font-size: 1.0rem;
+    box-shadow: 0px 0px 75px 5px black;
+    &-Contact {
+        transform: rotate(0deg);
+        padding: 0 10vw 0 10vw;
+    }
+}

@@ -1,6 +1,11 @@
-.Article2 {
+.Article4 {
     border: none;
-    height: auto;
+    height: 70vh;
+    padding: 5vh 0 5vh 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
     &-Text{
         height: auto;
         box-sizing: border-box;
@@ -11,7 +16,7 @@
         &Title {
             box-sizing: border-box;
             margin: 0;
-            padding: 30px 20px;
+            padding: 30px 20px 60px 20px;
             font-size: 3.7rem;
         }
         &Description {
@@ -24,26 +29,26 @@
         }
     }
     &-Img{
+        display: flex;
+        align-items: space-evenly;
+        justify-content: space-evenly;
         position: relative;
         box-sizing: border-box;
-        height: 50vh;
+        height: 20vh;
         width: 100vw;
-        margin-left: 20vw;
         &Me{
             bottom: 8vh;
-            position: absolute;
             z-index: 25;
             display: block;
             box-sizing: border-box;
-            width: 60vw;
-            height: 60vw;
+            width: 25vw;
+            height: 25vw;
             border-radius: 50% 50% 50% 50%;
             box-shadow: 0px 0px 10px black;
         }
         &Description{
             z-index: 25;
             bottom: 0;
-            position: absolute;
             box-sizing: border-box;
             width: 50%;
             text-align: center;

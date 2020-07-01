@@ -1,15 +1,13 @@
 .Carousel{
-    margin-top: 15vw;
+    margin-top: 35vw;
     box-sizing: border-box;
     position: relative;
+    z-index: 26;
     width: 100vw;
     height: auto;
-    margin-top: 10vh;
     &-Bottombar{
         box-sizing: border-box;
-        z-index: 20;
-        display: block;
-        content: '';
+        z-index: 26;
         position: absolute;
         bottom: -15vw;
         left: -5vw;
@@ -21,9 +19,7 @@
     }
     &-Abovebar{
         box-sizing: border-box;
-        z-index: 20;
-        display: block;
-        content: '';
+        z-index: 26;
         position: absolute;
         top: -15vw;
         left: -5vw;
@@ -32,6 +28,49 @@
         background: white;
         transform: rotate(-4deg);
         box-shadow: 0px 0px 10px white;
+        &Img{
+            box-shadow: 0px 0px 5px black;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            &1{
+                width: 20px;
+                border-radius: none;
+            }
+            &2{
+                margin: 0 10px 0 5px;
+            }
+            &3{
+                margin: 0 5px 0 5px;
+            }
+        }
+        &Container{
+            box-sizing: border-box;
+            width: 100vw;
+            padding: 0 0vw 0 10vw;
+            font-size: 1.4rem;
+            transform: rotate(4deg);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            &1{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                &Paragraph{
+                    margin: 0 10px 0 10px;
+                }
+            }
+            &2{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                &Paragraph{
+                    margin: 0 10px 0 10px;
+                }
+            }
+
+        }
     }
 }
 .Video{
