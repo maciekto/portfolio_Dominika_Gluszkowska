@@ -53,7 +53,7 @@
         height: 40px;
         top: calc(40% - 25px);
         left: calc((100% - 300px)/2.4);
-        z-index: 800;
+        z-index: 850;
         &::after{
             display: block;
             position: absolute;
@@ -93,7 +93,7 @@
         height: 40px;
         top: calc(40% - 25px);
         right: calc((100% - 300px)/2.4);
-        z-index: 800;
+        z-index: 850;
         &::after{
             display: block;
             position: absolute;
