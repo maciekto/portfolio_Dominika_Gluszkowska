@@ -28,28 +28,28 @@
         box-sizing: border-box;
         height: 50vh;
         width: 100vw;
-        margin-left: 20vw;
         &Me{
+            left: calc(50% - 100px);
             bottom: 8vh;
             position: absolute;
             z-index: 25;
             display: block;
             box-sizing: border-box;
-            width: 60vw;
-            height: 60vw;
+            width: 200px;
+            height: 200px;
             border-radius: 50% 50% 50% 50%;
             box-shadow: 0px 0px 10px black;
         }
         &Description{
             z-index: 25;
+            left: calc(50% - 100px);
             bottom: 0;
             position: absolute;
             box-sizing: border-box;
-            width: 50%;
+            width: 200px;
             text-align: center;
             margin-top: 25px;
             font-size: 1.2rem;
-            margin-left: calc(50% - 20vw - 25%);
         }
     }
 }

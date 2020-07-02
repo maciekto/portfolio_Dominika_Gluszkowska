@@ -1,10 +1,10 @@
 <template>
     <section class="Component Article1">
-        <h3 class="Article1-Title"> Latest projects </h3>
-        <article class="Article1-Carousel">
+        <h3 class="Article1-Title Animate"> Latest projects </h3>
+        <article class="Article1-Carousel Animate">
             <div class="Carousel01">
-                <div class="Carousel01-Arrow1"></div>
-                <div class="Carousel01-Arrow2"></div>
+                <div class="Carousel01-Arrow1 show"></div>
+                <div class="Carousel01-Arrow2 show"></div>
                 <div class="Carousel01-Item1 Carousel01-Item Carousel01-Item_Initial">
                     <div class="Carousel01-ItemContent">
                         <img src="./../beforeXD/default1.jpg" alt="default1" class="Carousel01-ItemContent-Img">
