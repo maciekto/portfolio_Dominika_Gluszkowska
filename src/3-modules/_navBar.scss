@@ -1,5 +1,5 @@
 .NavBar{
-    z-index: 20;
+    z-index: -1;
     position: fixed;
     top: 0;
     display: flex;
@@ -9,7 +9,9 @@
     width: 100vw;
     height: 10vh;
     background: rgba($color: #000000, $alpha: 0.0);
+    box-sizing: border-box;
     &-Logo{
+        margin-left: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -26,6 +28,7 @@
         justify-content: center;
         position: relative;
         box-sizing: border-box;
+        margin-right: 10px;
         height: 50px;
         width: 50px;
         background-color: transparent;

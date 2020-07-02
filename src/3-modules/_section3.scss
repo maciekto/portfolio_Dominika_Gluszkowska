@@ -1,32 +1,27 @@
 .Article3 {
-    z-index: 30;
+    z-index: 50;
     background: black;
-    position: relative;
     margin-top: 20vh;
     height: auto;
     padding: 0 0 10vh 0;
     &-AboveBar{
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
         color: white;
         box-sizing: border-box;
-        z-index: 20;
-        content: '';
-        position: absolute;
-        top: -15vw;
-        left: -5vw;
+        z-index: 50;
         width: 110vw;
         height: 20vw;
         background: black;
-        transform: rotate(-4deg);
+        transform: rotate(-4deg) translateY(-50px) translateX(-5vw);
         box-shadow: 0px 0px 10px black;
         &Text{
             margin-top: 15vh;
             font-weight: 700;
             font-size: 4rem;
-            transform: rotate(4deg);
         }
     }
     &-Text {
