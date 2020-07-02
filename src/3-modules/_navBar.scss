@@ -1,5 +1,6 @@
 .NavBar{
-    z-index: -1;
+    transition: 0.5s;
+    z-index: 1000;
     position: fixed;
     top: 0;
     display: flex;
@@ -21,6 +22,51 @@
         &Title{
             font-size: 1.5rem;
         }
+    }
+    &-Modal{
+        padding: 0px 0px 0px 20px;
+        font-size: 1.4rem;
+        color: black;
+        transition: 0.4s;
+        z-index: 999;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba($color: #FFFFFF, $alpha: 1);
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        transform: translateX(100vw);
+        &Link{
+            transition: 1s;
+            display: block;
+            margin: 10px 0px 10px 0px;
+            text-decoration: none;
+            color: black;
+            &:visited{
+                color: black;
+                text-decoration: none;
+            }
+        }
+    }
+    &-Modal-2{
+        color: black;
+        top: 0;
+        right: 0;
+        transition: 0.4s;
+        z-index: 9;
+        position: absolute;
+        background: rgba($color: #fff, $alpha: 1);
+        width: 100vw;
+        height: 10vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        transform: translateX(calc(50vw));
     }
     &-Hamburger{
         display: flex;

@@ -1,5 +1,5 @@
 <template>
-    <section class="Component Article1">
+    <section class="Component Article1" id="latest">
         <h3 class="Article1-Title Animate"> Latest projects </h3>
         <article class="Article1-Carousel Animate">
             <div class="Carousel01">

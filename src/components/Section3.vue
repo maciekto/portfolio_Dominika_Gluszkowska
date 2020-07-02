@@ -1,5 +1,5 @@
 <template>
-    <section class="Component Article3">
+    <section class="Component Article3" id="types">
         <article class="Component-Article">
           <div class="Article3-AboveBar">
             <p class="Article3-AboveBarText Animate4">

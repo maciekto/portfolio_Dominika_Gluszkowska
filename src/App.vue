@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <NavBar />
+    <NavBarModal />
     <Video />
     <Section1 />
     <Section2 />
@@ -12,6 +13,7 @@
 
 <script>
 import NavBar from './components/NavBar.vue';
+import NavBarModal from './components/NavBarModal.vue';
 import Video from './components/Video.vue';
 import Section1 from './components/Section1.vue';
 import Section2 from './components/Section2.vue';
@@ -23,6 +25,7 @@ export default {
   name: 'App',
   components: {
     NavBar,
+    NavBarModal,
     Video,
     Section1,
     Section2,
@@ -35,10 +38,10 @@ export default {
   },
   methods: {
     textAnimate() {
+      let prevScrollposN = window.pageYOffset;
       // eslint-disable-next-line
       window.addEventListener('scroll', onScroll);
       function elementVisible(el) {
-        console.log(document.querySelector('.Carousel01-Arrow1').offsetTop);
         const top = el.offsetTop;
         const height = el.offsetHeight;
         const bottom = top + height;
@@ -65,6 +68,16 @@ export default {
         for (const item of document.querySelectorAll('.Animate3')) {
           elementVisible(item);
         }
+        // eslint-disable-next-line
+        let currentScrollPosN = window.pageYOffset;
+        if (prevScrollposN > currentScrollPosN) {
+          document.querySelector('.NavBar').style.cssText = 'top: 0;';
+        } else if (currentScrollPosN > 2200) {
+          document.querySelector('.NavBar').style.cssText = 'top: 0;';
+        } else {
+          document.querySelector('.NavBar').style.cssText = 'top: -10vh;';
+        }
+        prevScrollposN = currentScrollPosN;
       }
     },
   },
