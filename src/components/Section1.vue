@@ -7,7 +7,7 @@
                 <div class="Carousel01-Arrow2 show"></div>
                 <div class="Carousel01-Item1 Carousel01-Item Carousel01-Item_Initial">
                     <div class="Carousel01-ItemContent">
-                        <img src="./../beforeXD/default1.jpg" alt="default1" class="Carousel01-ItemContent-Img">
+                        <img src="./../beforeXD/default1.jpg" alt="default1" class="Carousel01-ItemContent-Img Carousel01-ItemContent-Img1">
                     </div>
                     <div class="Carousel01-ItemText Carousel01-ItemText1 Carousel01-ItemText1_Active">
                         PICTURE 1
@@ -15,7 +15,7 @@
                 </div>
                 <div class="Carousel01-Item2 Carousel01-Item">
                     <div class="Carousel01-ItemContent">
-                        <img src="./../beforeXD/default2.jpg" alt="default1" class="Carousel01-ItemContent-Img">
+                        <img src="./../beforeXD/default2.jpg" alt="default1" class="Carousel01-ItemContent-Img Carousel01-ItemContent-Img2">
                     </div>
                     <div class="Carousel01-ItemText Carousel01-ItemText2 Carousel01-ItemText1_Notactive">
                         PICTURE 2
@@ -23,7 +23,7 @@
                 </div>
                 <div class="Carousel01-Item3 Carousel01-Item">
                     <div class="Carousel01-ItemContent">
-                        <img src="./../beforeXD/default3.jpg" alt="default1" class="Carousel01-ItemContent-Img">
+                        <img src="./../beforeXD/default3.jpg" alt="default1" class="Carousel01-ItemContent-Img Carousel01-ItemContent-Img3">
                     </div>
                     <div class="Carousel01-ItemText Carousel01-ItemText3 Carousel01-ItemText1_Notactive">
                         PICTURE 3
@@ -31,6 +31,27 @@
                 </div>
             </div>
         </article>
+        <div class="Carousel01-ItemModal1">
+          <div class="Carousel01-ItemModal1Exit">
+            <div class="Carousel01-ItemModal1Line Carousel01-ItemModal1Line1"></div>
+            <div class="Carousel01-ItemModal1Line Carousel01-ItemModal1Line2"></div>
+          </div>
+          <img src="./../beforeXD/default1.jpg" alt="default1" class="Carousel01-ItemModal1Img">
+        </div>
+        <div class="Carousel01-ItemModal2">
+          <div class="Carousel01-ItemModal2Exit">
+            <div class="Carousel01-ItemModal1Line Carousel01-ItemModal1Line1"></div>
+            <div class="Carousel01-ItemModal1Line Carousel01-ItemModal1Line2"></div>
+          </div>
+          <img src="./../beforeXD/default2.jpg" alt="default1" class="Carousel01-ItemModal2Img">
+        </div>
+        <div class="Carousel01-ItemModal3">
+          <div class="Carousel01-ItemModal3Exit">
+            <div class="Carousel01-ItemModal1Line Carousel01-ItemModal1Line1"></div>
+            <div class="Carousel01-ItemModal1Line Carousel01-ItemModal1Line2"></div>
+          </div>
+          <img src="./../beforeXD/default3.jpg" alt="default1" class="Carousel01-ItemModal3Img">
+        </div>
     </section>
 </template>
 
@@ -39,6 +60,9 @@ export default {
   name: 'Section1',
   mounted() {
     this.carousel01();
+    this.Modal1();
+    this.Modal2();
+    this.Modal3();
   },
   methods: {
     carousel01() {
@@ -191,6 +215,57 @@ export default {
       }
       // make it rain
       initCarousel();
+    },
+    Modal1() {
+      const Modal1 = document.querySelector('.Carousel01-ItemModal1');
+      const Modal1Button = document.querySelector('.Carousel01-ItemContent-Img1');
+      const Modal1Exit = document.querySelector('.Carousel01-ItemModal1Exit');
+      function OpenModal() {
+        Modal1Button.removeEventListener('click', OpenModal);
+        Modal1.classList.add('Carousel01-ItemModal1_active');
+        // eslint-disable-next-line
+        Modal1Exit.addEventListener('click', CloseModal);
+      }
+      function CloseModal() {
+        Modal1Exit.removeEventListener('click', CloseModal);
+        Modal1Button.addEventListener('click', OpenModal);
+        Modal1.classList.remove('Carousel01-ItemModal1_active');
+      }
+      Modal1Button.addEventListener('click', OpenModal);
+    },
+    Modal2() {
+      const Modal2 = document.querySelector('.Carousel01-ItemModal2');
+      const Modal2Button = document.querySelector('.Carousel01-ItemContent-Img2');
+      const Modal2Exit = document.querySelector('.Carousel01-ItemModal2Exit');
+      function OpenModal() {
+        Modal2Button.removeEventListener('click', OpenModal);
+        Modal2.classList.add('Carousel01-ItemModal2_active');
+        // eslint-disable-next-line
+        Modal2Exit.addEventListener('click', CloseModal);
+      }
+      function CloseModal() {
+        Modal2Exit.removeEventListener('click', CloseModal);
+        Modal2Button.addEventListener('click', OpenModal);
+        Modal2.classList.remove('Carousel01-ItemModal2_active');
+      }
+      Modal2Button.addEventListener('click', OpenModal);
+    },
+    Modal3() {
+      const Modal3 = document.querySelector('.Carousel01-ItemModal3');
+      const Modal3Button = document.querySelector('.Carousel01-ItemContent-Img3');
+      const Modal3Exit = document.querySelector('.Carousel01-ItemModal3Exit');
+      function OpenModal() {
+        Modal3Button.removeEventListener('click', OpenModal);
+        Modal3.classList.add('Carousel01-ItemModal3_active');
+        // eslint-disable-next-line
+        Modal3Exit.addEventListener('click', CloseModal);
+      }
+      function CloseModal() {
+        Modal3Exit.removeEventListener('click', CloseModal);
+        Modal3Button.addEventListener('click', OpenModal);
+        Modal3.classList.remove('Carousel01-ItemModal3_active');
+      }
+      Modal3Button.addEventListener('click', OpenModal);
     },
   },
 };
