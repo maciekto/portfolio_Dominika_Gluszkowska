@@ -1,5 +1,5 @@
 <template>
-    <section class="Component Article4">
+    <section class="Component Article4" id="contact">
         <article class="Component-Article Article4-Text Animate">
           <h3 class="Article4-TextTitle"> Contact me through Instagram or Facebook here</h3>
           <p class="Article4-TextDescription"></p>
