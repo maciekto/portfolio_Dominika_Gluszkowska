@@ -38,6 +38,10 @@
                 transform: translateY(10vh);
                 padding: 30px 50px 60px 50px;
             }
+            @media (min-width: 1920px) {
+                font-size: 3.5rem;
+            }
+            
         }
         &Description {
             display: none;

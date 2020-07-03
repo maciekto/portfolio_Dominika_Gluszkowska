@@ -31,6 +31,10 @@
                 font-size: 1.5rem;
                 padding-top: 15px;
             }
+            @media (min-width: 1920px) {
+                font-size: 2rem;
+                padding-top: 15px;
+            }
         }
     }
     &-Modal{

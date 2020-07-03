@@ -21,6 +21,10 @@
                 font-size: 2.7rem;
                 padding: 30px 130px;
             }
+            @media (min-width: 1920px) {
+                font-size: 3.2rem;
+                padding: 30px 130px;
+            }
         }
         &Description {
             background: white;
@@ -35,6 +39,10 @@
             }
             @media (min-width: 1280px) {
                 font-size: 1.4rem;
+                padding: 0px 150px 10px 150px;
+            }
+            @media (min-width: 1920px) {
+                font-size: 1.9rem;
                 padding: 0px 150px 10px 150px;
             }
         }
@@ -64,6 +72,11 @@
                 width: 200px;
                 height: 200px;
                 left: calc(30% - 100px);
+            }
+            @media (min-width: 1920px) {
+                width: 300px;
+                height: 300px;
+                left: calc(30% - 150px);
             }
         }
         &Description{
