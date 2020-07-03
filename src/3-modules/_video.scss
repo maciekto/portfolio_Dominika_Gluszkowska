@@ -29,6 +29,10 @@
             transform: rotate(0deg);
             height: 0vw;
         }
+        @media (min-width: 1920px){
+            bottom: 0vw;
+            height: 5vw;
+        }
     }
     &-Abovebar{
         box-sizing: border-box;

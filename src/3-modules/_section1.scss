@@ -11,6 +11,9 @@
     @media (min-width: 1280px){
         margin-top: calc(10vw);
     }
+    @media (min-width: 1920px){
+        margin-top: calc(5vw);
+    }
     &-Title{
         box-sizing: border-box;
         margin: 0;
