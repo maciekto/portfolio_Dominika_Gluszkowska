@@ -8,6 +8,9 @@
     height: auto;
     border: none;
     padding: 0 0 10vh 0;
+    @media (min-width: 1280px){
+        margin-top: calc(10vw);
+    }
     &-Title{
         box-sizing: border-box;
         margin: 0;
@@ -17,7 +20,7 @@
         font-size: 3.7rem;
         margin-bottom: 20px;
         @media (min-width: 768px) {
-            font-size: 4.7rem;   
+            font-size: 3.7rem;   
         }
     }
     &-Carousel{
@@ -166,7 +169,7 @@
                 width: 65%;
                 max-height: 90%;
                 @media (min-width: 768px) {
-                    width: 75%;
+                    width: 50%;
                 }
             }
         }
@@ -180,7 +183,7 @@
             width: 100%;
             height: 20%;
             @media (min-width: 768px) {
-                font-size: 2.5rem;
+                font-size: 1.5rem;
             }
             &1{
                 &_Notactive{

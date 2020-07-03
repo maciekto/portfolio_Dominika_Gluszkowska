@@ -21,4 +21,9 @@ html, body {
     height: 100vh;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    @media (min-width: 1280px) {
+        width: 60vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

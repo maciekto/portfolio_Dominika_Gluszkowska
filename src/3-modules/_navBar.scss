@@ -22,7 +22,14 @@
         &Title{
             font-size: 1.5rem;
             @media (min-width: 768px) {
-                font-size: 2.5rem;
+                font-size: 2rem;
+            }
+            @media (min-width: 1024px) {
+                font-size: 1.5rem;
+            }
+            @media (min-width: 1280px) {
+                font-size: 1.5rem;
+                padding-top: 15px;
             }
         }
     }
@@ -44,6 +51,12 @@
         flex-direction: column;
         transform: translateX(100vw);
         @media (min-width: 768px){
+            font-size: 2rem;
+        }
+        @media (min-width: 1024px) {
+            font-size: 1.5rem;
+        }
+        @media (min-width: 1280px) {
             font-size: 2.5rem;
         }
         &Link{
@@ -75,6 +88,7 @@
         transform: translateX(calc(50vw));
     }
     &-Hamburger{
+        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -84,6 +98,11 @@
         height: 50px;
         width: 50px;
         background-color: transparent;
+        @media (min-width: 1280px) {
+            position: fixed;
+            right: 2.5vw;
+            top: calc(50% - 25px);
+        }
         &Line {
             top: 0;
             display: block;
