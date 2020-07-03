@@ -5,6 +5,15 @@
     z-index: 26;
     width: 100vw;
     height: auto;
+    @media (min-width: 1024px){
+        margin-top: 20vw;
+    }
+    @media (min-width: 1280px){
+        margin-top: 6vw;
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
     &-Bottombar{
         box-sizing: border-box;
         z-index: 26;
@@ -16,6 +25,10 @@
         background: white;
         transform: rotate(-4deg);
         box-shadow: 0px 0px 10px white;
+        @media (min-width: 1024px){
+            transform: rotate(0deg);
+            height: 0vw;
+        }
     }
     &-Abovebar{
         box-sizing: border-box;
@@ -28,6 +41,19 @@
         background: white;
         transform: rotate(-4deg);
         box-shadow: 0px 0px 10px white;
+        @media (min-width: 1024px){
+            width: 100vw;
+            transform: rotate(0deg);
+            height: 15vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @media (min-width: 1280px){
+            height: 5vw;
+            top: -5.5vw;
+            left: -12vw;
+        }
         &Img{
             box-shadow: 0px 0px 5px black;
             border-radius: 50%;
@@ -37,14 +63,21 @@
                 width: 20px;
                 border-radius: none;
                 @media (min-width: 768px) {
-                    width: 40px;
+                    width: 30px;
                     margin: 0 0 0 20px;
+                }
+                @media (min-width: 1024px) {
+                    width: 30px;
+                    margin: 0 100px 0 20px;
                 }
             }
             &2{
                 margin: 0 10px 0 5px;
                 @media (min-width: 768px) {
                     margin: 0 20px 0 10px;
+                }
+                @media (min-width: 1024px) {
+                    margin: 0 20px 0 250px;
                 }
             }
             &3{
@@ -54,8 +87,8 @@
                 }
             }
             @media (min-width: 768px) {
-                width: 60px;
-                height: 60px;
+                width: 40px;
+                height: 40px;
             }
         }
         &Container{
@@ -68,7 +101,14 @@
             align-items: center;
             justify-content: space-between;
             @media (min-width: 768px) {
-                font-size: 2.4rem;
+                font-size: 1.9rem;
+            }
+            @media (min-width: 1024px){
+                transform: rotate(0deg);
+                justify-content: space-evenly;
+            }
+            @media (min-width: 1280px) {
+                font-size: 1.5rem;
             }
             &1{
                 display: flex;
@@ -95,6 +135,11 @@
     position: relative;
     width: 100vw;
     height: auto;
+    @media (min-width: 1280px) {
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
     &-Controls{
         position: absolute;
         top: 50%;
@@ -200,6 +245,10 @@
     @media (min-width: 768px) {
         width: 50vw;       
         left: calc(50% - 25vw);
+    }
+    @media (min-width: 1280px) {
+        width: 30vw;       
+        left: calc(50% - 15vw);
     }
 }
 .Controls-Mute {
