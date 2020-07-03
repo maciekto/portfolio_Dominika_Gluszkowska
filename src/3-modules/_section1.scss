@@ -16,6 +16,9 @@
         text-align: center;
         font-size: 3.7rem;
         margin-bottom: 20px;
+        @media (min-width: 768px) {
+            font-size: 4.7rem;   
+        }
     }
     &-Carousel{
         z-index: 500;
@@ -162,9 +165,13 @@
                 border-radius: 20%;
                 width: 65%;
                 max-height: 90%;
+                @media (min-width: 768px) {
+                    width: 75%;
+                }
             }
         }
         &Text{
+            font-size: 1.5rem;
             display: flex;
             padding-top: 10px;
             box-sizing: border-box;
@@ -172,6 +179,9 @@
             justify-content: center;
             width: 100%;
             height: 20%;
+            @media (min-width: 768px) {
+                font-size: 2.5rem;
+            }
             &1{
                 &_Notactive{
                     transition: 1s;

@@ -21,11 +21,14 @@
         width: calc(100% - 10vh);
         &Title{
             font-size: 1.5rem;
+            @media (min-width: 768px) {
+                font-size: 2.5rem;
+            }
         }
     }
     &-Modal{
         padding: 0px 0px 0px 20px;
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         color: black;
         transition: 0.4s;
         z-index: 999;
@@ -40,6 +43,9 @@
         justify-content: center;
         flex-direction: column;
         transform: translateX(100vw);
+        @media (min-width: 768px){
+            font-size: 2.5rem;
+        }
         &Link{
             transition: 1s;
             display: block;

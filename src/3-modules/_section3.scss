@@ -22,7 +22,10 @@
             margin-top: 15vh;
             font-weight: 700;
             font-size: 4rem;
-        }
+            @media (min-width: 768px) {
+                font-size: 5rem;
+            }
+        }   
     }
     &-Text {
         &Title{
@@ -31,6 +34,10 @@
             margin: 10vh 0 0 0;
             padding: 30px 30px;
             font-size: 2.7rem;
+            @media (min-width: 768px) {
+                font-size: 3.7rem;
+                padding: 30px 50px;
+            }
             &1{
                 text-align: left;
             }
@@ -50,6 +57,10 @@
             box-sizing: border-box;
             padding: 0px 40px;
             font-size: 1.5rem;
+            @media (min-width: 768px) {
+                font-size: 2.5rem;
+                padding: 0px 70px;   
+            }
             &1{
                 text-align: left;
             }
@@ -69,10 +80,18 @@
             border-radius: 20%;
             margin: 10vh 20vw 0vh 20vw;
             box-shadow: 0px 0px 7px white;
+            @media (min-width: 768px) {
+                max-width: 720px;
+                width: 50vw;
+                margin: 10vh 25vw 0vh 25vw;
+            }
             &Attribution{
                 font-size: 1.5rem;
                 color: white;
                 text-align: center;
+                @media (min-width: 768px) {
+                    font-size: 2.5rem;
+                }
             }
             &2{
                 border-radius: 10%;
