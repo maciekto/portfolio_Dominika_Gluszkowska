@@ -1,7 +1,7 @@
 <template>
     <section class="Carousel">
             <article class="Carousel-Inner">
-                <video class="Video" src="./../beforeXD/video_mo.mp4" type="video/mp4" autoplay loop muted>
+                <video class="Video" type="video/mp4" autoplay loop muted src="./../beforeXD/video_mo.mp4">
                 </video>
                 <div class="Video-Controls">
                     <input type="range" class="Seek-Bar" value="0" step="0.001" disabled />
@@ -40,10 +40,35 @@
 <script>
 export default {
   name: 'Video',
+  data() {
+    return {
+      change: 0,
+    };
+  },
   mounted() {
     this.videoControls();
+    this.myEventHandler();
+  },
+  created() {
+    window.addEventListener('resize', this.myEventHandler);
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.myEventHandler);
   },
   methods: {
+    myEventHandler() {
+      if (window.innerWidth < 1024 && this.change === 1) {
+        const Video = document.querySelector('.Video');
+        Video.setAttribute('src', '/media/video_mo.ae255dae.mp4');
+        Video.play();
+        this.change = 0;
+      } else if (window.innerWidth >= 1024 && this.change === 0) {
+        const Video = document.querySelector('.Video');
+        Video.setAttribute('src', '/media/video_pc.f01af31e.mp4');
+        Video.play();
+        this.change = 1;
+      }
+    },
     videoControls() {
       // Video
       const video = document.querySelector('.Video');

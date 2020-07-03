@@ -6,6 +6,10 @@
     align-items: center;
     justify-content: flex-end;
     flex-direction: column;
+    @media (min-width: 1024px) {
+        height: 80vh;
+        justify-content: space-evenly;
+    }
     &-Text{
         height: auto;
         box-sizing: border-box;
@@ -18,14 +22,16 @@
             margin: 0;
             padding: 30px 20px 60px 20px;
             font-size: 3.7rem;
+            @media (min-width: 768px) {
+                font-size: 4.7rem;   
+            }
+            @media (min-width: 1024px) {
+                transform: translateY(10vh);
+                padding: 30px 50px 60px 50px;
+            }
         }
         &Description {
-            background: white;
-            z-index: 24;
-            margin: 0;
-            box-sizing: border-box;
-            padding: 0px 20px 10px 20px;
-            font-size: 1.5rem;
+            display: none;
         }
     }
     &-Img{
@@ -35,6 +41,9 @@
         box-sizing: border-box;
         height: 20vh;
         width: 100vw;
+        @media (min-width: 1024px) {
+            justify-content: center;
+        }
         &Me{
             bottom: 8vh;
             z-index: 25;
@@ -44,16 +53,11 @@
             height: 25vw;
             border-radius: 50% 50% 50% 50%;
             box-shadow: 0px 0px 10px black;
-        }
-        &Description{
-            z-index: 25;
-            bottom: 0;
-            box-sizing: border-box;
-            width: 50%;
-            text-align: center;
-            margin-top: 25px;
-            font-size: 1.2rem;
-            margin-left: calc(50% - 20vw - 25%);
+            @media (min-width: 1024px) {
+                width: 20vw;   
+                height: 20vw;   
+                margin: 0 5vw 0 5vw;
+            }
         }
     }
 }
