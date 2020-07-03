@@ -1,0 +1,29 @@
+:root{
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0;
+    position: relative
+}
+html, body {
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: rgba($color: #000000, $alpha: 0);
+  }
+.app{
+    position: relative;
+}
+.Component{
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    @media (min-width: 1280px) {
+        width: 60vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
