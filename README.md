@@ -1,6 +1,29 @@
-# DominikaGluszkowska-PortfolioProject
-Portfolio Website for Graphic Designer
+# Dominika gluszkowska portfolio project (after migrate to VUE)
 
-If you're reading this, don't by shy and help me by checking this projects on http://www.maciekto.eu/subpages/domaPortfolio/index.html
+## Project setup
+```
+npm install
+```
 
-Trying to deploy site on netlify
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your unit tests
+```
+npm run test:unit
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/)
