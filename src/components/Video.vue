@@ -1,7 +1,9 @@
 <template>
     <section class="Carousel">
             <article class="Carousel-Inner">
-                <video class="Video" type="video/mp4" autoplay loop muted src="./../beforeXD/video_mo.mp4">
+                <video class="Video Video1" type="video/mp4" autoplay loop muted src="./../beforeXD/video_mo.mp4">
+                </video>
+                <video class="Video Video2" type="video/mp4" autoplay loop muted src="./../beforeXD/video_pc.mp4">
                 </video>
                 <div class="Video-Controls">
                     <input type="range" class="Seek-Bar" value="0" step="0.001" disabled />
@@ -42,6 +44,7 @@ export default {
   name: 'Video',
   data() {
     return {
+      initial: 0,
       change: 0,
     };
   },
@@ -57,15 +60,19 @@ export default {
   },
   methods: {
     myEventHandler() {
-      if (window.innerWidth < 1024 && this.change === 1) {
-        const Video = document.querySelector('.Video');
-        Video.setAttribute('src', '/media/video_mo.ae255dae.mp4');
-        Video.play();
+      if (window.innerWidth < 1024 && (this.change === 1 || this.initial === 0)) {
+        this.initial = 1;
+        const Video1 = document.querySelector('.Video1');
+        const Video2 = document.querySelector('.Video2');
+        Video2.style.cssText = 'display: none';
+        Video1.style.cssText = 'display: block';
         this.change = 0;
-      } else if (window.innerWidth >= 1024 && this.change === 0) {
-        const Video = document.querySelector('.Video');
-        Video.setAttribute('src', '/media/video_pc.f01af31e.mp4');
-        Video.play();
+      } else if (window.innerWidth >= 1024 && (this.change === 0 || this.initial === 0)) {
+        this.initial = 1;
+        const Video1 = document.querySelector('.Video1');
+        const Video2 = document.querySelector('.Video2');
+        Video2.style.cssText = 'display: block';
+        Video1.style.cssText = 'display: none';
         this.change = 1;
       }
     },
