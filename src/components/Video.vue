@@ -44,13 +44,15 @@ export default {
   name: 'Video',
   data() {
     return {
-      initial: 0,
+      initialVideoChange: 0,
+      initialPageLoad: 0,
       change: 0,
     };
   },
   mounted() {
     this.videoControls();
     this.myEventHandler();
+    this.pageLoading();
   },
   created() {
     window.addEventListener('resize', this.myEventHandler);
@@ -59,16 +61,32 @@ export default {
     window.removeEventListener('resize', this.myEventHandler);
   },
   methods: {
+    pageLoading() {
+      const video1 = document.querySelector('.Video1');
+      const video2 = document.querySelector('.Video2');
+      const PageLoadInScript = document.querySelector('.PageLoad');
+      setInterval(() => {
+        if (this.initialPageLoad === 0) {
+          if (video1.readyState === 4 && video2.readyState === 4) {
+            this.initialPageLoad = 1;
+            PageLoadInScript.classList.add('PageLoad_loaded');
+            setTimeout(() => {
+              PageLoadInScript.style.cssText = 'display: none';
+            }, 400);
+          }
+        }
+      }, 1000);
+    },
     myEventHandler() {
-      if (window.innerWidth < 1024 && (this.change === 1 || this.initial === 0)) {
-        this.initial = 1;
+      if (window.innerWidth < 1024 && (this.change === 1 || this.initialVideoChange === 0)) {
+        this.initialVideoChange = 1;
         const Video1 = document.querySelector('.Video1');
         const Video2 = document.querySelector('.Video2');
         Video2.style.cssText = 'display: none';
         Video1.style.cssText = 'display: block';
         this.change = 0;
-      } else if (window.innerWidth >= 1024 && (this.change === 0 || this.initial === 0)) {
-        this.initial = 1;
+      } else if (window.innerWidth >= 1024 && (this.change === 0 || this.initialVideoChange === 0)) {
+        this.initialVideoChange = 1;
         const Video1 = document.querySelector('.Video1');
         const Video2 = document.querySelector('.Video2');
         Video2.style.cssText = 'display: block';
