@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <PageLoad/>
     <NavBar />
     <NavBarModal />
     <Video />
@@ -20,10 +21,12 @@ import Section2 from './components/Section2.vue';
 import Section3 from './components/Section3.vue';
 import Section4 from './components/Section4.vue';
 import Footer from './components/Footer.vue';
+import PageLoad from './components/PageLoad.vue';
 
 export default {
   name: 'App',
   components: {
+    PageLoad,
     NavBar,
     NavBarModal,
     Video,

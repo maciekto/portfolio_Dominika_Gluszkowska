@@ -1,0 +1,29 @@
+.PageLoad {
+    transition: 0.4s;
+    overflow: none;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-Title{
+        font-size: 5rem;
+        animation: Loading 1s alternate infinite;
+        @keyframes Loading {
+            0%{
+                opacity: 1;
+            }100%{
+                opacity: 0;
+            }
+        }
+    }
+    &_loaded {
+        opacity: 0;
+        transition: 0.4s;
+    }
+}
