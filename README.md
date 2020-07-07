@@ -1,3 +1,5 @@
+https://dominika-gluszkowska.netlify.app/#/
+
 # Dominika gluszkowska portfolio project (after migrate to VUE)
 
 ## Project setup
