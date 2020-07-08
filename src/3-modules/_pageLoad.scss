@@ -11,16 +11,45 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    &-Title{
+    &-Title {
         font-size: 5rem;
         animation: Loading 1s alternate infinite;
         @keyframes Loading {
-            0%{
+            0% {
                 opacity: 1;
-            }100%{
+            }
+            100% {
                 opacity: 0;
             }
         }
+    }
+    &-Circle {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: black;
+        box-shadow: 0px 0px 5px black;
+        animation: appear 1s ease-in 1;
+        @keyframes appear {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    }
+    &-Counter {
+        text-align: center;
+        width: 100px;
+        position: absolute;
+        top: 5%;
+        left: calc(50% - 50px);
+        font-size: 5rem;
     }
     &_loaded {
         opacity: 0;
