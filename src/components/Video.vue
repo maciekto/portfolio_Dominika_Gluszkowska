@@ -19,7 +19,7 @@
                     <div class="Controls-Mute">
                 </div>
                 <input type="range" class="Controls-VolumeBar" min="0" max="1" step="0.01" value="1">
-                <div type="button" class="Controls-Fullscreen"></div>
+                <div type="button" class="Controls-Fullscreen" style="display: none"></div>
             </div>
         </article>
         <div class="Carousel-Bottombar"></div>
@@ -96,6 +96,8 @@ export default {
     },
     videoControls() {
       // Video
+      const video1 = document.querySelector('.Video1');
+      const video2 = document.querySelector('.Video2');
       const video = document.querySelector('.Video');
       // Buttons
       const playButton = document.querySelector('.PlayPause');
@@ -113,9 +115,10 @@ export default {
 
       // Event listener for the play/pause button
       playButton.addEventListener('click', () => {
-        if (video.paused === true) {
+        if (video1.paused === true && video2.paused === true) {
           // Play the video
-          video.play();
+          video1.play();
+          video2.play();
 
           // Update the button text to 'Pause'
           ele1.classList.remove('ele1_play');
@@ -126,7 +129,8 @@ export default {
           ele3.classList.add('ele3_pause');
         } else {
           // Pause the video
-          video.pause();
+          video1.pause();
+          video2.pause();
 
           // Update the button text to 'Play'
           ele1.classList.remove('ele1_pause');
@@ -139,15 +143,17 @@ export default {
       });
       // Event listener for the mute button
       muteButton.addEventListener('click', () => {
-        if (video.muted === false) {
+        if (video1.muted === false && video2.muted === false) {
         // Mute the video
-          video.muted = true;
+          video1.muted = true;
+          video2.muted = true;
 
           // Update the button text
           muteButton.style.cssText = "background: url('beforeXD/mute.png') center center no-repeat; background-size: 70%;";
         } else {
         // Unmute the video
-          video.muted = false;
+          video1.muted = false;
+          video2.muted = false;
 
           // Update the button text
           muteButton.style.cssText = "background: url('beforeXD/unmute.png') center center no-repeat; background-size: 70%;";
@@ -166,7 +172,8 @@ export default {
       // Event listener for the volume bar
       volumeBar.addEventListener('change', () => {
       // Update the video volume
-        video.volume = volumeBar.value;
+        video1.volume = volumeBar.value;
+        video2.volume = volumeBar.value;
       });
 
       setInterval(() => {
