@@ -14,23 +14,18 @@
 <script>
 export default {
   name: 'NavBar',
-  data() {
-    return {
-      event: 'BurgerOpen',
-    };
-  },
   mounted() {
-    this.Burger();
+    this.BurgerMenu();
   },
   methods: {
-    Burger() {
+    BurgerMenu() {
       const BurgerMain = document.querySelector('.NavBar-Hamburger');
       const BurgerLine1 = document.querySelector('.NavBar-HamburgerLine1');
       const BurgerLine2 = document.querySelector('.NavBar-HamburgerLine2');
       const BurgerLine3 = document.querySelector('.NavBar-HamburgerLine3');
       const NavBarModal = document.querySelector('.NavBar-Modal');
       const NavBarModal2 = document.querySelector('.NavBar-Modal-2');
-      const NavBarLink = document.querySelectorAll('.NavBar-ModalLink');
+      const NavBarModalLink = document.querySelectorAll('.NavBar-ModalLink');
       function Remove() {
         BurgerLine1.classList.remove('NavBar-HamburgerLine1_Exit');
         BurgerLine2.classList.remove('NavBar-HamburgerLine2_Exit');
@@ -50,7 +45,7 @@ export default {
         BurgerMain.addEventListener('click', Remove);
         NavBarModal.style.cssText = 'transform: translateX(50vw);';
         NavBarModal2.style.cssText = 'transform: translateX(calc(-50vw - 20px));';
-        NavBarLink.forEach((element) => {
+        NavBarModalLink.forEach((element) => {
           element.addEventListener('click', Remove);
         });
       }
