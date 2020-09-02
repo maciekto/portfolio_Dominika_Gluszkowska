@@ -1,25 +1,27 @@
 <template>
     <section class="Carousel">
             <article class="Carousel-Inner">
-                <video class="Video Video1" type="video/mp4" autoplay loop muted src="./../beforeXD/video_mo.mp4">
+               <!-- <video class="Video Video1" type="video/mp4" autoplay loop muted src="./../beforeXD/video_mo.mp4" style="display: none">
                 </video>
-                <video class="Video Video2" type="video/mp4" autoplay loop muted src="./../beforeXD/video_pc.mp4">
-                </video>
-                <div class="Video-Controls">
+                <video class="Video Video2" type="video/mp4" autoplay loop muted src="./../beforeXD/video_pc.mp4" style="display: none">
+                </video> -->
+                <div class="Video-Controls" style="display: none">
                     <input type="range" class="Seek-Bar" value="0" step="0.001" disabled />
                 </div>
-                <div type="button" class="PlayPause">
+                <div type="button" class="PlayPause" style="display: none">
                     <div class="PlayPause-Inner">
                         <span class="ele1_pause ele ele1"></span>
                         <span class="ele2_pause ele ele2"></span>
                         <span class="ele3_pause ele ele3"></span>
                     </div>
                 </div>
-                <div class="Controls">
+                <div class="Controls" style="display: none">
                     <div class="Controls-Mute">
                 </div>
-                <input type="range" class="Controls-VolumeBar" min="0" max="1" step="0.01" value="1">
+                <input type="range" class="Controls-VolumeBar" min="0" max="1" step="0.01" value="1" style="display: none">
                 <div type="button" class="Controls-Fullscreen" style="display: none"></div>
+            </div>
+            <div class="KV">
             </div>
         </article>
         <div class="Carousel-Bottombar"></div>
@@ -30,8 +32,8 @@
               <img src="./../beforeXD/cvIcon.png" class="Carousel-AbovebarImg1">
             </div>
             <div class="Carousel-AbovebarContainer2">
-              <img src="./../beforeXD/photoLogo2.jpg" class="Carousel-AbovebarImg Carousel-AbovebarImg2">
-              <img src="./../beforeXD/photoLogo.jpg" class="Carousel-AbovebarImg Carousel-AbovebarImg3">
+              <img src="./../assets/insta.jpg" class="Carousel-AbovebarImg Carousel-AbovebarImg2" @click="redirect">
+              <img src="./../beforeXD/photoLogo.jpg" class="Carousel-AbovebarImg Carousel-AbovebarImg3" @click="redirect2">
               <p class="Carousel-AbovebarContainer2Paragraph"> &#x2039; Contact </p>
             </div>
           </div>
@@ -50,15 +52,15 @@ export default {
     };
   },
   mounted() {
-    this.videoControls();
-    this.myEventHandler();
-    this.pageLoading();
+    // this.videoControls();
+    // this.myEventHandler();
+    // this.pageLoading();
   },
   created() {
-    window.addEventListener('resize', this.myEventHandler);
+    // window.addEventListener('resize', this.myEventHandler);
   },
   destroyed() {
-    window.removeEventListener('resize', this.myEventHandler);
+    // window.removeEventListener('resize', this.myEventHandler);
   },
   methods: {
     pageLoading() {
@@ -76,6 +78,12 @@ export default {
           }
         }
       }, 1000);
+    },
+    redirect() {
+      window.location.href = 'https://www.instagram.com/emikotlet/';
+    },
+    redirect2() {
+      window.location.href = 'https://www.facebook.com/domi.gluszkowska/';
     },
     myEventHandler() {
       if (window.innerWidth < 1024 && (this.change === 1 || this.initialVideoChange === 0)) {

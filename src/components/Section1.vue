@@ -7,15 +7,15 @@
                 <div class="Carousel01-Arrow2 show"></div>
                 <div class="Carousel01-Item1 Carousel01-Item Carousel01-Item_Initial">
                     <div class="Carousel01-ItemContent">
-                        <img src="./../beforeXD/default1.jpg" alt="default1" class="Carousel01-ItemContent-Img Carousel01-ItemContent-Img1">
+                        <img src="./../assets/sztosApp.jpg" alt="default1" class="Carousel01-ItemContent-Img Carousel01-ItemContent-Img1">
                     </div>
                     <div class="Carousel01-ItemText Carousel01-ItemText1 Carousel01-ItemText1_Active">
-                        PICTURE 1
+                        UI of HOME APP
                     </div>
                 </div>
                 <div class="Carousel01-Item2 Carousel01-Item">
                     <div class="Carousel01-ItemContent">
-                        <img src="./../beforeXD/default2.jpg" alt="default1" class="Carousel01-ItemContent-Img Carousel01-ItemContent-Img2">
+                        <img src="./../assets/coffee.jpg" alt="default1" class="Carousel01-ItemContent-Img Carousel01-ItemContent-Img2">
                     </div>
                     <div class="Carousel01-ItemText Carousel01-ItemText2 Carousel01-ItemText1_Notactive">
                         PICTURE 2
@@ -23,10 +23,10 @@
                 </div>
                 <div class="Carousel01-Item3 Carousel01-Item">
                     <div class="Carousel01-ItemContent">
-                        <img src="./../beforeXD/default3.jpg" alt="default1" class="Carousel01-ItemContent-Img Carousel01-ItemContent-Img3">
+                        <img src="./../assets/businessCard.jpg" alt="default1" class="Carousel01-ItemContent-Img Carousel01-ItemContent-Img3">
                     </div>
                     <div class="Carousel01-ItemText Carousel01-ItemText3 Carousel01-ItemText1_Notactive">
-                        PICTURE 3
+                        BUSINESS CARD
                     </div>
                 </div>
             </div>
@@ -36,21 +36,21 @@
             <div class="Carousel01-ItemModal1Line Carousel01-ItemModal1Line1"></div>
             <div class="Carousel01-ItemModal1Line Carousel01-ItemModal1Line2"></div>
           </div>
-          <img src="./../beforeXD/default1.jpg" alt="default1" class="Carousel01-ItemModal1Img">
+          <img src="./../assets/sztosApp.jpg" alt="default1" class="Carousel01-ItemModal1Img">
         </div>
         <div class="Carousel01-ItemModal2">
           <div class="Carousel01-ItemModal2Exit">
             <div class="Carousel01-ItemModal1Line Carousel01-ItemModal1Line1"></div>
             <div class="Carousel01-ItemModal1Line Carousel01-ItemModal1Line2"></div>
           </div>
-          <img src="./../beforeXD/default2.jpg" alt="default1" class="Carousel01-ItemModal2Img">
+          <img src="./../assets/coffee.jpg" alt="default1" class="Carousel01-ItemModal2Img">
         </div>
         <div class="Carousel01-ItemModal3">
           <div class="Carousel01-ItemModal3Exit">
             <div class="Carousel01-ItemModal1Line Carousel01-ItemModal1Line1"></div>
             <div class="Carousel01-ItemModal1Line Carousel01-ItemModal1Line2"></div>
           </div>
-          <img src="./../beforeXD/default3.jpg" alt="default1" class="Carousel01-ItemModal3Img">
+          <img src="./../assets/businessCard.jpg" alt="default1" class="Carousel01-ItemModal3Img">
         </div>
     </section>
 </template>

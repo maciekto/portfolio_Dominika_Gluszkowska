@@ -1,0 +1,20 @@
+// KV
+$kv-width: 100vw;
+$kv-height: auto;
+$kv-minHeight: 330px;
+$kv-background: url('./assets/businessCard.jpg') center center no-repeat;
+    // MEDIA KV
+    $PC-kv-width: 100%;
+    $PC-kv-height: 100vh;
+
+.KV {
+    width: $kv-width;
+    height: $kv-height;
+    background: $kv-background;
+    min-height: $kv-minHeight;
+    background-size: cover;
+    @media (min-width: 1024px) {
+        width: $PC-kv-width;
+        height: $PC-kv-height;
+    }
+}
