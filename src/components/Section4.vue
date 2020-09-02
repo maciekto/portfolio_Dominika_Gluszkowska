@@ -5,8 +5,8 @@
           <p class="Article4-TextDescription"></p>
         </article>
         <aside class="Article4-Img">
-          <img src="./../beforeXD/photoLogo2.jpg" class="Article4-ImgMe Animate">
-          <img src="./../beforeXD/photoLogo.jpg" class="Article4-ImgMe Animate">
+          <img src="./../assets/insta.jpg" class="Article4-ImgMe Animate" @click="redirect">
+          <img src="./../beforeXD/photoLogo.jpg" class="Article4-ImgMe Animate" @click="redirect2">
         </aside>
     </section>
 </template>
@@ -14,5 +14,13 @@
 <script>
 export default {
   name: 'Section4',
+  methods: {
+    redirect() {
+      window.location.href = 'https://www.instagram.com/emikotlet/';
+    },
+    redirect2() {
+      window.location.href = 'https://www.facebook.com/domi.gluszkowska/';
+    },
+  },
 };
 </script>

@@ -8,8 +8,8 @@
               <img src="./../beforeXD/cvIcon.png" class="Carousel-AbovebarImg1">
             </div>
             <div class="Carousel-AbovebarContainer2">
-              <img src="./../beforeXD/photoLogo2.jpg" class="Carousel-AbovebarImg Carousel-AbovebarImg2">
-              <img src="./../beforeXD/photoLogo.jpg" class="Carousel-AbovebarImg Carousel-AbovebarImg3">
+              <img src="./../assets/insta.jpg" class="Carousel-AbovebarImg Carousel-AbovebarImg2" @click="redirect">
+              <img src="./../beforeXD/photoLogo.jpg" class="Carousel-AbovebarImg Carousel-AbovebarImg3" @click="redirect2">
               <p class="Carousel-AbovebarContainer2Paragraph"> &#x2039; Contact </p>
             </div>
           </div>
@@ -19,5 +19,13 @@
 <script>
 export default {
   name: 'Footer',
+  methods: {
+    redirect() {
+      window.location.href = 'https://www.instagram.com/emikotlet/';
+    },
+    redirect2() {
+      window.location.href = 'https://www.facebook.com/domi.gluszkowska/';
+    },
+  },
 };
 </script>
