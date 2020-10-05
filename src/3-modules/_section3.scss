@@ -115,13 +115,18 @@
             }
             @media (min-width: 1024px) {
                 max-width: 720px;
-                width: 20vw;
-                margin: 10vh 40vw 0vh 40vw;
+                width: 50vw;
+                margin: 10vh 25vw 0vh 25vw;
             }
             @media (min-width: 1280px) {
                 max-width: 720px;
-                width: 15vw;
-                margin: 10vh 22.5vw 0vh 22.5vw;
+                width: 35vw;
+                margin: 10vh 12.5vw 0vh 12.5vw;
+            }
+            @media (min-width: 1920px) {
+                max-width: 1024px;
+                width: 35vw;
+                margin: 10vh 12.5vw 0vh 12.5vw;
             }
             &Attribution{
                 font-size: 1.5rem;
