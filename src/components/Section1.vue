@@ -18,7 +18,7 @@
                         <img src="./../assets/coffee.jpg" alt="default1" class="Carousel01-ItemContent-Img Carousel01-ItemContent-Img2">
                     </div>
                     <div class="Carousel01-ItemText Carousel01-ItemText2 Carousel01-ItemText1_Notactive">
-                        PICTURE 2
+                        Coffee
                     </div>
                 </div>
                 <div class="Carousel01-Item3 Carousel01-Item">
@@ -79,6 +79,7 @@ export default {
       function setInitialClasses() {
         // Targets the previous, current, and next items
         // This assumes there are at least three items.
+        console.log(totalItems);
         items[totalItems - 1].classList.add('Carousel01-Item_Prev');
         items[0].classList.add('Carousel01-Item_Active');
         items[1].classList.add('Carousel01-Item_Next');
@@ -113,14 +114,14 @@ export default {
               setTimeout(() => {
                 text1.classList.add('Carousel01-ItemText1_Active');
                 text1.classList.remove('Carousel01-ItemText1_Notactive');
-              }, 350);
+              }, 500);
               text3.classList.remove('Carousel01-ItemText3_Active');
               text3.classList.add('Carousel01-ItemText3_Notactive');
               text2.classList.remove('Carousel01-ItemText2_Active');
               text2.classList.add('Carousel01-ItemText2_Notactive');
             } else if (slide === 1) {
-              items[slide - 1].classList.add('Carousel01-Item_Prev');
               items[slide - 1].classList.remove('Carousel01-Item_Active');
+              items[slide - 1].classList.add('Carousel01-Item_Prev');
               items[slide - 1].classList.remove('Carousel01-Item_Next');
               items[slide - 1].classList.remove('Carousel01-Item_Initial');
 

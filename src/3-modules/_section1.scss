@@ -1,5 +1,5 @@
 .Article1{
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -136,7 +136,7 @@
         perspective: 10px;
         perspective-origin: 50% 50%;
         transform-style: preserve-3d;
-        opacity: 0;
+        opacity: 1;
         position: absolute;
         box-sizing: border-box;
         height: 100%;
@@ -148,24 +148,23 @@
         &_Initial, &_Active {
             opacity: 1;
             position: relative;
+            transform: translateX(0) scale(1);
         }
         &_Prev, &_Next {
+            transition: transform .5s, opacity .5s, z-index .5s;
             z-index: 800;
         }
         &_Prev {
-            transition: transform .5s, opacity .5s, z-index .5s;
-            transform: translateX(-140%) scale(0.5); /* Move 'prev' item to the left */
+            transform: translateX(-140%) scale(-1); /* Move 'prev' item to the left */
         }
         &_Next {
-            transition: transform .5s, opacity .5s, z-index .5s;
-            transform: translateX(140%) scale(0.5); /* Move 'prev' item to the left */
+            transform: translateX(140%) scale(3); /* Move 'prev' item to the left */
         }
         &Content{
             display: flex;
             align-items: center;
             justify-content: center;
             width: 240px;
-            height: 100;
             &-Img{
                 box-shadow: 0px 0px 5px 2px black;
                 border-radius: 20%;
