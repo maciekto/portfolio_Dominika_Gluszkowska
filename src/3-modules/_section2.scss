@@ -1,6 +1,7 @@
 .Article2 {
     border: none;
     height: auto;
+    margin-top: 50px; // delete when section 1 will be fixed and inserted ( margin from top to fix issue with text under the angeled content )
     &-Text{
         height: auto;
         box-sizing: border-box;
