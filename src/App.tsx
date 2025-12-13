@@ -14,6 +14,7 @@ import footerBg from './assets/images/footer-bg.png';
 import { HeroBottom } from './sections/HeroBottom';
 import { TwoImageSection } from './sections/TwoImageSection';
 import VideoSection from './sections/VideoSection';
+import { ComparisonSection } from './sections/ComparisonSection';
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
       />
 
       <VideoSection />
+
+      <ComparisonSection />
       
       <TwoImageSection 
         image1={mockup3}
@@ -41,7 +44,7 @@ function App() {
         flexDirectionMobile='flex-col-reverse'
       />
       <div className='h-[35vh] w-full md:h-auto'>
-      <img src={mockup9} alt="" className='object-cover md:object-contain h-full'/>
+        <img src={mockup9} alt="" className='object-cover md:object-contain h-full'/>
       </div>
       <TwoImageSection 
         image1={mockup7}
