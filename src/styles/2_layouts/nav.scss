@@ -1,0 +1,37 @@
+.Nav {
+    transition: 0.4s;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    font-size: $section;
+    top: 0;
+    left: 0;
+    background: rgba($color: #fff, $alpha: 0.8);
+    padding: 100px 0 50px 30px;
+    &-Line {
+        width: 120px;
+        height: 2px;
+        background: #000;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        
+    }
+    &-Closed {
+        transition: 0.4s;
+        transform: translateX(-100vw);
+    }
+    &-Title {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        &-Download {
+            margin-left: 10px;
+        }
+    }
+}
+@media (min-width: 1366px) {
+    .Nav {
+        padding: 200px 0 50px 95px;
+        font-size: $namePC;
+    }
+}

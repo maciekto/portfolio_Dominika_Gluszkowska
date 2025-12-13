@@ -1,0 +1,137 @@
+header {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 2fr;
+    padding: 20px 20px;
+    
+}
+.header {
+    &-Top {
+        display: flex;
+    }
+    &-Burger {
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 6px;
+        width: 36px;
+        height: 36px;
+        
+        &-Line {
+            transition: 0.4s;
+            height: 3px;
+            width: 24px;
+            background: $black;
+            &1 {
+                transition: 0.4s;
+                transform: rotate(45deg) translateX(7.5px) translateY(7px);
+            }
+            &2 {
+                transition: 0.4s;
+                opacity: 0;
+            }
+            &3 {
+                transition: 0.4s;
+                transform: rotate(-45deg) translateX(7.5px) translateY(-7px);
+            }
+        }
+    }
+    &-Name {
+        margin-left: 20px;
+        word-wrap: break-word;
+        font-size: $name;
+    }
+    &-Title {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        font-size: $title;
+        justify-self: center;
+        align-self: center;
+        &-PinElipseTitle {
+            display: inline-block;
+            position: relative;
+        }
+        &-ImgElipseTitle {
+            position: absolute;
+            left: 0px;
+            top: -30px;
+            z-index: -1;
+        }
+        &-Quote {
+            font-size: $quote;
+        }
+    }
+    &-Laptop {
+        width: 100%;
+        max-width: 350px;
+        grid-row: 3/4;
+        grid-column: 1/2;
+        margin: 40px 0 0 0;
+        align-self: flex-start;
+        justify-self: center;
+    }
+    &-LaptopPC {
+        display: none;
+    }
+}
+// PC
+@media (min-width: 1366px) {
+    header {
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 1fr;
+        padding: 80px 80px;
+    }
+    .header {
+        &-Burger {
+            cursor: pointer;
+            padding: 12px;
+            width: 84px;
+            height: 84px;
+            &-Line {
+                width: 60px;
+                height: 5px;
+                &1 {
+                    transition: 0.4s;
+                    transform: rotate(45deg) translateX(19px) translateY(19px);
+                }
+                &2 {
+                    transition: 0.4s;
+                    opacity: 0;
+                }
+                &3 {
+                    transition: 0.4s;
+                    transform: rotate(-45deg) translateX(19px) translateY(-19px);
+                }
+            }
+        }
+        &-Name {
+            margin-left: 60px;
+            font-size: $namePC;
+        }
+        &-Title {
+            margin-left: 3vw;
+            font-size: $titlePC;
+            justify-self: flex-start;
+            &-LaptopPC {
+                position: relative;
+            }
+            &-Quote {
+                font-size: $quotePC;
+            }
+        }
+        &-Laptop {
+            display: none;
+        }
+        &-LaptopPC {
+            max-width: 60vw;
+            z-index: -2;
+            display: block;
+            position: absolute;
+            left: 3vw;
+            top: -200%;
+        }
+    }
+}
