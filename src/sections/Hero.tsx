@@ -34,7 +34,7 @@ export const Hero = () => {
         
         <div className="mt-16">
           <button 
-            onClick={handleCV} className="bg-black text-white px-16 xl:px-24 py-1 xl:py-3 rounded-xl text-md xl:text-2xl uppercase tracking-widest hover:bg-gray-800 transition-colors cursor-pointer">
+            onClick={handleCV} className="bg-black text-white px-16 xl:px-24 py-1 xl:py-3 rounded-xl xl:rounded-3xl text-md xl:text-2xl uppercase tracking-widest hover:bg-zinc-800  border-black transition-colors cursor-pointer">
             CV
           </button>
         </div>
