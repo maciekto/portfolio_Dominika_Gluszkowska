@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Rosarivo:ital@0;1&display=swap');
+
+//mobile
+// $title: 10.55vw; //36px
+// $section: 6.66vw; //24px
+// $name: 5vw; //18px
+// $quote: 3.88vw; //14px
+// $description: 3.33vw; //12px
+
+// PX MOBILE
+$title: 36px; //36px
+$section: 24px; //24px
+$name: 18px; //18px
+$quote: 14px; //14px
+$description: 12px; //12px
+
+// pc
+$titlePC: 4.2vw; //64px
+$sectionPC: 7.027vw; // 96px
+$namePC: 2.63vw; //36px
+$quotePC: 1.75vw; //24px
+$sectionPC: 1.75vw;  //24px
+
+// PX pc
+
+// $titlePC: 64px; //64px
+// $sectionPC: 96px; // 96px
+// $namePC: 36px; //36px
+// $quotePC: 24px; //24px
+// $sectionPC: 24px;  //24px
+
+* {
+    font-family: 'Rosarivo', serif;
+}

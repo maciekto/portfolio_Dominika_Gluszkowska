@@ -1,0 +1,109 @@
+.MyWorks {
+    width: 100vw;
+    height: auto;
+    &-Title {
+        font-size: $section;
+        padding: 30px 0;
+        display: grid;
+        place-items: center;
+        z-index: 1;
+        background: white;
+    }
+    &-Sections {
+        width: 100vw;
+        height: auto;
+        z-index: 1;
+        &-Title {
+            font-size: $section;
+            display: grid;
+            position: relative;
+            place-items: center;
+            padding: 30px 0;
+            
+            &-Visualizations {
+                background: url('../../assets/Mobile/myWorks_visualizationBG.png') center center no-repeat;
+                background-size: cover;
+                background-color: white;
+            }
+            &-Banners {
+                background: url('../../assets/Mobile/myWorks_bannersBG.png') center center no-repeat;
+                background-size: cover;
+                background-color: white;
+            }
+            &-Drawings {
+                background: url('../../assets/Mobile/myWorks_drawingsBG.png') center center no-repeat;
+                background-size: cover;
+                background-color: white;
+            }
+            &-Arrow {
+                transition: 0.4s;
+                position: absolute;
+                width: 20px;
+                bottom: 15px;
+                left: 50%;
+                transform: translateX(-50%) rotate(180deg);
+                &-Visualizations, &-Banner, &-Drawings {
+                    &_off {
+                        transition: 0.4s;
+                        transform: translateX(-50%);
+                    }
+                }
+                
+            }
+        }
+        &-Works {
+            margin-top: 10px;
+            transition: 0.4s;
+            height: 400px;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &-Banner {
+                height: 1200px;
+            }
+            &-Drawings {
+                height: 900px;
+            }
+            &-Visualizations, &-Banner, &-Drawings {
+                &_off {
+                    transition: 0.4s;
+                    margin-top: 0px;
+                    height: 0px;
+                    &_img {
+                        display: none;
+                    }
+                }
+            }
+            
+            & img {
+                transition: 0.4s;
+                padding: 20px 0;
+                z-index: -2;
+            }
+        }
+    }
+}
+@media (min-width: 1366px) {
+    .MyWorks {
+        position: relative;
+        box-sizing: border-box;
+        &-Title {
+            right: 20px;
+            top: 300px;
+            position: absolute;
+            font-size: $titlePC;
+            width: 200px;
+            transform: rotate(90deg);
+        }
+        &-Sections {
+            &-Works {
+                height: auto;
+                & img {
+                    padding: 50px 0;
+                }
+            }
+        }
+    }
+}
