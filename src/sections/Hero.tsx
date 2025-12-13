@@ -1,8 +1,15 @@
 import { AnimatedSection } from '../components/ui/AnimatedSection';
 import heroImagePc from '../assets/images/hero-bg-gradient.png'
 import heroImageMobile from '../assets/images/hero-bg-mo-gradient.png'
+import cv from '../assets/files/CV_Dominika_Gluszkowska.pdf'
 
 export const Hero = () => {
+
+  const handleCV = () => {
+    // '_blank' opens it in a new tab
+    window.open(cv, '_blank');
+  };
+
   return (
     <section className="w-full bg-cover bg-center bg-no-repeat h-screen grid place-content-center text-center bg-(image:--bg-mobile) md:bg-(image:--bg-desktop)" 
     style={{
@@ -10,7 +17,7 @@ export const Hero = () => {
         '--bg-desktop': `url(${heroImagePc})`,
       } as React.CSSProperties}
     >
-      <AnimatedSection delay={0.5} className='flex items-center flex-col gap-0 w-2xs md:w-xl xl:w-6xl'>
+      <AnimatedSection className='flex items-center flex-col gap-0 w-2xs md:w-xl xl:w-6xl'>
 
         <p className='text-xs uppercase md:text-base'>
           WELCOME TO MY
@@ -26,7 +33,8 @@ export const Hero = () => {
         </p>
         
         <div className="mt-16">
-          <button className="bg-black text-white px-16 xl:px-24 py-1 xl:py-3 rounded-xl text-md xl:text-2xl uppercase tracking-widest hover:bg-gray-800 transition-colors">
+          <button 
+            onClick={handleCV} className="bg-black text-white px-16 xl:px-24 py-1 xl:py-3 rounded-xl text-md xl:text-2xl uppercase tracking-widest hover:bg-gray-800 transition-colors">
             CV
           </button>
         </div>

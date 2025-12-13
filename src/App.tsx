@@ -54,7 +54,7 @@ function App() {
 
       {/* Prosty Footer */}
       <footer 
-        className="bg-cover bg-center text-black text-xs md:text-base text-center py-4"
+        className="bg-cover bg-center text-black text-xs md:text-base text-center py-4 uppercase"
         style={{
           backgroundImage: `url(${footerBg})`
         }}
