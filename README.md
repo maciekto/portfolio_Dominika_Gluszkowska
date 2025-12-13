@@ -2,30 +2,19 @@ https://dominika-gluszkowska.netlify.app/#/
 
 # Dominika gluszkowska portfolio project (after migrate to VUE)
 
-## Project setup
-```
+# How to start on newer nodejs
+
+
+```bash
+# Uninstal
+npm uninstall node-sass
+
+# Install
+npm install -D sass sass-loader@10
 npm install
-```
 
-### Compiles and hot-reloads for development
-```
+# Run
+export NODE_OPTIONS=--openssl-legacy-provider
 npm run serve
-```
 
-### Compiles and minifies for production
 ```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/)
