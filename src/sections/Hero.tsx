@@ -10,7 +10,7 @@ export const Hero = () => {
         '--bg-desktop': `url(${heroImagePc})`,
       } as React.CSSProperties}
     >
-      <AnimatedSection className='flex items-center flex-col gap-0 w-2xs md:w-xl xl:w-6xl'>
+      <AnimatedSection delay={0.5} className='flex items-center flex-col gap-0 w-2xs md:w-xl xl:w-6xl'>
 
         <p className='text-xs uppercase md:text-base'>
           WELCOME TO MY
