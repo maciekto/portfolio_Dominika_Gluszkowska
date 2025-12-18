@@ -32,10 +32,10 @@ export const TwoImageSection = ({
       ${pcClass} 
     `}>
       <AnimatedSection className='md:w-1/2'>
-        <img src={image1} alt="" />
+        <img src={image1} className="w-full" alt="" />
       </AnimatedSection>
       <AnimatedSection className='md:w-1/2'>
-        <img src={image2} alt="" />
+        <img src={image2} className="w-full" alt="" />
       </AnimatedSection>
     </div>
   );

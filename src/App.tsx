@@ -44,7 +44,7 @@ function App() {
         flexDirectionMobile='flex-col-reverse'
       />
       <div className='h-[35vh] w-full md:h-auto'>
-        <img src={mockup9} alt="" className='object-cover md:object-contain h-full'/>
+        <img src={mockup9} alt="" className='object-cover md:object-contain h-full w-full'/>
       </div>
       <TwoImageSection 
         image1={mockup7}
