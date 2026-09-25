@@ -1,14 +1,8 @@
 import { AnimatedSection } from '../components/ui/AnimatedSection';
 import heroImagePc from '../assets/images/hero-bg-gradient.png'
 import heroImageMobile from '../assets/images/hero-bg-mo-gradient.png'
-import cv from '../assets/files/CV_Dominika_Gluszkowska.pdf'
 
 export const Hero = () => {
-
-  const handleCV = () => {
-    // '_blank' opens it in a new tab
-    window.open(cv, '_blank');
-  };
 
   return (
     <section className="w-full bg-cover bg-center bg-no-repeat h-screen grid place-content-center text-center bg-(image:--bg-mobile) md:bg-(image:--bg-desktop)" 
@@ -31,13 +25,6 @@ export const Hero = () => {
         <p className="text-xs uppercase mt-2 xl:mt-8 text-themeBlack self-end md:text-base">
           Dominika Głuszkowska
         </p>
-        
-        <div className="mt-16">
-          <button 
-            onClick={handleCV} className="bg-black text-white px-16 xl:px-24 py-1 xl:py-3 rounded-xl xl:rounded-3xl text-md xl:text-2xl uppercase tracking-widest hover:bg-zinc-800  border-black transition-colors cursor-pointer">
-            CV
-          </button>
-        </div>
       </AnimatedSection>
     </section>
   );
