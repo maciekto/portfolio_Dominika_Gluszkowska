@@ -3,9 +3,8 @@
 import { ChapterPage } from './ChapterPage'
 import { AnimatedSection } from '../components/ui/AnimatedSection'
 import { Photo } from '../components/ui/Photo'
-import VideoSection from '../sections/VideoSection'
 import { ComparisonSection } from '../sections/ComparisonSection'
-import { aiPhotos, VIDEO_IS_AI } from '../data/photos'
+import { aiPhotos } from '../data/photos'
 import { useLang } from '../i18n/useLang'
 
 const SectionLabel = ({ children }: { children: React.ReactNode }) => (
@@ -57,21 +56,10 @@ export const AiPage = () => {
         </div>
       </section>
 
-      {/* Film AI */}
-      {VIDEO_IS_AI && (
-        <section className="bg-espresso text-ivory px-5 md:px-10 py-20 md:py-32 flex flex-col gap-10 md:gap-16">
-          <AnimatedSection className="flex flex-col gap-6 md:max-w-[50%]">
-            <SectionLabel>04.3</SectionLabel>
-            <p className="font-luxury uppercase text-5xl md:text-[5vw] leading-[0.9]">{a.filmTitle}</p>
-          </AnimatedSection>
-          <VideoSection />
-        </section>
-      )}
-
       {/* Suwak porównania */}
       <section className="bg-mist text-espresso px-5 md:px-10 py-20 md:py-32 flex flex-col gap-10 md:gap-16">
         <AnimatedSection className="flex flex-col gap-6 md:max-w-[50%]">
-          <SectionLabel>04.4</SectionLabel>
+          <SectionLabel>04.3</SectionLabel>
           <p className="font-luxury uppercase text-5xl md:text-[5vw] leading-[0.9]">{a.comparisonTitle}</p>
         </AnimatedSection>
         <ComparisonSection />
@@ -81,7 +69,7 @@ export const AiPage = () => {
       <section className="bg-sage text-espresso px-5 md:px-10 py-20 md:py-32">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
           <AnimatedSection className="md:col-span-5 flex flex-col gap-6">
-            <SectionLabel>04.5</SectionLabel>
+            <SectionLabel>04.4</SectionLabel>
             <p className="font-luxury uppercase text-5xl md:text-[5vw] leading-[0.9]">{a.automationTitle}</p>
           </AnimatedSection>
           <AnimatedSection delay={0.1} className="md:col-span-6 md:col-start-7 md:self-end">
