@@ -4,16 +4,6 @@
 export type Lang = 'en' | 'pl'
 export const LANGS: Lang[] = ['en', 'pl']
 
-const LOREM_SHORT = '<Lorem ipsum dolor sit amet, consectetur adipiscing elit.>'
-const LOREM = '<Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.>'
-const LOREM_LONG = '<Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.>'
-
-const placeholderPage = {
-  whatIDid: LOREM_LONG,
-  experience: LOREM,
-  meta: [LOREM_SHORT, LOREM_SHORT, LOREM_SHORT],
-}
-
 const en = {
   meta: { title: 'Dominika Głuszkowska – Portfolio' },
   nav: {
@@ -47,22 +37,31 @@ const en = {
     campaign: {
       label: 'Fashion imagery',
       teaser: 'Campaign imagery I generated with AI. I design the whole vision myself, from styling the models to light, shadow and mood, while the products in the frame are real.',
-      ...placeholderPage,
+      whatIDid: 'Every generated photo shoot starts with the product that needs to be shown. Based on it, I select the styling and prepare a moodboard that defines the mood of the images. I build the concept around the current season and adapt it to the brand’s character: a high-fashion label calls for a different approach than a streetwear brand.',
+      experience: 'I have been creating AI-generated imagery for over a year, mainly for the footwear and accessories industry. I have produced a large volume of images, used in e-commerce, promotional banners, CRM communication and by the other teams I work with.',
+      meta: ['Senior Graphic Designer', 'Photoshop, Magnific, Figma', '2025–2026'],
     },
     ecommerce: {
       label: 'Digital product',
       teaser: 'Promotional banners for the website and mobile app, plus their reformats for international markets and performance marketing. I also designed the new arrivals page.',
-      ...placeholderPage,
+      whatIDid: 'I mainly designed promotional banners for the website and the app. I also created some of the interactive tiles on the website. In close collaboration with the UI/UX team, I designed the favourites category page and the size display on the product page.',
+      experience: 'I have been working in e-commerce for almost five years. This experience has shown me how important it is to align business goals with design, and that my work has an impact on the customer.',
+      meta: ['Senior Graphic Designer', 'Figma, Photoshop, Illustrator', '2021–2026'],
     },
     branding: {
       label: 'Identity',
       teaser: 'Visual identities for two brands: VBRNT, a powerful yet minimal gymwear label with a fashion edge, and Aura, a gentle, spa-inspired cosmetics brand.',
-      ...placeholderPage,
+      whatIDid: 'For VBRNT, a sportswear brand, I designed the logo. The brand speaks to both women and men and needed to feel strong yet minimal. For Aura, a cosmetics brand, I designed the logo and packaging. The logo reflects its positioning: a minimalist spa, the comfort of home and natural products.',
+      experience: 'I start every branding project with the brand’s character: its message, story, purpose and goals. That is the foundation for a consistent identity.',
+      meta: ['Senior Graphic Designer', 'Photoshop, Illustrator, InDesign', '2024–2026'],
     },
     ai: {
       label: 'Approach & tools',
       teaser: 'I work with AI every day, mostly creating campaign imagery, and I was the first at my company to test these tools. I also built a Figma library that helps the design team produce reformats faster.',
-      ...placeholderPage,
+      whatIDid: 'I use AI in two areas: creating generated imagery and my latest project, automating the reformatting process. Both save time. I invest that time in what matters more: the idea and the quality.',
+      experience: 'I have been working with AI since 2025. My role has changed significantly: I am now also responsible for preparing imagery. It is an area that interests me and one I want to keep developing in.',
+      // Na podstronie AI metryczka jest niepotrzebna – pusta lista ukrywa ją w PageIntro.
+      meta: [] as string[],
     },
     next: {
       label: 'Where I’m heading',
@@ -82,35 +81,30 @@ const en = {
   branding: { aura: 'Aura', vbrnt: 'VBRNT' },
   ai: {
     approachTitle: 'Approach',
-    approach: LOREM_LONG,
+    approach: 'AI has no taste – the designer does. A generator offers a thousand options, but I decide which one is right for the brand. I treat AI as a tool that speeds up the work, not as the author.',
     processTitle: 'From vision to product',
-    processIntro: LOREM,
     steps: [
-      { title: 'Vision', text: LOREM_SHORT },
-      { title: 'Background', text: LOREM_SHORT },
-      { title: 'Styling', text: LOREM_SHORT },
-      { title: 'Brand product', text: LOREM_SHORT },
-      { title: 'Film', text: LOREM_SHORT },
+      { title: 'Vision', text: 'Moodboard, narrative and light: I define the look and mood of the scene.' },
+      { title: 'Background', text: 'I generate a setting that matches the season and the brand’s character.' },
+      { title: 'Styling', text: 'I select the model, outfit and pose, as a stylist would on set.' },
+      { title: 'Brand product', text: 'I bring the real product into the scene and match the light, shadows and reflections.' },
+      { title: 'Film', text: 'I animate the image into a short clip for social media.' },
     ],
     galleryTitle: 'AI imagery',
-    galleryIntro: LOREM,
     filmTitle: 'AI film',
-    filmText: LOREM,
     comparisonTitle: 'One scene, two looks',
-    comparisonText: LOREM,
     automationTitle: 'Automation & Figma library',
-    automation: LOREM_LONG,
-    automationPoints: [LOREM_SHORT, LOREM_SHORT, LOREM_SHORT],
+    automation: 'The automation brought structure to the workflow: the logos of different brands and the fonts in use now live in one place. I was involved in building the template, for which we created text components and their variants for international markets. Swapping copy for each market, previously done by hand, now takes a few clicks and saves the team a significant amount of time.',
   },
   next: {
-    intro: LOREM_LONG,
+    intro: 'In recent years I have designed promotional and inspirational creatives, landing pages, mailings, MMS messages, logo guidelines and brand books. Working with image generation opened up a new area for me: creating AI-generated photo shoots.',
     directionsTitle: 'Directions',
     directions: [
-      { title: '<Direction 01>', text: LOREM },
-      { title: '<Direction 02>', text: LOREM },
-      { title: '<Direction 03>', text: LOREM },
+      { title: 'Art direction', text: 'I want to lead the visual concept of an entire campaign, from the photo shoot through to launch.' },
+      { title: 'Styling', text: 'I am drawn to styling, which is closely connected to creating imagery.' },
+      { title: 'AI shoots', text: 'I want to keep developing my skills in creating AI-generated photo shoots.' },
     ],
-    closing: LOREM,
+    closing: 'If you are looking for someone who combines art direction, styling and AI-generated imagery, let’s talk.',
     portraitPlaceholder: '<Photo of Dominika>',
   },
   contact: {
@@ -186,22 +180,30 @@ const pl: Dictionary = {
     campaign: {
       label: 'Sesje modowe',
       teaser: 'Zdjęcia do kampanii, które wygenerowałam z AI. Całą wizję projektuję sama, od stylizacji modeli po światło, cienie i klimat, a na zdjęciach występują prawdziwe produkty.',
-      ...placeholderPage,
+      whatIDid: 'Punktem wyjścia każdej generowanej sesji jest produkt, który trzeba pokazać. Na jego podstawie dobieram stylizację i przygotowuję moodboard określający klimat zdjęć. Koncepcję opieram na bieżącym sezonie i dopasowuję do charakteru marki: inaczej prowadzę sesję dla marki high fashion, a inaczej dla marki streetwearowej.',
+      experience: 'Od ponad roku tworzę zdjęcia generowane przez AI, głównie dla branży obuwniczej i akcesoryjnej. Przygotowałam ich bardzo wiele, a wykorzystywane są w e-commerce, banerach promocyjnych, komunikacji CRM i w innych działach, z którymi współpracuję.',
+      meta: ['Senior Graphic Designer', 'Photoshop, Magnific, Figma', '2025–2026'],
     },
     ecommerce: {
       label: 'Produkt cyfrowy',
       teaser: 'Banery promocyjne na stronę www i do aplikacji mobilnej oraz ich reformaty na rynki zagraniczne i do performance marketingu. Zaprojektowałam też stronę z nowościami.',
-      ...placeholderPage,
+      whatIDid: 'Projektowałam przede wszystkim banery promocyjne na stronę www i do aplikacji. Tworzyłam również część kafli interaktywnych na stronie www. W ścisłej współpracy z działem UI/UX zaprojektowałam stronę kategorii ulubionych oraz widok prezentacji rozmiarów na karcie produktu.',
+      experience: 'W e-commerce pracuję od prawie pięciu lat. To doświadczenie pokazało mi, jak ważne jest łączenie celów biznesowych z projektowaniem i że moje projekty mają wpływ na klienta.',
+      meta: ['Senior Graphic Designer', 'Figma, Photoshop, Illustrator', '2021–2026'],
     },
     branding: {
       label: 'Identyfikacja',
       teaser: 'Identyfikacje wizualne dwóch marek: VBRNT, mocnej i minimalistycznej marki odzieży na siłownię z modowym zacięciem, oraz Aury, delikatnej marki kosmetyków w klimacie spa.',
-      ...placeholderPage,
+      whatIDid: 'Dla VBRNT, marki odzieży sportowej, zaprojektowałam logotyp. Marka kieruje przekaz do kobiet i mężczyzn i miała być silna, a jednocześnie minimalistyczna. Dla Aury, marki kosmetycznej, zaprojektowałam logo i opakowania. Logotyp oddaje jej założenia: minimalizm w duchu spa, domowe zacisze i naturalne produkty.',
+      experience: 'Pracę nad marką zaczynam od jej charakteru: przekazu, historii, celu i tego, co chce osiągnąć. Na tej podstawie buduję spójny branding.',
+      meta: ['Senior Graphic Designer', 'Photoshop, Illustrator, InDesign', '2024–2026'],
     },
     ai: {
       label: 'Podejście i narzędzia',
       teaser: 'Z AI pracuję codziennie, głównie tworząc zdjęcia do kampanii, a w swojej firmie jako pierwsza zaczęłam testować te narzędzia. Zbudowałam też w Figmie bibliotekę, która przyspiesza zespołowi graficznemu tworzenie reformatów.',
-      ...placeholderPage,
+      whatIDid: 'AI wykorzystuję w dwóch obszarach: przy tworzeniu generowanych zdjęć oraz w najnowszym projekcie, dotyczącym automatyzacji procesu reformatowania. Każde z tych zastosowań oszczędza czas. Przeznaczam go na to, co ważniejsze: pomysł i jakość.',
+      experience: 'Z AI pracuję od 2025 roku. Zakres mojej pracy wyraźnie się zmienił: odpowiadam teraz również za przygotowywanie zdjęć. To obszar, który mnie interesuje i w którym chcę się dalej rozwijać.',
+      meta: [],
     },
     next: {
       label: 'Dokąd zmierzam',
@@ -221,35 +223,30 @@ const pl: Dictionary = {
   branding: { aura: 'Aura', vbrnt: 'VBRNT' },
   ai: {
     approachTitle: 'Podejście',
-    approach: LOREM_LONG,
+    approach: 'AI nie ma gustu – ma go projektant. Generator daje tysiąc możliwości, ale to ja decyduję, która z nich jest właściwa dla marki. Traktuję AI jako narzędzie, które przyspiesza pracę, a nie jako autora.',
     processTitle: 'Od wizji do produktu',
-    processIntro: LOREM,
     steps: [
-      { title: 'Wizja', text: LOREM_SHORT },
-      { title: 'Tło', text: LOREM_SHORT },
-      { title: 'Stylizacja', text: LOREM_SHORT },
-      { title: 'Produkt marki', text: LOREM_SHORT },
-      { title: 'Film', text: LOREM_SHORT },
+      { title: 'Wizja', text: 'Moodboard, narracja i światło: określam wygląd i nastrój sceny.' },
+      { title: 'Tło', text: 'Generuję otoczenie dopasowane do sezonu i charakteru marki.' },
+      { title: 'Stylizacja', text: 'Dobieram modelkę, ubiór i pozę, tak jak stylistka na planie.' },
+      { title: 'Produkt marki', text: 'Wprowadzam do sceny prawdziwy produkt i dopasowuję światło, cienie i odbicia.' },
+      { title: 'Film', text: 'Animuję zdjęcie w krótkie ujęcie do mediów społecznościowych.' },
     ],
     galleryTitle: 'Zdjęcia AI',
-    galleryIntro: LOREM,
     filmTitle: 'Film AI',
-    filmText: LOREM,
     comparisonTitle: 'Jedna scena, dwie stylizacje',
-    comparisonText: LOREM,
     automationTitle: 'Automatyzacja i biblioteka Figma',
-    automation: LOREM_LONG,
-    automationPoints: [LOREM_SHORT, LOREM_SHORT, LOREM_SHORT],
+    automation: 'Automatyzacja uporządkowała strukturę pracy: logotypy różnych marek oraz używane fonty są teraz w jednym miejscu. Brałam udział w tworzeniu szablonu, dla którego powstały komponenty tekstowe i ich warianty na rynki zagraniczne. Podmiana tekstów na poszczególne rynki, wcześniej wykonywana ręcznie, zajmuje teraz kilka kliknięć i oszczędza zespołowi dużo czasu.',
   },
   next: {
-    intro: LOREM_LONG,
+    intro: 'Przez ostatnie lata projektowałam kreacje promocyjne i inspiracyjne, landing page’e, mailingi, MMS-y, księgi znaku oraz brand booki. Praca z generowaniem zdjęć otworzyła przede mną nowy obszar: tworzenie generowanych sesji zdjęciowych.',
     directionsTitle: 'Kierunki',
     directions: [
-      { title: '<Kierunek 01>', text: LOREM },
-      { title: '<Kierunek 02>', text: LOREM },
-      { title: '<Kierunek 03>', text: LOREM },
+      { title: 'Art direction', text: 'Chcę prowadzić koncepcję wizualną całej kampanii, od sesji zdjęciowej po jej premierę.' },
+      { title: 'Stylizacja', text: 'Interesuje mnie stylizacja, która jest ściśle związana z tworzeniem zdjęć.' },
+      { title: 'Sesje AI', text: 'Chcę dalej rozwijać kompetencje w tworzeniu generowanych sesji zdjęciowych.' },
     ],
-    closing: LOREM,
+    closing: 'Jeśli szukasz osoby, która połączy art direction, stylizację i generowane zdjęcia, porozmawiajmy.',
     portraitPlaceholder: '<Zdjęcie Dominiki>',
   },
   contact: {

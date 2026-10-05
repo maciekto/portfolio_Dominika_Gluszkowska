@@ -25,12 +25,9 @@ export const AiPage = () => {
 
       {/* Proces: od wizji do produktu */}
       <section className="bg-ivory text-espresso px-5 md:px-10 py-20 md:py-32">
-        <AnimatedSection className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
-          <div className="md:col-span-5 flex flex-col gap-6">
-            <SectionLabel>04.1</SectionLabel>
-            <p className="font-luxury uppercase text-5xl md:text-[5vw] leading-[0.9]">{a.processTitle}</p>
-          </div>
-          <p className="md:col-span-5 md:col-start-8 self-end text-sm md:text-base leading-relaxed opacity-80">{a.processIntro}</p>
+        <AnimatedSection className="flex flex-col gap-6 md:max-w-[50%]">
+          <SectionLabel>04.1</SectionLabel>
+          <p className="font-luxury uppercase text-5xl md:text-[5vw] leading-[0.9]">{a.processTitle}</p>
         </AnimatedSection>
         <ol className="mt-14 md:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-px bg-espresso/15 border border-espresso/15">
           {a.steps.map((s, i) => (
@@ -47,12 +44,9 @@ export const AiPage = () => {
 
       {/* Galeria zdjęć AI – zbierana automatycznie z flag w src/data/photos.ts */}
       <section className="bg-paper text-espresso px-5 md:px-10 py-20 md:py-32">
-        <AnimatedSection className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 mb-12 md:mb-20">
-          <div className="md:col-span-5 flex flex-col gap-6">
-            <SectionLabel>04.2</SectionLabel>
-            <p className="font-luxury uppercase text-5xl md:text-[5vw] leading-[0.9]">{a.galleryTitle}</p>
-          </div>
-          <p className="md:col-span-5 md:col-start-8 self-end text-sm md:text-base leading-relaxed opacity-80">{a.galleryIntro}</p>
+        <AnimatedSection className="flex flex-col gap-6 md:max-w-[50%] mb-12 md:mb-20">
+          <SectionLabel>04.2</SectionLabel>
+          <p className="font-luxury uppercase text-5xl md:text-[5vw] leading-[0.9]">{a.galleryTitle}</p>
         </AnimatedSection>
         <div className="columns-2 md:columns-3 gap-4 md:gap-6">
           {aiPhotos.map((p, i) => (
@@ -64,12 +58,9 @@ export const AiPage = () => {
       {/* Film AI */}
       {VIDEO_IS_AI && (
         <section className="bg-espresso text-ivory px-5 md:px-10 py-20 md:py-32 flex flex-col gap-10 md:gap-16">
-          <AnimatedSection className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
-            <div className="md:col-span-6 flex flex-col gap-6">
-              <SectionLabel>04.3</SectionLabel>
-              <p className="font-luxury uppercase text-5xl md:text-[5vw] leading-[0.9]">{a.filmTitle}</p>
-            </div>
-            <p className="md:col-span-5 md:col-start-8 self-end text-sm md:text-base leading-relaxed opacity-80">{a.filmText}</p>
+          <AnimatedSection className="flex flex-col gap-6 md:max-w-[50%]">
+            <SectionLabel>04.3</SectionLabel>
+            <p className="font-luxury uppercase text-5xl md:text-[5vw] leading-[0.9]">{a.filmTitle}</p>
           </AnimatedSection>
           <VideoSection />
         </section>
@@ -77,12 +68,9 @@ export const AiPage = () => {
 
       {/* Suwak porównania */}
       <section className="bg-mist text-espresso px-5 md:px-10 py-20 md:py-32 flex flex-col gap-10 md:gap-16">
-        <AnimatedSection className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
-          <div className="md:col-span-6 flex flex-col gap-6">
-            <SectionLabel>04.4</SectionLabel>
-            <p className="font-luxury uppercase text-5xl md:text-[5vw] leading-[0.9]">{a.comparisonTitle}</p>
-          </div>
-          <p className="md:col-span-5 md:col-start-8 self-end text-sm md:text-base leading-relaxed opacity-80">{a.comparisonText}</p>
+        <AnimatedSection className="flex flex-col gap-6 md:max-w-[50%]">
+          <SectionLabel>04.4</SectionLabel>
+          <p className="font-luxury uppercase text-5xl md:text-[5vw] leading-[0.9]">{a.comparisonTitle}</p>
         </AnimatedSection>
         <ComparisonSection />
       </section>
@@ -94,16 +82,8 @@ export const AiPage = () => {
             <SectionLabel>04.5</SectionLabel>
             <p className="font-luxury uppercase text-5xl md:text-[5vw] leading-[0.9]">{a.automationTitle}</p>
           </AnimatedSection>
-          <AnimatedSection delay={0.1} className="md:col-span-6 md:col-start-7 flex flex-col gap-8 md:pt-10">
+          <AnimatedSection delay={0.1} className="md:col-span-6 md:col-start-7 md:self-end">
             <p className="text-base md:text-lg leading-relaxed">{a.automation}</p>
-            <ul className="flex flex-col">
-              {a.automationPoints.map((point, i) => (
-                <li key={i} className="border-t border-espresso/20 py-4 text-sm md:text-base flex gap-6">
-                  <span className="opacity-50">0{i + 1}</span>
-                  <span>{point}</span>
-                </li>
-              ))}
-            </ul>
           </AnimatedSection>
         </div>
       </section>
