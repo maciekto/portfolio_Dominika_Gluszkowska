@@ -13,13 +13,14 @@ Zastępuje hosting na Netlify.
 | Adres publiczny | `https://dominikagluszkowska.com` |
 | Dane, sekrety | brak — strona jest w pełni statyczna |
 
-Obraz buduje się na serwerze w dwóch etapach: Node 22 robi `npm run build`, a gotowy `dist/`
-serwuje nginx bez roota (`nginx-unprivileged`). Kontener ma system plików tylko do odczytu,
+Obraz buduje się na serwerze w dwóch etapach: Node 22 robi `npm run build` (Next.js, statyczny eksport
+do `out/` + kompresja zdjęć), a gotowe pliki serwuje nginx bez roota (`nginx-unprivileged`). Kontener ma system plików tylko do odczytu,
 odebrane wszystkie capabilities i `no-new-privileges`.
 
-nginx obsługuje trasy SPA (`/en/…`, `/pl/…` → `index.html`), cache na rok dla plików
-z `/assets/` (mają hash w nazwie) i `no-cache` dla `index.html`, więc po wdrożeniu
-odwiedzający od razu dostają nową wersję.
+Każda podstrona to gotowy plik HTML z treścią i metadanymi SEO (`/pl/ai` → `pl/ai.html`).
+nginx przekierowuje `/` na `/pl` albo `/en` według języka przeglądarki (`Accept-Language`),
+daje cache na rok plikom z `/_next/static/` (hash w nazwie) i `no-cache` stronom HTML,
+więc po wdrożeniu odwiedzający od razu dostają nową wersję.
 
 ## Wdrożenie przez git clone z GitHuba (obecny sposób)
 
@@ -29,15 +30,20 @@ Pierwszy raz, na serwerze:
 
 ```bash
 cd /srv/docker-apps
-git clone -b feat/nowe-zdjecia-nowy-ui https://github.com/maciekto/portfolio_Dominika_Gluszkowska.git dominikagluszkowska.com
+git clone -b feat/nextjs https://github.com/maciekto/portfolio_Dominika_Gluszkowska.git dominikagluszkowska.com
 cd dominikagluszkowska.com
 sudo docker compose up -d --build
 sudo docker ps --filter name=dominikagluszkowska   # po ~10 s: (healthy)
 curl -sI http://127.0.0.1:10012/pl/ai | head -1    # HTTP/1.1 200 OK
 ```
 
-Po merge'u do `master` zamiast `-b feat/nowe-zdjecia-nowy-ui` wystarczy zwykły clone (albo
-`git switch master` w istniejącym katalogu).
+Przejście istniejącej instalacji z wersji Vite (`feat/nowe-zdjecia-nowy-ui`) na Next.js:
+
+```bash
+cd /srv/docker-apps/dominikagluszkowska.com && git fetch && git switch feat/nextjs && sudo docker compose up -d --build && sudo docker image prune -f
+```
+
+Powrót do wersji Vite: `git switch feat/nowe-zdjecia-nowy-ui` i ten sam `docker compose up -d --build`.
 
 Każda kolejna aktualizacja:
 
@@ -48,8 +54,8 @@ sudo docker compose up -d --build
 sudo docker image prune -f   # stare obrazy po buildach – dysk systemowy jest ciasny
 ```
 
-Build pobiera obrazy `node:22-alpine` i `nginx-unprivileged` oraz paczki npm — za pierwszym razem trwa
-kilka minut. Warstwy npm zostają w cache buildera; gdy zabraknie miejsca: `sudo docker builder prune`.
+Build pobiera obrazy `node:22-alpine` i `nginx-unprivileged`, paczki npm oraz font Inter z Google Fonts
+(next/font zapisuje go w obrazie – strona nie łączy się z Google) — za pierwszym razem trwa kilka minut. Warstwy npm zostają w cache buildera; gdy zabraknie miejsca: `sudo docker builder prune`.
 
 ## Wdrożenie z Maca przez rsync (alternatywa)
 
@@ -116,7 +122,8 @@ curl -sI https://www.dominikagluszkowska.com/ | grep -i location  # → https://
 ssh debian-server 'sudo docker ps --filter name=dominikagluszkowska'
 ssh debian-server 'sudo docker logs --tail 50 dominikagluszkowska'
 ssh debian-server 'curl -s http://127.0.0.1:10012/healthz'           # ok
-ssh debian-server 'curl -sI http://127.0.0.1:10012/pl/ai | head -1'  # 200 – trasy SPA działają
+ssh debian-server 'curl -sI http://127.0.0.1:10012/pl/ai | head -1'  # 200 – podstrona jako statyczny HTML
+ssh debian-server 'curl -sI -H "Accept-Language: pl" http://127.0.0.1:10012/ | grep -i location'  # /pl
 ```
 
 ## Wycofanie zmian
