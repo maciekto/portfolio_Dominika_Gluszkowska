@@ -34,6 +34,7 @@ export const Photo = ({ data, aspect, className = '', index, delay = 0 }: Props)
           viewport={{ once: true }}
           transition={{ duration: 1.6, delay, ease: [0.22, 1, 0.36, 1] }}
           className="h-full w-full object-cover"
+          style={data.focus ? { objectPosition: data.focus } : undefined}
         />
       </div>
       {index && (
