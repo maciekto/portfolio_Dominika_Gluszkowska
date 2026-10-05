@@ -1,0 +1,41 @@
+# Portfolio Dominiki Głuszkowskiej – https://dominikagluszkowska.com
+# Serwer domowy: Debian VM 192.168.1.31, katalog /srv/docker-apps/dominikagluszkowska.com/
+# Publikacja: Cloudflare Tunnel → http://localhost:10012
+
+# Jawna nazwa projektu – inaczej compose wziąłby ją z katalogu i usunął kropkę.
+name: dominikagluszkowska
+
+services:
+  dominikagluszkowska:
+    build: .
+    image: dominikagluszkowska:latest
+    container_name: dominikagluszkowska
+    restart: unless-stopped
+    environment:
+      TZ: Europe/Warsaw
+      NGINX_ENTRYPOINT_QUIET_LOGS: "1"
+    ports:
+      # Tylko pętla zwrotna — ruch z zewnątrz wchodzi wyłącznie przez Cloudflare Tunnel.
+      # 10012 = kolejny wolny numer w konwencji 10000+ (10010/10011 zajmuje Forgejo).
+      - "127.0.0.1:10012:8080"
+    # Strona jest w pełni statyczna – system plików kontenera tylko do odczytu,
+    # nginx pisze wyłącznie pid i pliki tymczasowe do /tmp.
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      # Obraz na Alpine – busyboxowy wget, bez curla.
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1:8080/healthz"]
+      interval: 30s
+      timeout: 5s
+      start_period: 5s
+      retries: 3
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
