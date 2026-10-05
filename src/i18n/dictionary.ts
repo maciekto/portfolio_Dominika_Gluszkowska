@@ -94,7 +94,6 @@ const en = {
       { title: 'Film', text: 'I turn the image into a short video for social media.' },
     ],
     galleryTitle: 'AI imagery',
-    filmTitle: 'AI film',
     comparisonTitle: 'One scene, two looks',
     automationTitle: 'Automation & Figma library',
     automation: 'Automation brought structure to the team’s work: all brand logos and approved fonts now live in one place. I co-created a template with text components and their variants for international markets. Localising copy, once done by hand, now takes a few clicks.',
@@ -105,7 +104,7 @@ const en = {
     directions: [
       { title: 'Art direction', text: 'I want to lead the visual concept of an entire campaign, from the shoot to its launch.' },
       { title: 'Styling', text: 'I am developing my skills in styling, an inseparable part of creating images.' },
-      { title: 'AI shoots', text: 'I want to keep refining my craft in creating generated photo shoots.' },
+      { title: 'AI shoots & films', text: 'I want to keep refining my craft in creating generated photo shoots and films.' },
     ],
     closing: 'If you are looking for someone who brings together art direction, styling and AI imagery, let’s talk.',
     portraitPlaceholder: '<Photo of Dominika>',
@@ -149,7 +148,6 @@ const en = {
     comparison1: 'Model in a pink skirt and red sneakers, first styling of the same scene',
     comparison2: 'Model in a plaid skirt and suede boots, second styling of the same scene',
     portraitDominika: 'Portrait of Dominika Głuszkowska',
-    film: 'AI fashion film: model in a white belted dress',
   },
 }
 
@@ -244,9 +242,8 @@ const pl: Dictionary = {
       { title: 'Film', text: 'Przekształcam zdjęcie w krótkie ujęcie wideo do mediów społecznościowych.' },
     ],
     galleryTitle: 'Zdjęcia AI',
-    filmTitle: 'Film AI',
     comparisonTitle: 'Jedna scena, dwie stylizacje',
-    automationTitle: 'Automatyzacja i biblioteka Figma',
+    automationTitle: 'Automatyzacja i\u00A0biblioteka Figma',
     automation: 'Automatyzacja uporządkowała pracę zespołu: logotypy wszystkich marek i obowiązujące fonty znajdują się teraz w jednym miejscu. Współtworzyłam szablon, dla którego powstały komponenty tekstowe wraz z wariantami na rynki zagraniczne. Lokalizacja tekstów, wcześniej wykonywana ręcznie, zajmuje dziś kilka kliknięć.',
   },
   next: {
@@ -255,7 +252,7 @@ const pl: Dictionary = {
     directions: [
       { title: 'Art direction', text: 'Chcę prowadzić koncepcję wizualną całej kampanii – od sesji zdjęciowej po jej premierę.' },
       { title: 'Stylizacja', text: 'Rozwijam się w stylizacji, która jest nieodłączną częścią tworzenia zdjęć.' },
-      { title: 'Sesje AI', text: 'Chcę dalej doskonalić warsztat w tworzeniu generowanych sesji zdjęciowych.' },
+      { title: 'Sesje i\u00A0filmy AI', text: 'Chcę dalej doskonalić warsztat w tworzeniu generowanych sesji zdjęciowych oraz filmów.' },
     ],
     closing: 'Jeśli szukasz osoby, która połączy art direction, stylizację i obraz generowany w AI – porozmawiajmy.',
     portraitPlaceholder: '<Zdjęcie Dominiki>',
@@ -299,7 +296,6 @@ const pl: Dictionary = {
     comparison1: 'Modelka w różowej spódnicy i czerwonych sneakersach – pierwsza stylizacja tej samej sceny',
     comparison2: 'Modelka w spódnicy w kratę i zamszowych botkach – druga stylizacja tej samej sceny',
     portraitDominika: 'Portret Dominiki Głuszkowskiej',
-    film: 'Film modowy AI: modelka w białej sukience z paskiem',
   },
 }
 
