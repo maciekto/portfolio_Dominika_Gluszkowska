@@ -81,9 +81,6 @@ export const photos = {
 
 export const aiPhotos = Object.values(photos).filter((p) => p.ai)
 
-/** Film na stronie (videos/ai-fashion-film-white-dress.mp4) – stworzony z AI. */
-export const VIDEO_IS_AI = true
-
 /** Zdjęcia w suwaku porównania (images/ai/ai-styling-comparison-*.png) – stworzone z AI. */
 export const COMPARISON_IS_AI = true
 
