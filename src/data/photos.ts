@@ -4,6 +4,7 @@
 // Źródło oznaczeń: folder src/assets/images/ai/ = zdjęcia z AI, src/assets/images/nieai/ = bez AI.
 // Nazwy plików są opisowe (trafiają do publicznych adresów zdjęć – liczy się to dla SEO).
 
+import type { StaticImageData } from 'next/image'
 import type { Dictionary } from '../i18n/dictionary'
 
 import snow from '../assets/images/ai/ai-campaign-cream-coat-burgundy-bag-snow.jpg'
@@ -35,7 +36,7 @@ import portraitDominika from '../assets/images/nieai/dominika-gluszkowska-portra
 export type AltKey = keyof Dictionary['alt']
 
 export interface PhotoData {
-  src: string
+  src: StaticImageData
   alt: AltKey
   ai: boolean
   /** Proporcje używane w galerii AI */
@@ -48,7 +49,7 @@ export interface PhotoData {
   focus?: string
 }
 
-const photo = (src: string, alt: AltKey, ai: boolean, aspect: string, focus?: string): PhotoData => ({ src, alt, ai, aspect, focus })
+const photo = (src: StaticImageData, alt: AltKey, ai: boolean, aspect: string, focus?: string): PhotoData => ({ src, alt, ai, aspect, focus })
 
 export const photos = {
   // Kampania
@@ -81,7 +82,7 @@ export const photos = {
 
 export const aiPhotos = Object.values(photos).filter((p) => p.ai)
 
-/** Film na stronie (videos/ai-fashion-film-white-dress.mp4) – stworzony z AI. */
+/** Film na stronie (public/videos/ai-fashion-film-white-dress.mp4) – stworzony z AI. */
 export const VIDEO_IS_AI = true
 
 /** Zdjęcia w suwaku porównania (images/ai/ai-styling-comparison-*.png) – stworzone z AI. */
@@ -91,4 +92,4 @@ export const COMPARISON_IS_AI = true
  * Portret Dominiki na podstronie „Co dalej” (prawdziwe zdjęcie, nie AI).
  * Ustaw na null, żeby wrócić do typograficznej zaślepki z monogramem.
  */
-export const PORTRAIT_PHOTO: string | null = portraitDominika
+export const PORTRAIT_PHOTO: StaticImageData | null = portraitDominika

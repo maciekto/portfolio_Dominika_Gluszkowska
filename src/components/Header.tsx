@@ -1,20 +1,35 @@
-import { useEffect, useState } from 'react'
-import { Link, NavLink, useLocation } from 'react-router'
+'use client'
+
+import { useEffect, useState, useSyncExternalStore } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
 import { chapters } from '../data/chapters'
 import { LANGS } from '../i18n/dictionary'
 import { useLang } from '../i18n/useLang'
 
+// Kotwica z adresu (#contact). Odczytywana przy każdym renderze, więc zmiana strony też ją odświeża.
+const subscribeHash = (cb: () => void) => {
+  window.addEventListener('hashchange', cb)
+  window.addEventListener('popstate', cb)
+  return () => {
+    window.removeEventListener('hashchange', cb)
+    window.removeEventListener('popstate', cb)
+  }
+}
+const useHash = () => useSyncExternalStore(subscribeHash, () => window.location.hash, () => '')
+
 const LangSwitch = ({ className = '' }: { className?: string }) => {
   const { lang } = useLang()
-  const { pathname, hash } = useLocation()
+  const pathname = usePathname()
+  const hash = useHash()
   return (
     <div className={`flex items-center gap-2 ${className}`}>
       {LANGS.map((l, i) => (
         <span key={l} className="flex items-center gap-2">
           {i > 0 && <span className="opacity-40">/</span>}
           <Link
-            to={pathname.replace(/^\/(en|pl)/, `/${l}`) + hash}
+            href={pathname.replace(/^\/(en|pl)/, `/${l}`) + hash}
             aria-current={l === lang ? 'true' : undefined}
             className={l === lang ? 'underline underline-offset-4' : 'opacity-50 hover:opacity-100 transition-opacity'}
           >
@@ -28,9 +43,10 @@ const LangSwitch = ({ className = '' }: { className?: string }) => {
 
 export const Header = () => {
   const { lang, t } = useLang()
-  const { pathname, hash } = useLocation()
+  const pathname = usePathname()
+  const hash = useHash()
   const contactHref = `/${lang}#contact`
-  const contactActive = hash === '#contact'
+  const contactActive = pathname === `/${lang}` && hash === '#contact'
   // Menu jest otwarte tylko na stronie, na której je otwarto – po przejściu dalej samo się zamyka
   const [openedAt, setOpenedAt] = useState<string | null>(null)
   const open = openedAt === pathname
@@ -44,25 +60,26 @@ export const Header = () => {
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
     `transition-opacity hover:opacity-60 ${isActive ? 'underline underline-offset-[6px]' : ''}`
+  const isActive = (href: string) => pathname === href
 
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-50 mix-blend-difference text-white">
         <nav className="flex items-center justify-between gap-6 px-5 md:px-10 py-5 text-[10px] md:text-xs uppercase tracking-[0.3em]">
-          <Link to={`/${lang}`} className="font-luxury text-2xl md:text-3xl tracking-normal leading-none" aria-label={t.nav.home}>
+          <Link href={`/${lang}`} className="font-luxury text-2xl md:text-3xl tracking-normal leading-none" aria-label={t.nav.home}>
             DG
           </Link>
 
           <ul className="hidden xl:flex items-center gap-8 2xl:gap-10 whitespace-nowrap">
             {chapters.map((c) => (
               <li key={c.key}>
-                <NavLink to={`/${lang}/${c.slug}`} className={linkClass}>
+                <Link href={`/${lang}/${c.slug}`} className={linkClass({ isActive: isActive(`/${lang}/${c.slug}`) })}>
                   {t.nav[c.key]}
-                </NavLink>
+                </Link>
               </li>
             ))}
             <li>
-              <Link to={contactHref} className={linkClass({ isActive: contactActive })}>
+              <Link href={contactHref} className={linkClass({ isActive: contactActive })}>
                 {t.nav.contact}
               </Link>
             </li>
@@ -97,7 +114,7 @@ export const Header = () => {
             className="fixed inset-0 z-[60] bg-espresso text-ivory flex flex-col px-5 md:px-10 py-5"
           >
             <div className="flex items-center justify-between text-[10px] md:text-xs uppercase tracking-[0.3em]">
-              <Link to={`/${lang}`} onClick={close} className="font-luxury text-2xl md:text-3xl tracking-normal leading-none">DG</Link>
+              <Link href={`/${lang}`} onClick={close} className="font-luxury text-2xl md:text-3xl tracking-normal leading-none">DG</Link>
               <button type="button" onClick={close} className="uppercase tracking-[0.3em] cursor-pointer">
                 {t.nav.close}
               </button>
@@ -111,16 +128,12 @@ export const Header = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.05 * i + 0.1 }}
                 >
-                  <NavLink to={`/${lang}/${c.slug}`} onClick={close} className="flex items-baseline gap-4">
-                    {({ isActive }) => (
-                      <>
-                        <span className="text-[10px] tracking-[0.3em] opacity-60">{c.number}</span>
-                        <span className={`font-luxury uppercase text-[11vw] md:text-7xl leading-none ${isActive ? 'text-sand' : ''}`}>
-                          {t.nav[c.key]}
-                        </span>
-                      </>
-                    )}
-                  </NavLink>
+                  <Link href={`/${lang}/${c.slug}`} onClick={close} className="flex items-baseline gap-4">
+                    <span className="text-[10px] tracking-[0.3em] opacity-60">{c.number}</span>
+                    <span className={`font-luxury uppercase text-[11vw] md:text-7xl leading-none ${isActive(`/${lang}/${c.slug}`) ? 'text-sand' : ''}`}>
+                      {t.nav[c.key]}
+                    </span>
+                  </Link>
                 </motion.li>
               ))}
               <motion.li
@@ -128,7 +141,7 @@ export const Header = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.05 * chapters.length + 0.1 }}
               >
-                <Link to={contactHref} onClick={close} className="flex items-baseline gap-4">
+                <Link href={contactHref} onClick={close} className="flex items-baseline gap-4">
                   <span className="text-[10px] tracking-[0.3em] opacity-60">0{chapters.length + 1}</span>
                   <span className={`font-luxury uppercase text-[11vw] md:text-7xl leading-none ${contactActive ? 'text-sand' : ''}`}>
                     {t.nav.contact}

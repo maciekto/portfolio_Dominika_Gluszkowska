@@ -1,4 +1,6 @@
-import { Link } from 'react-router'
+'use client'
+
+import Link from 'next/link'
 import { chapters } from '../data/chapters'
 import { useLang } from '../i18n/useLang'
 import { AnimatedSection } from '../components/ui/AnimatedSection'
@@ -22,14 +24,14 @@ export const ChapterTeasers = () => {
                   <span className="h-px w-10 bg-current opacity-50" />
                   <span>{copy.label}</span>
                 </div>
-                <Link to={href} className="group">
+                <Link href={href} className="group">
                   <h2 className="font-luxury uppercase leading-[0.85] text-[13vw] md:text-[5vw] group-hover:opacity-70 transition-opacity">
                     {t.nav[c.key]}
                   </h2>
                 </Link>
                 <p className="max-w-md text-sm leading-relaxed opacity-75">{copy.teaser}</p>
                 <Link
-                  to={href}
+                  href={href}
                   className="self-start mt-2 border-b border-current pb-1 text-[10px] md:text-xs uppercase tracking-[0.3em] hover:opacity-60 transition-opacity"
                 >
                   {t.common.seeChapter}
@@ -37,10 +39,10 @@ export const ChapterTeasers = () => {
               </AnimatedSection>
 
               {main && (
-                <Link to={href} className="md:col-span-7 grid grid-cols-2 gap-4 md:gap-6" tabIndex={-1} aria-hidden>
+                <Link href={href} className="md:col-span-7 grid grid-cols-2 gap-4 md:gap-6" tabIndex={-1} aria-hidden>
                   <Photo data={main} className="col-span-2" aspect="aspect-[16/9]" />
                   {rest.map((p, i) => (
-                    <Photo key={p.src} data={p} aspect="aspect-[4/3]" delay={0.1 * (i + 1)} />
+                    <Photo key={p.src.src} data={p} aspect="aspect-[4/3]" delay={0.1 * (i + 1)} />
                   ))}
                 </Link>
               )}

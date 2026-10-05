@@ -1,5 +1,8 @@
+'use client'
+
 import { useState } from 'react'
-import video from '../assets/videos/ai-fashion-film-white-dress.mp4'
+// Plik w public/ – Next nie importuje wideo jak obrazów
+const video = '/videos/ai-fashion-film-white-dress.mp4'
 import { AnimatedSection } from '../components/ui/AnimatedSection'
 import { AiBadge } from '../components/ui/AiBadge'
 import { VIDEO_IS_AI } from '../data/photos'

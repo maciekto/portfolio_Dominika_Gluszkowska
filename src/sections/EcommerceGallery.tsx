@@ -1,3 +1,5 @@
+'use client'
+
 import { Photo } from '../components/ui/Photo'
 import { photos } from '../data/photos'
 

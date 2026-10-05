@@ -1,3 +1,5 @@
+'use client'
+
 import type { ReactNode } from 'react'
 import { chapters, type ChapterKey } from '../data/chapters'
 import { PageIntro } from '../components/PageIntro'

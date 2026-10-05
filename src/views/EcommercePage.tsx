@@ -1,3 +1,5 @@
+'use client'
+
 import { ChapterPage } from './ChapterPage'
 import { EcommerceGallery } from '../sections/EcommerceGallery'
 
