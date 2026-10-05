@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://dominikagluszkowska.com/pl</loc>
+    <lastmod>2026-10-05</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dominikagluszkowska.com/pl" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dominikagluszkowska.com/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dominikagluszkowska.com/en" />
+  </url>
+  <url>
+    <loc>https://dominikagluszkowska.com/en</loc>
+    <lastmod>2026-10-05</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dominikagluszkowska.com/pl" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dominikagluszkowska.com/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dominikagluszkowska.com/en" />
+  </url>
+  <url>
+    <loc>https://dominikagluszkowska.com/pl/campaign</loc>
+    <lastmod>2026-10-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dominikagluszkowska.com/pl/campaign" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dominikagluszkowska.com/en/campaign" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dominikagluszkowska.com/en/campaign" />
+  </url>
+  <url>
+    <loc>https://dominikagluszkowska.com/en/campaign</loc>
+    <lastmod>2026-10-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dominikagluszkowska.com/pl/campaign" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dominikagluszkowska.com/en/campaign" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dominikagluszkowska.com/en/campaign" />
+  </url>
+  <url>
+    <loc>https://dominikagluszkowska.com/pl/ecommerce</loc>
+    <lastmod>2026-10-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dominikagluszkowska.com/pl/ecommerce" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dominikagluszkowska.com/en/ecommerce" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dominikagluszkowska.com/en/ecommerce" />
+  </url>
+  <url>
+    <loc>https://dominikagluszkowska.com/en/ecommerce</loc>
+    <lastmod>2026-10-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dominikagluszkowska.com/pl/ecommerce" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dominikagluszkowska.com/en/ecommerce" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dominikagluszkowska.com/en/ecommerce" />
+  </url>
+  <url>
+    <loc>https://dominikagluszkowska.com/pl/branding</loc>
+    <lastmod>2026-10-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dominikagluszkowska.com/pl/branding" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dominikagluszkowska.com/en/branding" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dominikagluszkowska.com/en/branding" />
+  </url>
+  <url>
+    <loc>https://dominikagluszkowska.com/en/branding</loc>
+    <lastmod>2026-10-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dominikagluszkowska.com/pl/branding" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dominikagluszkowska.com/en/branding" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dominikagluszkowska.com/en/branding" />
+  </url>
+  <url>
+    <loc>https://dominikagluszkowska.com/pl/ai</loc>
+    <lastmod>2026-10-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dominikagluszkowska.com/pl/ai" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dominikagluszkowska.com/en/ai" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dominikagluszkowska.com/en/ai" />
+  </url>
+  <url>
+    <loc>https://dominikagluszkowska.com/en/ai</loc>
+    <lastmod>2026-10-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dominikagluszkowska.com/pl/ai" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dominikagluszkowska.com/en/ai" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dominikagluszkowska.com/en/ai" />
+  </url>
+  <url>
+    <loc>https://dominikagluszkowska.com/pl/next</loc>
+    <lastmod>2026-10-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dominikagluszkowska.com/pl/next" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dominikagluszkowska.com/en/next" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dominikagluszkowska.com/en/next" />
+  </url>
+  <url>
+    <loc>https://dominikagluszkowska.com/en/next</loc>
+    <lastmod>2026-10-05</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dominikagluszkowska.com/pl/next" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dominikagluszkowska.com/en/next" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dominikagluszkowska.com/en/next" />
+  </url>
+</urlset>

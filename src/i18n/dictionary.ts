@@ -5,7 +5,10 @@ export type Lang = 'en' | 'pl'
 export const LANGS: Lang[] = ['en', 'pl']
 
 const en = {
-  meta: { title: 'Dominika Głuszkowska – Portfolio' },
+  meta: {
+    title: 'Dominika Głuszkowska – Portfolio',
+    description: 'Portfolio of Dominika Głuszkowska, Senior Graphic Designer: AI campaign imagery, e-commerce design, branding and design automation.',
+  },
   nav: {
     home: 'Home',
     campaign: 'Campaign',
@@ -132,23 +135,30 @@ const en = {
     sandals: 'Vanilla stiletto sandals on cream satin',
     portrait: 'Blonde woman in cat-eye sunglasses and gold earrings',
     skater: 'Skater in an orange cap holding a skateboard',
-    laptop: 'Online store page on a laptop',
-    mockup1: 'Shopping app screens on three phones',
-    mockup2: 'Shopping app home screen',
-    mockup3: 'Aura cream jar on a marble shelf',
-    mockup4: 'Aura bath foam bottle',
-    mockup5: 'Aura logo on a light background',
-    mockup6: 'Aura logo on a dark background',
-    mockup7: 'VBRNT logo on a light background',
-    mockup8: 'VBRNT logo on a dark background',
-    mockup9: 'VBRNT sportswear',
+    laptop: 'E-commerce project: online store homepage on a laptop',
+    mockup1: 'E-commerce project: shopping app screens on three phones',
+    mockup2: 'E-commerce project: shopping app home screen with a promotional banner',
+    mockup3: 'Aura branding: cosmetic cream jar on a marble shelf',
+    mockup4: 'Aura branding: bath foam bottle packaging',
+    mockup5: 'Aura logotype on a light background',
+    mockup6: 'Aura logotype on a dark background',
+    mockup7: 'VBRNT logotype on a light background',
+    mockup8: 'VBRNT logotype on a dark background',
+    mockup9: 'VBRNT branding: sportswear with the logotype',
+    comparison1: 'Model in a pink skirt and red sneakers, first styling of the same scene',
+    comparison2: 'Model in a plaid skirt and suede boots, second styling of the same scene',
+    portraitDominika: 'Portrait of Dominika Głuszkowska',
+    film: 'AI fashion film: model in a white belted dress',
   },
 }
 
 export type Dictionary = typeof en
 
 const pl: Dictionary = {
-  meta: { title: 'Dominika Głuszkowska – Portfolio' },
+  meta: {
+    title: 'Dominika Głuszkowska – Portfolio',
+    description: 'Portfolio Dominiki Głuszkowskiej, Senior Graphic Designer: zdjęcia kampanijne tworzone w AI, projekty e-commerce, branding i automatyzacja pracy projektowej.',
+  },
   nav: {
     home: 'Start',
     campaign: 'Kampanie',
@@ -274,16 +284,20 @@ const pl: Dictionary = {
     sandals: 'Waniliowe sandały na szpilce na kremowej satynie',
     portrait: 'Portret blondynki w okularach kocie oko i złotych kolczykach',
     skater: 'Skater w pomarańczowej czapce z deskorolką',
-    laptop: 'Strona sklepu internetowego na laptopie',
-    mockup1: 'Ekrany aplikacji zakupowej na trzech telefonach',
-    mockup2: 'Ekran główny aplikacji zakupowej',
-    mockup3: 'Słoik kremu marki aura na marmurowej półce',
-    mockup4: 'Butelka pianki do kąpieli marki aura',
-    mockup5: 'Logo aura na jasnym tle',
-    mockup6: 'Logo aura na ciemnym tle',
-    mockup7: 'Logo VBRNT na jasnym tle',
-    mockup8: 'Logo VBRNT na ciemnym tle',
-    mockup9: 'Odzież sportowa marki VBRNT',
+    laptop: 'Projekt e-commerce: strona główna sklepu internetowego na laptopie',
+    mockup1: 'Projekt e-commerce: ekrany aplikacji zakupowej na trzech telefonach',
+    mockup2: 'Projekt e-commerce: ekran główny aplikacji zakupowej z banerem promocyjnym',
+    mockup3: 'Branding Aura: słoik kremu na marmurowej półce',
+    mockup4: 'Branding Aura: opakowanie pianki do kąpieli',
+    mockup5: 'Logotyp Aura na jasnym tle',
+    mockup6: 'Logotyp Aura na ciemnym tle',
+    mockup7: 'Logotyp VBRNT na jasnym tle',
+    mockup8: 'Logotyp VBRNT na ciemnym tle',
+    mockup9: 'Branding VBRNT: odzież sportowa z logotypem',
+    comparison1: 'Modelka w różowej spódnicy i czerwonych sneakersach – pierwsza stylizacja tej samej sceny',
+    comparison2: 'Modelka w spódnicy w kratę i zamszowych botkach – druga stylizacja tej samej sceny',
+    portraitDominika: 'Portret Dominiki Głuszkowskiej',
+    film: 'Film modowy AI: modelka w białej sukience z paskiem',
   },
 }
 

@@ -1,35 +1,36 @@
 // Jedno źródło prawdy o zdjęciach.
 // `ai: true` = zdjęcie powstało z wykorzystaniem AI. Dostaje etykietę „AI”
 // i automatycznie trafia do galerii na podstronie AI & Automation.
-// Źródło oznaczeń: pliki z prefiksem NIEAI_ nie są z AI, wszystkie pozostałe są.
+// Źródło oznaczeń: folder src/assets/images/ai/ = zdjęcia z AI, src/assets/images/nieai/ = bez AI.
+// Nazwy plików są opisowe (trafiają do publicznych adresów zdjęć – liczy się to dla SEO).
 
 import type { Dictionary } from '../i18n/dictionary'
 
-import snow from '../assets/images/campaign/snow.jpg'
-import woodTote from '../assets/images/campaign/wood-tote.jpg'
-import woodLeather from '../assets/images/campaign/wood-leather.jpg'
-import greenBoots from '../assets/images/campaign/green-boots.jpg'
-import greenDuo from '../assets/images/campaign/green-duo.jpg'
-import checkerMan from '../assets/images/campaign/checker-man.jpg'
-import gardenMan from '../assets/images/campaign/garden-man.jpg'
-import gardenDuo from '../assets/images/campaign/garden-duo.jpg'
-import gardenDress from '../assets/images/campaign/garden-dress.jpg'
-import bag from '../assets/images/campaign/bag.jpg'
-import sandals from '../assets/images/campaign/sandals.jpg'
-import portrait from '../assets/images/campaign/portrait.jpg'
-import skater from '../assets/images/campaign/skater.jpg'
+import snow from '../assets/images/ai/ai-campaign-cream-coat-burgundy-bag-snow.jpg'
+import woodTote from '../assets/images/ai/ai-campaign-beige-outfit-woven-tote.jpg'
+import woodLeather from '../assets/images/ai/ai-campaign-brown-leather-blazer-knee-boots.jpg'
+import greenBoots from '../assets/images/ai/ai-campaign-beige-knee-high-boots-green-studio.jpg'
+import greenDuo from '../assets/images/ai/ai-campaign-couple-green-studio-checkerboard.jpg'
+import checkerMan from '../assets/images/ai/ai-campaign-white-suit-checkerboard-floor.jpg'
+import gardenMan from '../assets/images/ai/ai-campaign-white-linen-suit-sun-lounger.jpg'
+import gardenDuo from '../assets/images/ai/ai-campaign-garden-striped-dress-white-suit.jpg'
+import gardenDress from '../assets/images/ai/ai-campaign-striped-dress-garden-table.jpg'
+import bag from '../assets/images/ai/ai-product-black-leather-hobo-bag.jpg'
+import sandals from '../assets/images/ai/ai-product-vanilla-stiletto-sandals-satin.jpg'
+import portrait from '../assets/images/ai/ai-portrait-cat-eye-sunglasses-gold-earrings.jpg'
+import skater from '../assets/images/ai/ai-campaign-skater-orange-cap-skatepark.jpg'
 
-import laptop from '../assets/images/NIEAI_hero-bottom-bg.png'
-import mockup1 from '../assets/images/NIEAI_mockup-1.png'
-import mockup2 from '../assets/images/NIEAI_mockup-2.png'
-import mockup3 from '../assets/images/NIEAI_mockup-3.png'
-import mockup4 from '../assets/images/NIEAI_mockup-4.png'
-import mockup5 from '../assets/images/NIEAI_mockup-5.png'
-import mockup6 from '../assets/images/NIEAI_mockup-6.png'
-import mockup7 from '../assets/images/NIEAI_mockup-7.png'
-import mockup8 from '../assets/images/NIEAI_mockup-8.png'
-import mockup9 from '../assets/images/NIEAI_mockup-9.png'
-import portraitDominika from '../assets/images/NIEAI_dominika.jpg'
+import laptop from '../assets/images/nieai/ecommerce-online-store-laptop-mockup.png'
+import mockup1 from '../assets/images/nieai/ecommerce-shopping-app-screens-mockup.png'
+import mockup2 from '../assets/images/nieai/ecommerce-shopping-app-home-screen-mockup.png'
+import mockup3 from '../assets/images/nieai/aura-branding-cosmetic-jar-packaging.png'
+import mockup4 from '../assets/images/nieai/aura-branding-bath-foam-bottle-packaging.png'
+import mockup5 from '../assets/images/nieai/aura-logo-light-background.png'
+import mockup6 from '../assets/images/nieai/aura-logo-dark-background.png'
+import mockup7 from '../assets/images/nieai/vbrnt-logo-light-background.png'
+import mockup8 from '../assets/images/nieai/vbrnt-logo-dark-background.png'
+import mockup9 from '../assets/images/nieai/vbrnt-sportswear-branding.png'
+import portraitDominika from '../assets/images/nieai/dominika-gluszkowska-portrait.jpg'
 
 export type AltKey = keyof Dictionary['alt']
 
@@ -74,10 +75,10 @@ export const photos = {
 
 export const aiPhotos = Object.values(photos).filter((p) => p.ai)
 
-/** Film na stronie (video1.mp4) – stworzony z AI. */
+/** Film na stronie (videos/ai-fashion-film-white-dress.mp4) – stworzony z AI. */
 export const VIDEO_IS_AI = true
 
-/** Zdjęcia w suwaku porównania (comparision-image1/2.png) – stworzone z AI. */
+/** Zdjęcia w suwaku porównania (images/ai/ai-styling-comparison-*.png) – stworzone z AI. */
 export const COMPARISON_IS_AI = true
 
 /**

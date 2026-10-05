@@ -9,6 +9,8 @@ export default defineConfig({
     tailwindcss(),
     react(),
     ViteImageOptimizer({
+      // Tylko JPG/PNG – SVG (favicon, znaczek AI) zostają bez zmian, bez dodatkowej paczki svgo
+      test: /\.(jpe?g|png)$/i,
       jpg: { quality: 80 },
       png: { quality: 80 },
     }),

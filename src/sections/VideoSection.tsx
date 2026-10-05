@@ -1,11 +1,13 @@
 import { useState } from 'react'
-import video from '../assets/videos/video1.mp4'
+import video from '../assets/videos/ai-fashion-film-white-dress.mp4'
 import { AnimatedSection } from '../components/ui/AnimatedSection'
 import { AiBadge } from '../components/ui/AiBadge'
 import { VIDEO_IS_AI } from '../data/photos'
+import { useLang } from '../i18n/useLang'
 
 const VideoSection = ({ className = '' }: { className?: string }) => {
   const [isLoading, setIsLoading] = useState(true)
+  const { t } = useLang()
 
   return (
     <AnimatedSection className={`relative ${className}`}>
@@ -21,6 +23,8 @@ const VideoSection = ({ className = '' }: { className?: string }) => {
         loop
         muted
         playsInline
+        aria-label={t.alt.film}
+        title={t.alt.film}
         onLoadedData={() => setIsLoading(false)}
       >
         <source src={video} type="video/mp4" />

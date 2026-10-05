@@ -1,0 +1,11 @@
+{
+  "name": "Dominika Głuszkowska – Portfolio",
+  "short_name": "DG",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "theme_color": "#1F1712",
+  "background_color": "#F4EFE7",
+  "display": "browser"
+}

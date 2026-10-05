@@ -1,12 +1,14 @@
 import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
 // Import your two images
-import image1 from '../assets/images/comparision-image1.png'; // The "Before" or Left image
-import image2 from '../assets/images/comparision-image2.png'; // The "After" or Right image
+import image1 from '../assets/images/ai/ai-styling-comparison-pink-skirt-sneakers.png'; // The "Before" or Left image
+import image2 from '../assets/images/ai/ai-styling-comparison-plaid-skirt-suede-boots.png'; // The "After" or Right image
 import { AnimatedSection } from '../components/ui/AnimatedSection';
 import { AiBadge } from '../components/ui/AiBadge';
 import { COMPARISON_IS_AI } from '../data/photos';
+import { useLang } from '../i18n/useLang';
 
 export const ComparisonSection = () => {
+  const { t } = useLang();
   return (
     <AnimatedSection className="w-full flex items-center justify-center ">
       
@@ -23,7 +25,7 @@ export const ComparisonSection = () => {
             <ReactCompareSliderImage 
               src={image1} 
               srcSet={image1} 
-              alt="Image one" 
+              alt={t.alt.comparison1} 
               style={{ objectFit: 'cover', height: '100%' }} // Ensures image fills height
             />
           }
@@ -33,7 +35,7 @@ export const ComparisonSection = () => {
             <ReactCompareSliderImage 
               src={image2} 
               srcSet={image2} 
-              alt="Image two" 
+              alt={t.alt.comparison2} 
               style={{ objectFit: 'cover', height: '100%' }} // Ensures image fills height
             />
           }
