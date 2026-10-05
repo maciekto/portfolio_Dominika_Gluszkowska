@@ -7,7 +7,7 @@ import { PORTRAIT_PHOTO } from '../data/photos'
 const Portrait = () => {
   const { t } = useLang()
   if (PORTRAIT_PHOTO) {
-    return <img src={PORTRAIT_PHOTO} alt="Dominika Głuszkowska" className="w-full aspect-[3/4] object-cover" />
+    return <img src={PORTRAIT_PHOTO} alt={t.alt.portraitDominika} className="w-full aspect-[3/4] object-cover" />
   }
   return (
     <figure className="relative w-full aspect-[3/4] bg-stone text-espresso flex flex-col items-center justify-center overflow-hidden">
