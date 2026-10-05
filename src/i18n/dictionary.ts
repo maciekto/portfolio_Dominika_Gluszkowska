@@ -47,7 +47,7 @@ const en = {
     ecommerce: {
       label: 'Digital product',
       teaser: 'Promotional banners for the website and mobile app, with reformats for international markets and performance campaigns. I also designed the new arrivals page.',
-      whatIDid: 'I designed promotional banners for the website and mobile app, as well as selected interactive tiles on the website. Working closely with the UI/UX team, I designed the favourites category page and the size display on the product page.',
+      whatIDid: 'I designed promotional banners for the website and mobile app, as well as interactive tiles on the website. Working closely with the UI/UX team, I designed the favourites category page and the size display on the product page.',
       experience: 'For almost five years I have worked in e-commerce, where I learned to combine business goals with thoughtful design. I always consider the customer’s perspective and how every element of a project shapes their experience and purchasing decisions.',
       meta: ['Senior Graphic Designer', 'Figma, Photoshop, Illustrator', '2021–2026'],
     },
@@ -196,7 +196,7 @@ const pl: Dictionary = {
     ecommerce: {
       label: 'Produkt cyfrowy',
       teaser: 'Banery promocyjne na stronę i do aplikacji mobilnej wraz z reformatami na rynki zagraniczne i kampanie performance. Zaprojektowałam także stronę nowości.',
-      whatIDid: 'Projektowałam banery promocyjne na stronę internetową i do aplikacji mobilnej oraz wybrane kafle interaktywne na stronie. W ścisłej współpracy z zespołem UI/UX zaprojektowałam stronę kategorii ulubionych oraz widok prezentacji rozmiarów na karcie produktu.',
+      whatIDid: 'Projektowałam banery promocyjne na stronę internetową i do aplikacji mobilnej oraz kafle interaktywne na stronie. W ścisłej współpracy z zespołem UI/UX zaprojektowałam stronę kategorii ulubionych oraz widok prezentacji rozmiarów na karcie produktu.',
       experience: 'Od blisko pięciu lat pracuję w branży e-commerce, gdzie nauczyłam się łączyć cele biznesowe z przemyślanym projektowaniem. W swojej pracy zawsze biorę pod uwagę perspektywę klienta i to, jak każdy element projektu wpływa na jego doświadczenie oraz decyzje zakupowe.',
       meta: ['Senior Graphic Designer', 'Figma, Photoshop, Illustrator', '2021–2026'],
     },
