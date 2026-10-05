@@ -118,7 +118,8 @@ const en = {
   },
   footer: {
     thanks: 'Thank you for watching',
-    madeBy: 'Made by Dominika Głuszkowska',
+    designBy: 'Design by Dominika Głuszkowska',
+    websiteBy: 'Website by',
     backToTop: 'Back to top ↑',
   },
   alt: {
@@ -267,7 +268,8 @@ const pl: Dictionary = {
   },
   footer: {
     thanks: 'Dziękuję za uwagę',
-    madeBy: 'Made by Dominika Głuszkowska',
+    designBy: 'Design by Dominika Głuszkowska',
+    websiteBy: 'Website by',
     backToTop: 'Do góry ↑',
   },
   alt: {
