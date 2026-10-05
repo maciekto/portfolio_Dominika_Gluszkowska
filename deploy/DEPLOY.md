@@ -21,7 +21,37 @@ nginx obsługuje trasy SPA (`/en/…`, `/pl/…` → `index.html`), cache na rok
 z `/assets/` (mają hash w nazwie) i `no-cache` dla `index.html`, więc po wdrożeniu
 odwiedzający od razu dostają nową wersję.
 
-## Wdrożenie (pierwsze i każde kolejne)
+## Wdrożenie przez git clone z GitHuba (obecny sposób)
+
+Repozytorium jest publiczne, więc serwer klonuje je bez tokena. Docelowo można to przenieść na Forgejo z CI/CD.
+
+Pierwszy raz, na serwerze:
+
+```bash
+cd /srv/docker-apps
+git clone -b feat/nowe-zdjecia-nowy-ui https://github.com/maciekto/portfolio_Dominika_Gluszkowska.git dominikagluszkowska.com
+cd dominikagluszkowska.com
+sudo docker compose up -d --build
+sudo docker ps --filter name=dominikagluszkowska   # po ~10 s: (healthy)
+curl -sI http://127.0.0.1:10012/pl/ai | head -1    # HTTP/1.1 200 OK
+```
+
+Po merge'u do `master` zamiast `-b feat/nowe-zdjecia-nowy-ui` wystarczy zwykły clone (albo
+`git switch master` w istniejącym katalogu).
+
+Każda kolejna aktualizacja:
+
+```bash
+cd /srv/docker-apps/dominikagluszkowska.com
+git pull
+sudo docker compose up -d --build
+sudo docker image prune -f   # stare obrazy po buildach – dysk systemowy jest ciasny
+```
+
+Build pobiera obrazy `node:22-alpine` i `nginx-unprivileged` oraz paczki npm — za pierwszym razem trwa
+kilka minut. Warstwy npm zostają w cache buildera; gdy zabraknie miejsca: `sudo docker builder prune`.
+
+## Wdrożenie z Maca przez rsync (alternatywa)
 
 Z Maca, z katalogu projektu, na gałęzi, którą chcesz wypuścić:
 
