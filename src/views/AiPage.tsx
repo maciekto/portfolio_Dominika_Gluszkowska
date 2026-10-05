@@ -1,3 +1,5 @@
+'use client'
+
 import { ChapterPage } from './ChapterPage'
 import { AnimatedSection } from '../components/ui/AnimatedSection'
 import { Photo } from '../components/ui/Photo'
@@ -50,7 +52,7 @@ export const AiPage = () => {
         </AnimatedSection>
         <div className="columns-2 md:columns-3 gap-4 md:gap-6">
           {aiPhotos.map((p, i) => (
-            <Photo key={p.src} data={p} className="mb-4 md:mb-6 break-inside-avoid" delay={0.05 * (i % 3)} />
+            <Photo key={p.src.src} data={p} className="mb-4 md:mb-6 break-inside-avoid" delay={0.05 * (i % 3)} />
           ))}
         </div>
       </section>

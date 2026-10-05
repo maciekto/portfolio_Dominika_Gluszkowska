@@ -1,3 +1,5 @@
+'use client'
+
 import { ChapterTitle } from './ui/ChapterTitle'
 import { AnimatedSection } from './ui/AnimatedSection'
 import type { Chapter } from '../data/chapters'

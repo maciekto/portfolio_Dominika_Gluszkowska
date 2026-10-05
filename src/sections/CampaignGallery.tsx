@@ -1,3 +1,5 @@
+'use client'
+
 import { Photo } from '../components/ui/Photo'
 import { AnimatedSection } from '../components/ui/AnimatedSection'
 import { photos } from '../data/photos'

@@ -1,3 +1,6 @@
+'use client'
+
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import type { PhotoData } from '../../data/photos'
 import { useLang } from '../../i18n/useLang'
@@ -24,18 +27,22 @@ export const Photo = ({ data, aspect, className = '', index, delay = 0 }: Props)
     >
       <div className={`relative overflow-hidden ${aspect ?? data.aspect}`}>
         {data.ai && <AiBadge />}
-        <motion.img
-          src={data.src}
-          alt={t.alt[data.alt]}
-          loading="lazy"
-          decoding="async"
+        <motion.div
+          className="absolute inset-0"
           initial={{ scale: 1.08 }}
           whileInView={{ scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.6, delay, ease: [0.22, 1, 0.36, 1] }}
-          className="h-full w-full object-cover"
-          style={data.focus ? { objectPosition: data.focus } : undefined}
-        />
+        >
+          <Image
+            src={data.src}
+            alt={t.alt[data.alt]}
+            fill
+            sizes="(min-width: 768px) 60vw, 100vw"
+            className="object-cover"
+            style={data.focus ? { objectPosition: data.focus } : undefined}
+          />
+        </motion.div>
       </div>
       {index && (
         <figcaption className="mt-3 text-right text-[10px] md:text-[11px] uppercase tracking-[0.25em] opacity-60">

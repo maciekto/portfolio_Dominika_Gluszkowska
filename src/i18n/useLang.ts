@@ -1,22 +1,14 @@
-import { useParams } from 'react-router'
-import { dictionaries, LANGS, type Lang } from './dictionary'
-import { withTypography } from './typography'
+'use client'
 
-// Słowniki z poprawioną typografią (twarde spacje po jednoliterowych wyrazach)
-const prepared: Record<Lang, (typeof dictionaries)[Lang]> = {
-  en: withTypography(dictionaries.en),
-  pl: withTypography(dictionaries.pl),
-}
+import { useParams } from 'next/navigation'
+import type { Lang } from './dictionary'
+import { getDictionary, isLang } from './getDictionary'
 
-export const isLang = (v: string | undefined): v is Lang => !!v && (LANGS as string[]).includes(v)
+export { isLang, detectLang } from './getDictionary'
 
-/** Język z adresu (/en/…, /pl/…) i słownik dla niego. */
+/** Język z adresu (/en/…, /pl/…) i słownik dla niego. Tylko w komponentach klienckich. */
 export const useLang = () => {
-  const { lang } = useParams()
-  const current: Lang = isLang(lang) ? lang : 'en'
-  return { lang: current, t: prepared[current] }
+  const params = useParams<{ lang: string }>()
+  const lang: Lang = isLang(params?.lang) ? params.lang : 'en'
+  return { lang, t: getDictionary(lang) }
 }
-
-/** Domyślny język na podstawie przeglądarki. */
-export const detectLang = (): Lang =>
-  typeof navigator !== 'undefined' && navigator.language?.toLowerCase().startsWith('pl') ? 'pl' : 'en'

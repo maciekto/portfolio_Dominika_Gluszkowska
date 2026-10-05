@@ -1,4 +1,6 @@
-import { Link } from 'react-router'
+'use client'
+
+import Link from 'next/link'
 import { AnimatedSection } from './ui/AnimatedSection'
 import { chapters } from '../data/chapters'
 import { useLang } from '../i18n/useLang'
@@ -16,13 +18,13 @@ export const Footer = () => {
       <ul className="mt-16 md:mt-24 flex flex-wrap gap-x-8 gap-y-3 text-[10px] md:text-xs uppercase tracking-[0.3em]">
         {chapters.map((c) => (
           <li key={c.key}>
-            <Link to={`/${lang}/${c.slug}`} className="opacity-70 hover:opacity-100 transition-opacity">
+            <Link href={`/${lang}/${c.slug}`} className="opacity-70 hover:opacity-100 transition-opacity">
               {c.number} {t.nav[c.key]}
             </Link>
           </li>
         ))}
         <li>
-          <Link to={`/${lang}#contact`} className="opacity-70 hover:opacity-100 transition-opacity">
+          <Link href={`/${lang}#contact`} className="opacity-70 hover:opacity-100 transition-opacity">
             0{chapters.length + 1} {t.nav.contact}
           </Link>
         </li>

@@ -1,3 +1,5 @@
+'use client'
+
 import { Hero } from '../sections/Hero'
 import { Marquee } from '../sections/Marquee'
 import { ChapterTeasers } from '../sections/ChapterTeasers'

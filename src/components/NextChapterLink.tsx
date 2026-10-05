@@ -1,4 +1,6 @@
-import { Link } from 'react-router'
+'use client'
+
+import Link from 'next/link'
 import { nextChapter, type ChapterKey } from '../data/chapters'
 import { useLang } from '../i18n/useLang'
 import { AnimatedSection } from './ui/AnimatedSection'
@@ -9,7 +11,7 @@ export const NextChapterLink = ({ current }: { current: ChapterKey }) => {
   const next = nextChapter(current)
   return (
     <AnimatedSection className="bg-ivory text-espresso border-t border-espresso/15">
-      <Link to={`/${lang}/${next.slug}`} className="group block px-5 md:px-10 py-16 md:py-24">
+      <Link href={`/${lang}/${next.slug}`} className="group block px-5 md:px-10 py-16 md:py-24">
         <span className="text-[10px] md:text-xs uppercase tracking-[0.3em] opacity-60">
           {t.common.nextChapter} · {next.number}
         </span>

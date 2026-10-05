@@ -1,12 +1,13 @@
-# --- Etap 1: build strony (Vite) ---
+# --- Etap 1: build strony (Next.js, statyczny eksport do out/) ---
 FROM node:22-alpine AS build
 WORKDIR /app
+ENV NEXT_TELEMETRY_DISABLED=1
 
-# Lockfile jest opcjonalny: gdy jest – instalacja 1:1 (npm ci), gdy go nie ma – npm install.
-COPY package.json package-lock.json* ./
-RUN if [ -f package-lock.json ]; then npm ci --no-audit --no-fund; else npm install --no-audit --no-fund; fi
+COPY package.json package-lock.json ./
+RUN npm ci --no-audit --no-fund
 
 COPY . .
+# next build + kompresja zdjęć w out/ (scripts/optimize-images.mjs)
 RUN npm run build
 
 # --- Etap 2: serwowanie statycznych plików ---
@@ -14,5 +15,5 @@ RUN npm run build
 FROM nginxinc/nginx-unprivileged:stable-alpine
 COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
 COPY deploy/security-headers.conf /etc/nginx/snippets/security-headers.conf
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/out /usr/share/nginx/html
 EXPOSE 8080

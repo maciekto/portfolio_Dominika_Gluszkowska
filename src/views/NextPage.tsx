@@ -1,13 +1,23 @@
+'use client'
+
 import { ChapterPage } from './ChapterPage'
 import { AnimatedSection } from '../components/ui/AnimatedSection'
 import { useLang } from '../i18n/useLang'
+import Image from 'next/image'
 import { PORTRAIT_PHOTO } from '../data/photos'
 
 /** Portret Dominiki albo – dopóki nie ma zdjęcia – typograficzna zaślepka z monogramem. */
 const Portrait = () => {
   const { t } = useLang()
   if (PORTRAIT_PHOTO) {
-    return <img src={PORTRAIT_PHOTO} alt={t.alt.portraitDominika} className="w-full aspect-[3/4] object-cover" />
+    return (
+      <Image
+        src={PORTRAIT_PHOTO}
+        alt={t.alt.portraitDominika}
+        sizes="(min-width: 768px) 33vw, 66vw"
+        className="w-full h-auto aspect-[3/4] object-cover"
+      />
+    )
   }
   return (
     <figure className="relative w-full aspect-[3/4] bg-stone text-espresso flex flex-col items-center justify-center overflow-hidden">

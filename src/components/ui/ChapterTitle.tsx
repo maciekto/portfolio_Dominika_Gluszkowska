@@ -1,3 +1,5 @@
+'use client'
+
 import { AnimatedSection } from './AnimatedSection'
 
 interface Props {

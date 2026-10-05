@@ -1,3 +1,5 @@
+'use client'
+
 import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
 // Import your two images
 import image1 from '../assets/images/ai/ai-styling-comparison-pink-skirt-sneakers.png'; // The "Before" or Left image
@@ -23,8 +25,8 @@ export const ComparisonSection = () => {
           // 2. The First Image (Left Side)
           itemOne={
             <ReactCompareSliderImage 
-              src={image1} 
-              srcSet={image1} 
+              src={image1.src} 
+              srcSet={image1.src} 
               alt={t.alt.comparison1} 
               style={{ objectFit: 'cover', height: '100%' }} // Ensures image fills height
             />
@@ -33,8 +35,8 @@ export const ComparisonSection = () => {
           // 3. The Second Image (Right Side)
           itemTwo={
             <ReactCompareSliderImage 
-              src={image2} 
-              srcSet={image2} 
+              src={image2.src} 
+              srcSet={image2.src} 
               alt={t.alt.comparison2} 
               style={{ objectFit: 'cover', height: '100%' }} // Ensures image fills height
             />

@@ -1,3 +1,5 @@
+'use client'
+
 import { useLang } from '../i18n/useLang'
 
 export const Marquee = () => {

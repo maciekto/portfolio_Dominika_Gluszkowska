@@ -1,3 +1,5 @@
+'use client'
+
 import { AnimatedSection } from './ui/AnimatedSection'
 import { CONTACT_HREF } from '../data/contact'
 import { useLang } from '../i18n/useLang'

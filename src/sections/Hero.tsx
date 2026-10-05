@@ -1,3 +1,6 @@
+'use client'
+
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { photos } from '../data/photos'
 import { useLang } from '../i18n/useLang'
@@ -30,10 +33,12 @@ export const Hero = () => {
           className="relative md:col-span-4 w-3/4 md:w-full mx-auto"
         >
           {photos.hero.ai && <AiBadge />}
-          <img
+          <Image
             src={photos.hero.src}
             alt={t.alt.hero}
-            className="w-full aspect-[3/4] object-cover md:max-h-[78svh]"
+            priority
+            sizes="(min-width: 768px) 33vw, 75vw"
+            className="w-full h-auto aspect-[3/4] object-cover md:max-h-[78svh]"
           />
         </motion.figure>
 
