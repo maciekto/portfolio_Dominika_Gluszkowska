@@ -9,6 +9,20 @@ import mockup7 from './assets/images/mockup-7.png';
 import mockup8 from './assets/images/mockup-8.png';
 import mockup9 from './assets/images/mockup-9.png';
 
+import snow from './assets/images/campaign/snow.jpg';
+import woodTote from './assets/images/campaign/wood-tote.jpg';
+import woodLeather from './assets/images/campaign/wood-leather.jpg';
+import greenBoots from './assets/images/campaign/green-boots.jpg';
+import greenDuo from './assets/images/campaign/green-duo.jpg';
+import checkerMan from './assets/images/campaign/checker-man.jpg';
+import gardenMan from './assets/images/campaign/garden-man.jpg';
+import gardenDuo from './assets/images/campaign/garden-duo.jpg';
+import bag from './assets/images/campaign/bag.jpg';
+import sandals from './assets/images/campaign/sandals.jpg';
+import portrait from './assets/images/campaign/portrait.jpg';
+import skater from './assets/images/campaign/skater.jpg';
+import gardenDress from './assets/images/campaign/garden-dress.jpg';
+
 import footerBg from './assets/images/footer-bg.png';
 
 import { HeroBottom } from './sections/HeroBottom';
@@ -51,6 +65,42 @@ function App() {
         image2={mockup8}
         flexDirectionMobile='flex-col-reverse'
       />
+
+      {/* Kampania modowa */}
+      <div className='h-[35vh] w-full md:h-auto'>
+        <img src={snow} alt="" className='object-cover md:object-contain h-full w-full'/>
+      </div>
+      <TwoImageSection 
+        image1={woodTote}
+        image2={woodLeather}
+        flexDirectionMobile='flex-col-reverse'
+      />
+      <TwoImageSection 
+        image1={greenBoots}
+        image2={greenDuo}
+        flexDirectionMobile='flex-col-reverse'
+      />
+      <TwoImageSection 
+        image1={checkerMan}
+        image2={gardenMan}
+        flexDirectionMobile='flex-col-reverse'
+      />
+      <div className='h-[35vh] w-full md:h-auto'>
+        <img src={gardenDuo} alt="" className='object-cover md:object-contain h-full w-full'/>
+      </div>
+      <TwoImageSection 
+        image1={bag}
+        image2={sandals}
+        flexDirectionMobile='flex-col-reverse'
+      />
+      <TwoImageSection 
+        image1={portrait}
+        image2={skater}
+        flexDirectionMobile='flex-col-reverse'
+      />
+      <div className='h-[35vh] w-full md:h-auto'>
+        <img src={gardenDress} alt="" className='object-cover md:object-contain h-full w-full'/>
+      </div>
 
       {/* Prosty Footer */}
       <footer 
