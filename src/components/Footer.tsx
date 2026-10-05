@@ -29,11 +29,21 @@ export const Footer = () => {
       </ul>
 
       <div className="mt-10 pt-6 border-t border-ivory/15 flex justify-between gap-6 text-[10px] md:text-xs uppercase tracking-[0.3em] opacity-60">
-        <span>{t.footer.madeBy}</span>
+        <span>
+          {t.footer.designBy}, {t.footer.websiteBy}{' '}
+          <a
+            href="https://maciejtomaszewski.com"
+            target="_blank"
+            rel="noopener"
+            className="underline underline-offset-4 decoration-ivory/50 hover:decoration-ivory hover:opacity-100 transition-colors"
+          >
+            Maciej Tomaszewski
+          </a>
+        </span>
         <button
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="uppercase tracking-[0.3em] cursor-pointer hover:opacity-60 transition-opacity"
+          className="shrink-0 whitespace-nowrap uppercase tracking-[0.3em] cursor-pointer hover:opacity-60 transition-opacity"
         >
           {t.footer.backToTop}
         </button>
