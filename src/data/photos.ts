@@ -40,17 +40,23 @@ export interface PhotoData {
   ai: boolean
   /** Proporcje używane w galerii AI */
   aspect: string
+  /**
+   * Punkt skupienia przy przycinaniu (CSS object-position), np. '50% 10%'.
+   * Działa tylko tam, gdzie zdjęcie jest wyświetlane w innych proporcjach niż oryginał
+   * (np. zajawki na stronie głównej) – pilnuje, żeby nie ucinać głów.
+   */
+  focus?: string
 }
 
-const photo = (src: string, alt: AltKey, ai: boolean, aspect: string): PhotoData => ({ src, alt, ai, aspect })
+const photo = (src: string, alt: AltKey, ai: boolean, aspect: string, focus?: string): PhotoData => ({ src, alt, ai, aspect, focus })
 
 export const photos = {
   // Kampania
   hero: photo(woodTote, 'hero', true, 'aspect-[3/4]'),
   snow: photo(snow, 'snow', true, 'aspect-[16/9]'),
-  woodLeather: photo(woodLeather, 'woodLeather', true, 'aspect-[3/4]'),
-  greenDuo: photo(greenDuo, 'greenDuo', true, 'aspect-square'),
-  greenBoots: photo(greenBoots, 'greenBoots', true, 'aspect-square'),
+  woodLeather: photo(woodLeather, 'woodLeather', true, 'aspect-[3/4]', '50% 22%'),
+  greenDuo: photo(greenDuo, 'greenDuo', true, 'aspect-square', '50% 4%'),
+  greenBoots: photo(greenBoots, 'greenBoots', true, 'aspect-square', '50% 0%'),
   checkerMan: photo(checkerMan, 'checkerMan', true, 'aspect-[3/4]'),
   gardenMan: photo(gardenMan, 'gardenMan', true, 'aspect-[3/4]'),
   gardenDuo: photo(gardenDuo, 'gardenDuo', true, 'aspect-[16/9]'),
