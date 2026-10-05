@@ -1,42 +1,32 @@
-import { useState } from 'react';
-import video from '../assets/videos/video1.mp4';
-import { AnimatedSection } from '../components/ui/AnimatedSection';
+import { useState } from 'react'
+import video from '../assets/videos/video1.mp4'
+import { AnimatedSection } from '../components/ui/AnimatedSection'
+import { AiBadge } from '../components/ui/AiBadge'
+import { VIDEO_IS_AI } from '../data/photos'
 
-const VideoSection = () => {
-  // 1. Create state to track loading
-  const [isLoading, setIsLoading] = useState(true);
-
-  const handleVideoLoaded = () => {
-    setIsLoading(false);
-  };
+const VideoSection = ({ className = '' }: { className?: string }) => {
+  const [isLoading, setIsLoading] = useState(true)
 
   return (
-    <AnimatedSection className="relative">
-      
-      {/* 2. LOADER OVERLAY */}
-      {/* conditionally render this div only if isLoading is true */}
+    <AnimatedSection className={`relative ${className}`}>
+      {VIDEO_IS_AI && <AiBadge />}
       {isLoading && (
         <div className="absolute inset-0 z-10 flex items-center justify-center bg-gray-100/50 backdrop-blur-sm">
-          {/* Simple CSS Spinner */}
           <div className="w-12 h-12 border-4 border-gray-300 border-t-black rounded-full animate-spin"></div>
         </div>
       )}
-
-      {/* 3. VIDEO ELEMENT */}
-      <video 
+      <video
         className={`h-[90vh] w-full object-cover md:object-contain md:h-auto transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
-        autoPlay 
-        loop 
-        muted 
+        autoPlay
+        loop
+        muted
         playsInline
-        // 4. This event fires when the first frame is ready
-        onLoadedData={handleVideoLoaded}
+        onLoadedData={() => setIsLoading(false)}
       >
         <source src={video} type="video/mp4" />
       </video>
-      
     </AnimatedSection>
-  );
-};
+  )
+}
 
-export default VideoSection;
+export default VideoSection
