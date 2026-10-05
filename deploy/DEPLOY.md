@@ -127,8 +127,9 @@ git switch --detach <poprzedni-commit>
 git switch -   # powrót na gałąź
 ```
 
-## Uwaga: brak package-lock.json
+## Lockfile
 
-W repozytorium nie ma lockfile'a, więc build robi `npm install` i może dociągnąć nowsze
-wersje paczek niż te, na których strona była testowana. Dockerfile przełączy się sam na
-`npm ci`, gdy `package-lock.json` wróci do repozytorium — warto go przywrócić.
+`package-lock.json` jest w repozytorium, więc build robi `npm ci` i instaluje dokładnie przetestowane wersje.
+Po każdej zmianie zależności lockfile trzeba wygenerować **bez `node_modules`** (w czystym katalogu albo po
+`rm -rf node_modules`), inaczej npm zapisze w nim tylko paczki natywne dla macOS, a build na serwerze (Linux)
+wywali się na bibliotece `sharp`.
