@@ -1,6 +1,24 @@
 import { ChapterPage } from './ChapterPage'
 import { AnimatedSection } from '../components/ui/AnimatedSection'
 import { useLang } from '../i18n/useLang'
+import { PORTRAIT_PHOTO } from '../data/photos'
+
+/** Portret Dominiki albo – dopóki nie ma zdjęcia – typograficzna zaślepka z monogramem. */
+const Portrait = () => {
+  const { t } = useLang()
+  if (PORTRAIT_PHOTO) {
+    return <img src={PORTRAIT_PHOTO} alt="Dominika Głuszkowska" className="w-full aspect-[3/4] object-cover" />
+  }
+  return (
+    <figure className="relative w-full aspect-[3/4] bg-stone text-espresso flex flex-col items-center justify-center overflow-hidden">
+      <span aria-hidden className="font-luxury uppercase leading-none text-[40vw] md:text-[14vw] opacity-90">DG</span>
+      <figcaption className="absolute bottom-4 inset-x-4 flex justify-between text-[10px] uppercase tracking-[0.3em] opacity-60">
+        <span>Dominika Głuszkowska</span>
+        <span>{t.next.portraitPlaceholder}</span>
+      </figcaption>
+    </figure>
+  )
+}
 
 export const NextPage = () => {
   const { t } = useLang()
@@ -8,9 +26,14 @@ export const NextPage = () => {
   return (
     <ChapterPage chapterKey="next" tone="bg-sage text-espresso">
       <section className="bg-sage text-espresso px-5 md:px-10 pb-20 md:pb-32">
-        <AnimatedSection className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 border-t border-espresso/20 pt-10 md:pt-16">
-          <p className="md:col-span-9 md:col-start-4 font-luxury text-3xl md:text-5xl leading-[1.1]">{n.intro}</p>
-        </AnimatedSection>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 border-t border-espresso/20 pt-10 md:pt-16 items-start">
+          <AnimatedSection className="md:col-span-4 w-2/3 md:w-full">
+            <Portrait />
+          </AnimatedSection>
+          <AnimatedSection delay={0.1} className="md:col-span-7 md:col-start-6">
+            <p className="font-luxury text-3xl md:text-5xl leading-[1.1]">{n.intro}</p>
+          </AnimatedSection>
+        </div>
       </section>
 
       <section className="bg-ivory text-espresso px-5 md:px-10 py-20 md:py-32">

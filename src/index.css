@@ -24,6 +24,8 @@
   --color-espresso: #1F1712;
   --color-olive: #3B4630;
   --color-sage: #DCDFD2;
+  /* Ciepły trawertyn z murków w sesji ogrodowej */
+  --color-stone: #E7DCCB;
   --color-mist: #E7E5E1;
 }
 
@@ -48,7 +50,12 @@ body {
   animation: marquee 40s linear infinite;
 }
 
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Przy „ogranicz ruch” pasek nie staje (inaczej ucina tekst), tylko zwalnia. */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .animate-marquee { animation: none; }
+  .animate-marquee { animation-duration: 120s; }
 }

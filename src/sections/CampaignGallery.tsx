@@ -48,7 +48,7 @@ export const CampaignGallery = () => {
       </div>
 
       {/* Ogród */}
-      <div className="bg-sage text-espresso">
+      <div className="bg-stone text-espresso">
         <div className="px-5 md:px-10 pt-20 md:pt-32 pb-10 md:pb-16 flex items-end justify-between gap-6">
           <AnimatedSection className="flex flex-col gap-6">
             <Label>01.4</Label>

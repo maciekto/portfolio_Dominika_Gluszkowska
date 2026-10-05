@@ -28,7 +28,9 @@ const LangSwitch = ({ className = '' }: { className?: string }) => {
 
 export const Header = () => {
   const { lang, t } = useLang()
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
+  const contactHref = `/${lang}#contact`
+  const contactActive = hash === '#contact'
   // Menu jest otwarte tylko na stronie, na której je otwarto – po przejściu dalej samo się zamyka
   const [openedAt, setOpenedAt] = useState<string | null>(null)
   const open = openedAt === pathname
@@ -51,7 +53,7 @@ export const Header = () => {
             DG
           </Link>
 
-          <ul className="hidden lg:flex items-center gap-6 xl:gap-10">
+          <ul className="hidden xl:flex items-center gap-8 2xl:gap-10 whitespace-nowrap">
             {chapters.map((c) => (
               <li key={c.key}>
                 <NavLink to={`/${lang}/${c.slug}`} className={linkClass}>
@@ -59,14 +61,20 @@ export const Header = () => {
                 </NavLink>
               </li>
             ))}
+            <li>
+              <Link to={contactHref} className={linkClass({ isActive: contactActive })}>
+                {t.nav.contact}
+              </Link>
+            </li>
           </ul>
 
           <div className="flex items-center gap-6">
-            <LangSwitch className="hidden lg:flex" />
+            <LangSwitch className="hidden xl:flex" />
+
             <button
               type="button"
               onClick={() => setOpenedAt(pathname)}
-              className="lg:hidden uppercase tracking-[0.3em] cursor-pointer"
+              className="xl:hidden uppercase tracking-[0.3em] cursor-pointer"
               aria-expanded={open}
               aria-controls="mobile-menu"
             >
@@ -107,7 +115,7 @@ export const Header = () => {
                     {({ isActive }) => (
                       <>
                         <span className="text-[10px] tracking-[0.3em] opacity-60">{c.number}</span>
-                        <span className={`font-luxury uppercase text-5xl md:text-7xl leading-none ${isActive ? 'text-sand' : ''}`}>
+                        <span className={`font-luxury uppercase text-[11vw] md:text-7xl leading-none ${isActive ? 'text-sand' : ''}`}>
                           {t.nav[c.key]}
                         </span>
                       </>
@@ -115,6 +123,18 @@ export const Header = () => {
                   </NavLink>
                 </motion.li>
               ))}
+              <motion.li
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.05 * chapters.length + 0.1 }}
+              >
+                <Link to={contactHref} onClick={close} className="flex items-baseline gap-4">
+                  <span className="text-[10px] tracking-[0.3em] opacity-60">0{chapters.length + 1}</span>
+                  <span className={`font-luxury uppercase text-[11vw] md:text-7xl leading-none ${contactActive ? 'text-sand' : ''}`}>
+                    {t.nav.contact}
+                  </span>
+                </Link>
+              </motion.li>
             </ul>
 
             <LangSwitch className="text-xs uppercase tracking-[0.3em]" />

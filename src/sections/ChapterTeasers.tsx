@@ -23,7 +23,7 @@ export const ChapterTeasers = () => {
                   <span>{copy.label}</span>
                 </div>
                 <Link to={href} className="group">
-                  <h2 className="font-luxury uppercase leading-[0.85] text-[13vw] md:text-[7vw] group-hover:opacity-70 transition-opacity">
+                  <h2 className="font-luxury uppercase leading-[0.85] text-[13vw] md:text-[5vw] group-hover:opacity-70 transition-opacity">
                     {t.nav[c.key]}
                   </h2>
                 </Link>
