@@ -1,8 +1,7 @@
 // Jedno źródło prawdy o zdjęciach.
 // `ai: true` = zdjęcie powstało z wykorzystaniem AI. Dostaje etykietę „AI”
 // i automatycznie trafia do galerii na podstronie AI & Automation.
-// UWAGA: flagi poniżej są wstępne (pliki „magnific_…” z folderu „nowe”).
-// Do potwierdzenia przez Dominikę – wystarczy zmienić true/false tutaj.
+// Źródło oznaczeń: pliki z prefiksem NIEAI_ nie są z AI, wszystkie pozostałe są.
 
 import type { Dictionary } from '../i18n/dictionary'
 
@@ -20,16 +19,16 @@ import sandals from '../assets/images/campaign/sandals.jpg'
 import portrait from '../assets/images/campaign/portrait.jpg'
 import skater from '../assets/images/campaign/skater.jpg'
 
-import laptop from '../assets/images/hero-bottom-bg.png'
-import mockup1 from '../assets/images/mockup-1.png'
-import mockup2 from '../assets/images/mockup-2.png'
-import mockup3 from '../assets/images/mockup-3.png'
-import mockup4 from '../assets/images/mockup-4.png'
-import mockup5 from '../assets/images/mockup-5.png'
-import mockup6 from '../assets/images/mockup-6.png'
-import mockup7 from '../assets/images/mockup-7.png'
-import mockup8 from '../assets/images/mockup-8.png'
-import mockup9 from '../assets/images/mockup-9.png'
+import laptop from '../assets/images/NIEAI_hero-bottom-bg.png'
+import mockup1 from '../assets/images/NIEAI_mockup-1.png'
+import mockup2 from '../assets/images/NIEAI_mockup-2.png'
+import mockup3 from '../assets/images/NIEAI_mockup-3.png'
+import mockup4 from '../assets/images/NIEAI_mockup-4.png'
+import mockup5 from '../assets/images/NIEAI_mockup-5.png'
+import mockup6 from '../assets/images/NIEAI_mockup-6.png'
+import mockup7 from '../assets/images/NIEAI_mockup-7.png'
+import mockup8 from '../assets/images/NIEAI_mockup-8.png'
+import mockup9 from '../assets/images/NIEAI_mockup-9.png'
 
 export type AltKey = keyof Dictionary['alt']
 
@@ -54,8 +53,8 @@ export const photos = {
   gardenMan: photo(gardenMan, 'gardenMan', true, 'aspect-[3/4]'),
   gardenDuo: photo(gardenDuo, 'gardenDuo', true, 'aspect-[16/9]'),
   gardenDress: photo(gardenDress, 'gardenDress', true, 'aspect-[16/9]'),
-  bag: photo(bag, 'bag', false, 'aspect-[3/4]'),
-  sandals: photo(sandals, 'sandals', false, 'aspect-[3/4]'),
+  bag: photo(bag, 'bag', true, 'aspect-[3/4]'),
+  sandals: photo(sandals, 'sandals', true, 'aspect-[3/4]'),
   portrait: photo(portrait, 'portrait', true, 'aspect-square'),
   skater: photo(skater, 'skater', true, 'aspect-square'),
   // E-commerce
@@ -74,5 +73,17 @@ export const photos = {
 
 export const aiPhotos = Object.values(photos).filter((p) => p.ai)
 
-/** Film na stronie (video1.mp4) – według Dominiki stworzony z AI. */
+/** Film na stronie (video1.mp4) – stworzony z AI. */
 export const VIDEO_IS_AI = true
+
+/** Zdjęcia w suwaku porównania (comparision-image1/2.png) – stworzone z AI. */
+export const COMPARISON_IS_AI = true
+
+/**
+ * Portret Dominiki na podstronie „Co dalej”.
+ * Na razie brak zdjęcia – wyświetla się typograficzna zaślepka z monogramem.
+ * Żeby wstawić zdjęcie: zaimportuj plik i podstaw go tutaj, np.
+ *   import portraitDominika from '../assets/images/dominika.jpg'
+ *   export const PORTRAIT_PHOTO: string | null = portraitDominika
+ */
+export const PORTRAIT_PHOTO: string | null = null

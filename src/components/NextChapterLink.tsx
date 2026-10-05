@@ -14,7 +14,7 @@ export const NextChapterLink = ({ current }: { current: ChapterKey }) => {
           {t.common.nextChapter} · {next.number}
         </span>
         <span className="mt-4 flex items-end justify-between gap-6">
-          <span className="font-luxury uppercase leading-[0.85] text-[13vw] md:text-[8vw] group-hover:opacity-70 transition-opacity">
+          <span className="font-luxury uppercase leading-[0.85] text-[10vw] md:text-[8vw] group-hover:opacity-70 transition-opacity">
             {t.nav[next.key]}
           </span>
           <span className="text-3xl md:text-6xl pb-2 transition-transform group-hover:translate-x-2">→</span>

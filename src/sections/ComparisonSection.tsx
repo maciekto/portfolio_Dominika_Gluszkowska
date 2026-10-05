@@ -3,13 +3,16 @@ import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slide
 import image1 from '../assets/images/comparision-image1.png'; // The "Before" or Left image
 import image2 from '../assets/images/comparision-image2.png'; // The "After" or Right image
 import { AnimatedSection } from '../components/ui/AnimatedSection';
+import { AiBadge } from '../components/ui/AiBadge';
+import { COMPARISON_IS_AI } from '../data/photos';
 
 export const ComparisonSection = () => {
   return (
     <AnimatedSection className="w-full flex items-center justify-center ">
       
       {/* Container for the slider */}
-      <div className="w-full">
+      <div className="relative w-full">
+        {COMPARISON_IS_AI && <AiBadge />}
         
         <ReactCompareSlider
           // 1. The main interaction wrapper

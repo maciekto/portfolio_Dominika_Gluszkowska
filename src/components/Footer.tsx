@@ -21,6 +21,11 @@ export const Footer = () => {
             </Link>
           </li>
         ))}
+        <li>
+          <Link to={`/${lang}#contact`} className="opacity-70 hover:opacity-100 transition-opacity">
+            0{chapters.length + 1} {t.nav.contact}
+          </Link>
+        </li>
       </ul>
 
       <div className="mt-10 pt-6 border-t border-ivory/15 flex justify-between gap-6 text-[10px] md:text-xs uppercase tracking-[0.3em] opacity-60">

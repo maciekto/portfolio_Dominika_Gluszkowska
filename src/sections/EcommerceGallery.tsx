@@ -1,6 +1,4 @@
 import { Photo } from '../components/ui/Photo'
-import VideoSection from './VideoSection'
-import { ComparisonSection } from './ComparisonSection'
 import { photos } from '../data/photos'
 
 export const EcommerceGallery = () => (
@@ -10,7 +8,5 @@ export const EcommerceGallery = () => (
       <Photo data={photos.mockup1} index="02" />
       <Photo data={photos.mockup2} index="03" delay={0.15} />
     </div>
-    <VideoSection />
-    <ComparisonSection />
   </section>
 )
