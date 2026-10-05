@@ -6,7 +6,7 @@ import { AnimatedSection } from '../components/ui/AnimatedSection';
 
 export const ComparisonSection = () => {
   return (
-    <AnimatedSection className="w-full flex items-center justify-center bg-[#F8F8F8]">
+    <AnimatedSection className="w-full flex items-center justify-center ">
       
       {/* Container for the slider */}
       <div className="w-full">

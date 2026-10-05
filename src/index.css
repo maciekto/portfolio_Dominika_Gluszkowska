@@ -2,37 +2,53 @@
 
 @import "tailwindcss";
 
-
-/* 1. Definicja fontu */
 @font-face {
   font-family: 'KaliebLuxury';
-  /* Ścieżka relatywna do pliku index.css */
   src: url('./assets/fonts/KaliebLuxuryDemo-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap; /* Zapobiega znikaniu tekstu podczas ładowania */
+  font-display: swap;
 }
 
-/* 2. Konfiguracja Tailwind v4 */
+/* Paleta wyciągnięta ze zdjęć kampanii: kość słoniowa, orzech, oliwka, piasek */
 @theme {
-  /* Kluczowe: cudzysłów wokół nazwy fontu i fallback (sans-serif) */
-  --font-luxury: "KaliebLuxury", sans-serif;
-
-  /* Opcjonalnie nadpisujemy domyślny sans jeśli chcesz inny dla tekstów prostych */
+  --font-luxury: "KaliebLuxury", serif;
   --font-sans: "Inter", sans-serif;
 
-  /* This creates bg-themeBlack, text-themeBlack, border-themeBlack */
   --color-themeBlack: #131313;
+  --color-ivory: #F4EFE7;
+  --color-paper: #FAF8F4;
+  --color-sand: #D8C6AC;
+  --color-cognac: #8C5B3A;
+  --color-walnut: #3A2419;
+  --color-espresso: #1F1712;
+  --color-olive: #3B4630;
+  --color-sage: #DCDFD2;
+  --color-mist: #E7E5E1;
 }
 
-/* 3. Style globalne (opcjonalne) */
-body {
-  background-color: #F8F8F8;
-  color: #131313;
-  /* Jeśli chcesz by ten font był domyślny wszędzie, odkomentuj linię poniżej: */
-  /* font-family: "KaliebLuxury", sans-serif; */
-  font-family: 'Inter', sans-serif;
+html {
+  scroll-behavior: smooth;
+}
 
+body {
+  background-color: var(--color-ivory);
+  color: var(--color-espresso);
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-marquee { animation: none; }
 }
