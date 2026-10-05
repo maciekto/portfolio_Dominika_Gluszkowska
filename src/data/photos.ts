@@ -29,6 +29,7 @@ import mockup6 from '../assets/images/NIEAI_mockup-6.png'
 import mockup7 from '../assets/images/NIEAI_mockup-7.png'
 import mockup8 from '../assets/images/NIEAI_mockup-8.png'
 import mockup9 from '../assets/images/NIEAI_mockup-9.png'
+import portraitDominika from '../assets/images/NIEAI_dominika.jpg'
 
 export type AltKey = keyof Dictionary['alt']
 
@@ -80,10 +81,7 @@ export const VIDEO_IS_AI = true
 export const COMPARISON_IS_AI = true
 
 /**
- * Portret Dominiki na podstronie „Co dalej”.
- * Na razie brak zdjęcia – wyświetla się typograficzna zaślepka z monogramem.
- * Żeby wstawić zdjęcie: zaimportuj plik i podstaw go tutaj, np.
- *   import portraitDominika from '../assets/images/dominika.jpg'
- *   export const PORTRAIT_PHOTO: string | null = portraitDominika
+ * Portret Dominiki na podstronie „Co dalej” (prawdziwe zdjęcie, nie AI).
+ * Ustaw na null, żeby wrócić do typograficznej zaślepki z monogramem.
  */
-export const PORTRAIT_PHOTO: string | null = null
+export const PORTRAIT_PHOTO: string | null = portraitDominika
