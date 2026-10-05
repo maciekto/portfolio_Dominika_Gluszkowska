@@ -44,11 +44,30 @@ const en = {
     aiLegend: 'Created with AI',
   },
   chapters: {
-    campaign: { label: 'Fashion imagery', teaser: LOREM, ...placeholderPage },
-    ecommerce: { label: 'Digital product', teaser: LOREM, ...placeholderPage },
-    branding: { label: 'Identity', teaser: LOREM, ...placeholderPage },
-    ai: { label: 'Approach & tools', teaser: LOREM, ...placeholderPage },
-    next: { label: 'Where I’m heading', teaser: LOREM },
+    campaign: {
+      label: 'Fashion imagery',
+      teaser: 'Campaign imagery I generated with AI. I design the whole vision myself, from styling the models to light, shadow and mood, while the products in the frame are real.',
+      ...placeholderPage,
+    },
+    ecommerce: {
+      label: 'Digital product',
+      teaser: 'Promotional banners for the website and mobile app, plus their reformats for international markets and performance marketing. I also designed the new arrivals page.',
+      ...placeholderPage,
+    },
+    branding: {
+      label: 'Identity',
+      teaser: 'Visual identities for two brands: VBRNT, a powerful yet minimal gymwear label with a fashion edge, and Aura, a gentle, spa-inspired cosmetics brand.',
+      ...placeholderPage,
+    },
+    ai: {
+      label: 'Approach & tools',
+      teaser: 'I work with AI every day, mostly creating campaign imagery, and I was the first at my company to test these tools. I also built a Figma library that helps the design team produce reformats faster.',
+      ...placeholderPage,
+    },
+    next: {
+      label: 'Where I’m heading',
+      teaser: 'I want to create campaign imagery and have a real influence on it. I’m inspired by fashion and pop culture, and by how they shape creative campaigns.',
+    },
   },
   campaign: {
     snow: 'Snow',
@@ -164,11 +183,30 @@ const pl: Dictionary = {
     aiLegend: 'Stworzone z AI',
   },
   chapters: {
-    campaign: { label: 'Sesje modowe', teaser: LOREM, ...placeholderPage },
-    ecommerce: { label: 'Produkt cyfrowy', teaser: LOREM, ...placeholderPage },
-    branding: { label: 'Identyfikacja', teaser: LOREM, ...placeholderPage },
-    ai: { label: 'Podejście i narzędzia', teaser: LOREM, ...placeholderPage },
-    next: { label: 'Dokąd zmierzam', teaser: LOREM },
+    campaign: {
+      label: 'Sesje modowe',
+      teaser: 'Zdjęcia do kampanii, które wygenerowałam z AI. Całą wizję projektuję sama, od stylizacji modeli po światło, cienie i klimat, a na zdjęciach występują prawdziwe produkty.',
+      ...placeholderPage,
+    },
+    ecommerce: {
+      label: 'Produkt cyfrowy',
+      teaser: 'Banery promocyjne na stronę www i do aplikacji mobilnej oraz ich reformaty na rynki zagraniczne i do performance marketingu. Zaprojektowałam też stronę z nowościami.',
+      ...placeholderPage,
+    },
+    branding: {
+      label: 'Identyfikacja',
+      teaser: 'Identyfikacje wizualne dwóch marek: VBRNT, mocnej i minimalistycznej marki odzieży na siłownię z modowym zacięciem, oraz Aury, delikatnej marki kosmetyków w klimacie spa.',
+      ...placeholderPage,
+    },
+    ai: {
+      label: 'Podejście i narzędzia',
+      teaser: 'Z AI pracuję codziennie, głównie tworząc zdjęcia do kampanii, a w swojej firmie jako pierwsza zaczęłam testować te narzędzia. Zbudowałam też w Figmie bibliotekę, która przyspiesza zespołowi graficznemu tworzenie reformatów.',
+      ...placeholderPage,
+    },
+    next: {
+      label: 'Dokąd zmierzam',
+      teaser: 'Chcę tworzyć zdjęcia do kampanii i mieć realny wpływ na ich kształt. Inspiruje mnie moda i popkultura oraz to, jak wpływają na kreatywne kampanie.',
+    },
   },
   campaign: {
     snow: 'Śnieg',
